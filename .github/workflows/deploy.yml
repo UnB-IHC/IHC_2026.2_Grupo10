@@ -1,0 +1,29 @@
+name: Deploy PrismaIHC no GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Instalar dependências do MkDocs Material
+        run: pip install -r requirements.txt
+
+      - name: Publicar site estático na branch gh-pages
+        run: mkdocs gh-deploy --force
