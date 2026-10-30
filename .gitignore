@@ -1,0 +1,16 @@
+# Build do MkDocs (gerado automaticamente via GitHub Actions)
+site/
+
+# Ambientes virtuais e cache Python
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+.cache/
+
+# Arquivos de sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
