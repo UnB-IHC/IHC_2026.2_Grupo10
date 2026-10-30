@@ -53,70 +53,67 @@ Acesse `http://127.0.0.1:8000` no navegador. Para contribuir com conteúdo em su
 
 ---
 
-## Equipe — Grupo 10 (2026.2)
+## Contribuidores — Grupo 10 (2026.2)
 
+<div align="center">
 <table>
   <tr>
     <td align="center">
+      <a href="https://github.com/augustogmedeiros">
+        <img style="border-radius: 50%;" src="https://github.com/augustogmedeiros.png" width="95px;" alt="Foto de Augusto"/><br />
+        <sub><b>Augusto</b></sub>
+      </a><br />
+      <sub>@augustogmedeiros</sub>
+    </td>
+    <td align="center">
       <a href="https://github.com/CeciliaCunha">
-        <img style="border-radius: 50%;" src="https://github.com/CeciliaCunha.png" width="90px;" alt="Foto de Cecília Costa"/><br />
+        <img style="border-radius: 50%;" src="https://github.com/CeciliaCunha.png" width="95px;" alt="Foto de Cecília Costa"/><br />
         <sub><b>Cecília Costa</b></sub>
       </a><br />
-      <sub>Sprint 00 • Arquitetura</sub>
+      <sub>@CeciliaCunha</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/jasonlong.png" width="90px;" alt="Integrante Sprint 01"/><br />
-        <sub><b>Integrante 2</b></sub>
+      <a href="https://github.com/Dannyeclisson">
+        <img style="border-radius: 50%;" src="https://github.com/Dannyeclisson.png" width="95px;" alt="Foto de Dannyeclisson"/><br />
+        <sub><b>Dannyeclisson</b></sub>
       </a><br />
-      <sub>Sprint 01 • Total X</sub>
+      <sub>@Dannyeclisson</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/octocat.png" width="90px;" alt="Integrante Sprint 02"/><br />
-        <sub><b>Integrante 3</b></sub>
+      <a href="https://github.com/dantescarpati">
+        <img style="border-radius: 50%;" src="https://github.com/dantescarpati.png" width="95px;" alt="Foto de Dante Scarpati"/><br />
+        <sub><b>Dante Scarpati</b></sub>
       </a><br />
-      <sub>Sprint 02 • Personas</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/hubot.png" width="90px;" alt="Integrante Sprint 03"/><br />
-        <sub><b>Integrante 4</b></sub>
-      </a><br />
-      <sub>Sprint 03 • Jornadas</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/mona.png" width="90px;" alt="Integrante Sprint 04"/><br />
-        <sub><b>Integrante 5</b></sub>
-      </a><br />
-      <sub>Sprint 04 • Blueprints</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/copilot.png" width="90px;" alt="Integrante Sprint 05"/><br />
-        <sub><b>Integrante 6</b></sub>
-      </a><br />
-      <sub>Sprint 05 • Cognição & UI</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/support.png" width="90px;" alt="Integrante Sprint 06"/><br />
-        <sub><b>Integrante 7</b></sub>
-      </a><br />
-      <sub>Sprint 06 • Web & NBRs</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/UnB-IHC">
-        <img style="border-radius: 50%;" src="https://github.com/identicons/security.png" width="90px;" alt="Integrante Sprint 07"/><br />
-        <sub><b>Integrante 8</b></sub>
-      </a><br />
-      <sub>Sprint 07 • Ferramentas</sub>
+      <sub>@dantescarpati</sub>
     </td>
   </tr>
 </table>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/EduOValadares">
+        <img style="border-radius: 50%;" src="https://github.com/EduOValadares.png" width="95px;" alt="Foto de Eduardo Valadares"/><br />
+        <sub><b>Eduardo Valadares</b></sub>
+      </a><br />
+      <sub>@EduOValadares</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gustavolima973">
+        <img style="border-radius: 50%;" src="https://github.com/gustavolima973.png" width="95px;" alt="Foto de Gustavo Lima"/><br />
+        <sub><b>Gustavo Lima</b></sub>
+      </a><br />
+      <sub>@gustavolima973</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/marispmorais">
+        <img style="border-radius: 50%;" src="https://github.com/marispmorais.png" width="95px;" alt="Foto de Mariana"/><br />
+        <sub><b>Mariana</b></sub>
+      </a><br />
+      <sub>@marispmorais</sub>
+    </td>
+  </tr>
+</table>
+</div>
 
 ---
 
