@@ -87,8 +87,6 @@ Acesse `http://127.0.0.1:8000` no navegador. Para contribuir com conteúdo em su
       <sub>@dantescarpati</sub>
     </td>
   </tr>
-</table>
-<table>
   <tr>
     <td align="center">
       <a href="https://github.com/EduOValadares">
@@ -96,6 +94,13 @@ Acesse `http://127.0.0.1:8000` no navegador. Para contribuir com conteúdo em su
         <sub><b>Eduardo Valadares</b></sub>
       </a><br />
       <sub>@EduOValadares</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Guilhermesouza21">
+        <img style="border-radius: 50%;" src="https://github.com/Guilhermesouza21.png" width="95px;" alt="Foto de Guilherme Souza"/><br />
+        <sub><b>Guilherme Souza</b></sub>
+      </a><br />
+      <sub>@Guilhermesouza21</sub>
     </td>
     <td align="center">
       <a href="https://github.com/gustavolima973">
