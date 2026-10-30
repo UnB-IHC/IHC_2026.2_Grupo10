@@ -1,6 +1,7 @@
 # MIT License
 
-Copyright (c) [2024] [VerificAAA]
+Copyright (c) 2024 VerificAAA
+Copyright (c) 2026 Grupo 10 — IHC UnB (PrismaIHC)
 
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
 deste software e dos arquivos de documentação associados (o "Software"), para lidar

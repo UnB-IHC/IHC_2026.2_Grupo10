@@ -1,41 +1,91 @@
-repo_url: https://github.com/vitorfleonardo/VerificAAA
-repo_name: VerificAAA
+site_name: PrismaIHC
+site_description: Guia Prático de Auditoria em UX, Interação Humano-Computador e Acessibilidade Digital — Grupo 10 (UnB 2026.2)
+site_url: https://unb-ihc.github.io/IHC_2026.2_Grupo10/
+repo_url: https://github.com/UnB-IHC/IHC_2026.2_Grupo10
+repo_name: UnB-IHC/IHC_2026.2_Grupo10
 
-site_url: https://github.com/vitorfleonardo/VerificAAA
-site_name: VerificAAA
-
-use_directory_urls: False
-
-nav:
-  - Início - VerificAAA: 'index.md'
-
-  - Desenvolvimento Web:
-    - Desenvolvimento: 'devWeb/non_text_content.md'
-
-  - Design:
-    - Design: 'design/design.md'
-  
-  - Geração de Conteúdo:
-    - Conteúdo: 'geracaoConteudo/conteudo.md'
-
-  - Gestão de Projetos:
-    - Gestão de Projetos: 'gestaoProjeto/gestaoProjeto.md'
-
-  - Ferramentas:
-    - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
+use_directory_urls: false
 
 theme:
-  name: readthedocs
-  locale: pt_BR
-  titles_only: true
-  logo: imagens/logo-verificaaa.png
-  favicon: imagens/logo-verificaaa.png
+  name: material
+  language: pt-BR
+  logo: imagens/logo-prismaihc.svg
+  favicon: imagens/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
 
 markdown_extensions:
+  - admonition
   - def_list
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.tasklist:
-      custom_checkbox: false
+      custom_checkbox: true
       clickable_checkbox: true
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/auditoria.js
+
+nav:
+  - Início: index.md
+
+  - Total X & Personas:
+    - Experiência Total & Empatia:
+      - UX, CX, EX e TX (Total X): 01-totalx-personas/total-experience.md
+      - Design Empático & Canvas: 01-totalx-personas/design-empatico-canvas.md
+    - Modelagem de Personas:
+      - Personas Inclusivas (Como Criar): 01-totalx-personas/personas-como-criar.md
+      - Personas Ecossistêmicas: 01-totalx-personas/personas-ecossistemicas.md
+
+  - Jornadas, Blueprint & Omnicanal:
+    - Fluxos & Canais:
+      - User Journey × User Flows: 02-jornadas-blueprints/user-journey-vs-flows.md
+      - Omnicanalidade em IHC: 02-jornadas-blueprints/omnicanalidade.md
+    - Service Blueprints:
+      - Service Blueprint (Morgan & Miller): 02-jornadas-blueprints/blueprint-morgan-miller.md
+      - Blueprints Situacionais (Kalbach): 02-jornadas-blueprints/blueprint-situacoes-kalbach.md
+
+  - Cognição, IHC, UI & Figma:
+    - Avaliação & Interface:
+      - Neurodiversidade & Usabilidade: 03-cognicao-ui-figma/cognicao-usabilidade.md
+      - Design UI & Prototipação Figma: 03-cognicao-ui-figma/ui-prototipacao-figma.md
+
+  - Web, NBR 17225 & WCAG 2.2:
+    - Implementação & Marco Legal:
+      - Código Semântico, Mídia & Conteúdo: 04-web-normas/web-semantica-conteudo.md
+      - ABNT NBR 17225, NBR 17060 & WCAG 2.2: 04-web-normas/normas-nbr-wcag.md
+
+  - Ferramentas:
+    - Laboratório Prático:
+      - Comparativo (Qual Usar e Para Quê?): 05-ferramentas/comparativo-ferramentas.md
+      - Testes Práticos & Passo a Passo: 05-ferramentas/tutoriais-passo-a-passo.md
+    - Guia da Equipe:
+      - Como Escrever os Checklists: COMO_CONTRIBUIR.md
