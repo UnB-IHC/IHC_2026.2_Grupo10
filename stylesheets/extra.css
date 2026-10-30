@@ -1,0 +1,484 @@
+/* ==========================================================================
+   PrismaIHC — Tema Customizado, Donuts SVG, Cards de Auditoria e Smart Badges
+   ========================================================================== */
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0f4c5c;
+  --md-primary-fg-color--light: #146c78;
+  --md-primary-fg-color--dark: #0b3b49;
+  --md-accent-fg-color: #0d9488;
+  --prisma-surface: #ffffff;
+  --prisma-surface-alt: #f8fafc;
+  --prisma-border: #e2e8f0;
+  --prisma-text: #0f172a;
+  --prisma-muted: #475569;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0f3f5c;
+  --md-primary-fg-color--light: #134e5e;
+  --md-primary-fg-color--dark: #091e2c;
+  --md-accent-fg-color: #2dd4bf;
+  --prisma-surface: #1e293b;
+  --prisma-surface-alt: #0f172a;
+  --prisma-border: #334155;
+  --prisma-text: #f1f5f9;
+  --prisma-muted: #94a3b8;
+}
+
+.md-header {
+  background: linear-gradient(95deg, #0f172a 0%, #134e4a 55%, #1e3a8a 100%) !important;
+}
+
+.md-tabs {
+  background: rgba(9, 20, 36, 0.94) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* ==========================================================================
+   PÁGINA INICIAL (HERO + DASHBOARD DE DONUTS SVG)
+   ========================================================================== */
+.prisma-home-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.prisma-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.75rem 2rem;
+  border-radius: 1rem;
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.prisma-hero__logo {
+  width: 5.2rem;
+  height: 5.2rem;
+  flex-shrink: 0;
+}
+
+.prisma-hero__body {
+  flex: 1 1 320px;
+}
+
+.prisma-pill-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(13, 148, 136, 0.14);
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.32);
+  margin-bottom: 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .prisma-pill-tag {
+  color: #5eead4;
+}
+
+.prisma-hero__body h1 {
+  margin: 0.2rem 0 0.6rem !important;
+  font-size: 1.65rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+  color: var(--prisma-text);
+}
+
+.prisma-hero__body p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--prisma-muted);
+  line-height: 1.6;
+}
+
+.prisma-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.prisma-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  cursor: pointer;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-text) !important;
+  transition: all 0.18s ease;
+}
+
+.prisma-btn:hover {
+  border-color: #0d9488;
+  transform: translateY(-1px);
+}
+
+.prisma-btn--primary {
+  background: #0f766e !important;
+  color: #ffffff !important;
+  border-color: #0f766e !important;
+}
+
+.prisma-btn--primary:hover {
+  background: #0d9488 !important;
+}
+
+/* Dashboard de Donuts */
+.prisma-dash-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.prisma-dash-header h2 {
+  margin: 0 !important;
+  font-size: 1.15rem !important;
+}
+
+.prisma-dash-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.prisma-main-donut-card {
+  grid-column: span 4;
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.prisma-sector-grid {
+  grid-column: span 8;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 960px) {
+  .prisma-main-donut-card,
+  .prisma-sector-grid {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .prisma-sector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prisma-donut-svg-wrap {
+  position: relative;
+  width: 10.5rem;
+  height: 10.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 0;
+}
+
+.prisma-donut-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+}
+
+.prisma-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.prisma-donut-pct {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--prisma-text);
+  line-height: 1.1;
+}
+
+.prisma-donut-sub {
+  font-size: 0.75rem;
+  color: var(--prisma-muted);
+}
+
+.prisma-sector-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.prisma-sector-card:hover {
+  border-color: rgba(13, 148, 136, 0.55);
+}
+
+.prisma-mini-donut {
+  position: relative;
+  width: 4.2rem;
+  height: 4.2rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prisma-mini-donut span {
+  position: absolute;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--prisma-text);
+}
+
+.prisma-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .prisma-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prisma-step-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.85rem;
+  padding: 1.15rem;
+}
+
+.prisma-step-card h3 {
+  margin: 0.3rem 0 0.4rem !important;
+  font-size: 0.95rem !important;
+}
+
+.prisma-step-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--prisma-muted);
+}
+
+/* ==========================================================================
+   PÁGINAS DE CHECKLIST (BARRA DE CONTROLE, CARDS E SMART BADGES)
+   ========================================================================== */
+.prisma-page-panel {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.9rem;
+  padding: 1rem 1.15rem;
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.prisma-page-panel__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.prisma-page-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.prisma-filter-bar {
+  border-top: 1px solid var(--prisma-border);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.prisma-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.prisma-filter-pill {
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.prisma-filter-pill.is-active {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
+}
+
+/* Transformação dos itens de tasklist em Cards Auditáveis */
+.md-typeset ul.task-list {
+  list-style: none;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.md-typeset li.task-list-item.prisma-audit-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.85rem;
+  padding: 1rem 1.15rem 0.9rem 2.75rem !important;
+  margin-bottom: 0.95rem !important;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.md-typeset li.task-list-item.prisma-audit-card.is-checked {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.md-typeset li.task-list-item.prisma-audit-card .task-list-indicator {
+  left: 1rem !important;
+  top: 1.12rem !important;
+}
+
+/* Remove bolinha da sublista de Smart Badges */
+.md-typeset li.prisma-audit-card > ul {
+  list-style: none !important;
+  margin: 0.55rem 0 0.35rem !important;
+  padding-left: 0 !important;
+}
+
+.md-typeset li.prisma-audit-card > ul > li {
+  margin: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Smart Badges Acessíveis (Ícone + Prefixo + Cor) */
+.smart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, opacity 0.15s ease;
+}
+
+.smart-badge:hover {
+  transform: translateY(-1px);
+}
+
+.badge-persona {
+  background: rgba(139, 92, 246, 0.12);
+  color: #6d28d9;
+  border-color: rgba(139, 92, 246, 0.32);
+}
+
+[data-md-color-scheme="slate"] .badge-persona {
+  color: #c4b5fd;
+}
+
+.badge-norma {
+  background: rgba(245, 158, 11, 0.13);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.36);
+}
+
+[data-md-color-scheme="slate"] .badge-norma {
+  color: #fcd34d;
+}
+
+.badge-ferramenta {
+  background: rgba(13, 148, 136, 0.13);
+  color: #0f766e;
+  border-color: rgba(13, 148, 136, 0.35);
+}
+
+[data-md-color-scheme="slate"] .badge-ferramenta {
+  color: #5eead4;
+}
+
+/* Modal de Relatório Markdown */
+.prisma-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.prisma-modal-backdrop.is-open {
+  display: flex;
+}
+
+.prisma-modal {
+  background: var(--prisma-surface);
+  color: var(--prisma-text);
+  border: 1px solid var(--prisma-border);
+  border-radius: 1rem;
+  max-width: 42rem;
+  width: 100%;
+  padding: 1.35rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.prisma-modal pre {
+  background: var(--prisma-surface-alt);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.65rem;
+  padding: 0.85rem;
+  font-size: 0.75rem;
+  max-height: 18rem;
+  overflow: auto;
+  white-space: pre-wrap;
+}
