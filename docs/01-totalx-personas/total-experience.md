@@ -69,6 +69,23 @@ Só que a experiência vai além da tela. A **Experiência do Cliente (CX)** inc
 
 ---
 
+## Total Experience (TX)
+
+- [ ] **Mantenha um mapa que mostre, lado a lado, a jornada do cliente e o que acontece nos bastidores para atendê-lo.** [[8]](#ref-8)
+    - `👤 Persona: Cliente` `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Service Blueprint`
+    ??? info "Como auditar / Passo a passo"
+        1. Peça o mapa da jornada ou o blueprint do serviço.
+        2. Escolha uma reclamação comum de clientes e procure no mapa de onde ela vem nos bastidores.
+        3. O critério é atendido quando o mapa existe, está atualizado e ajuda a achar a causa dos problemas.
+
+- [ ] **Reúna em um só lugar a satisfação de clientes, usuários e equipe interna para analisar os resultados em conjunto.** [[6]](#ref-6)
+    - `👤 Persona: Cliente` `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Total Experience (Gartner)` `🛠️ Ferramenta: Painel de indicadores`
+    ??? info "Como auditar / Passo a passo"
+        1. Veja quais pesquisas de satisfação existem e quem cuida de cada uma.
+        2. O critério é atendido quando os resultados são discutidos juntos antes de decidir melhorias.
+
+---
+
 ## Referências Bibliográficas e Documentais
 
 1. <a id="ref-1"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **ABNT NBR ISO 9241-210**: Ergonomia da interação humano-sistema — Projeto centrado no ser humano para sistemas interativos. Rio de Janeiro: ABNT, 2011.
@@ -78,3 +95,4 @@ Só que a experiência vai além da tela. A **Experiência do Cliente (CX)** inc
 5. <a id="ref-5"></a> W3C. **Web Content Accessibility Guidelines (WCAG) 2.2**. 2023. Disponível em: <https://www.w3.org/TR/WCAG22/>.
 6. <a id="ref-6"></a> GARTNER. **Gartner Identifies the Top Strategic Technology Trends for 2021**. 2020. Disponível em: <https://www.gartner.com/en/newsroom/press-releases/2020-10-19-gartner-identifies-the-top-strategic-technology-trends-for-2021>.
 7. <a id="ref-7"></a> MORGAN, Jacob. **The Employee Experience Advantage**. Hoboken: Wiley, 2017.
+8. <a id="ref-8"></a> KALBACH, Jim. **Mapeamento de Experiências: um guia para criar valor por meio de jornadas, blueprints e diagramas**. Rio de Janeiro: Alta Books, 2017.
