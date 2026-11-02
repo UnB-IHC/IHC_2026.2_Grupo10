@@ -1,28 +1,10 @@
 # Design Empático & Canvas em IHC
 
-O **Design Empático** busca compreender na prática as limitações físicas, sensoriais, cognitivas, emocionais e situacionais enfrentadas pelas pessoas em contextos reais, apoiando-se em artefatos visuais como o **Mapa de Empatia** e o **UX Canvas**.
+O **Design Empático** parte do que as pessoas realmente vivem, ou seja, do que pensam, sentem, dizem e fazem e das dificuldades que enfrentam no dia a dia. Para chegar a esse entendimento, a equipe conversa com pessoas reais e acompanha o uso no dia a dia, incluindo pessoas com deficiência, registrando suas limitações físicas, sensoriais, cognitivas, emocionais e situacionais. Com essas informações em mãos, as decisões do projeto passam a se apoiar no que foi visto e ouvido em campo.
 
-!!! note "Arquivo-molde da Sprint 01"
-    Expanda e personalize livremente as seções e perguntas abaixo com base nas aulas e na bibliografia da sua Issue, mantendo o formato das *Smart Badges*, do bloco *Como auditar* e das *Referências*.
-
----
-
-## Descoberta Empática e Uso de Canvas
-
-- [ ] **As decisões críticas de interface estão ancoradas em dores, esforços e barreiras reais documentadas em Mapa de Empatia ou Canvas** [[1]](#ref-1)
-    - `👤 Persona: Idosos` `👤 Persona: Limitação Situacional` `⚖️ Norma/Base: Design Empático` `🛠️ Ferramenta: Mapa de Empatia`
-    ??? info "Como auditar / Passo a passo"
-        1. Revise os artefatos de descoberta do projeto (Mapa de Empatia / Canvas de Proposta de Valor).
-        2. Confirme se cada funcionalidade principal responde a uma dor observada e não apenas a suposições técnicas.
-
-- [ ] **O mapeamento empático contempla barreiras ambientais e de tecnologia assistiva além do cenário ideal de laboratório** [[2]](#ref-2)
-    - `👤 Persona: Deficiência Visual` `⚖️ Norma/Base: Guia Boas Práticas Gov.br` `🛠️ Ferramenta: Entrevista Contextual`
-    ??? info "Como auditar / Passo a passo"
-        1. Verifique se cenários de baixa conectividade, iluminação adversa, ruído ou uso exclusivo por teclado foram considerados.
+Para organizar o que foi aprendido, a equipe usa **Canvas**, que são quadros visuais de uma página. Os mais comuns são o **Mapa de Empatia**, que reúne o que a pessoa vê, ouve, pensa, sente, diz e faz, o **Canvas de Proposta de Valor**, que liga as dores e os desejos das pessoas às soluções do produto, e o **UX Canvas**, que resume o problema, o público, os objetivos e as ideias a testar. Nessa etapa, é importante garantir que as decisões do projeto nasçam dessa escuta.
 
 ---
 
 ## Referências Bibliográficas e Documentais
 
-1. <a id="ref-1"></a> BARBOSA, S. D. J.; SILVA, B. S. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação / Campus.
-2. <a id="ref-2"></a> DINIZ, V. et al. **Guia de Boas Práticas para Acessibilidade Digital**. Governo Digital (Gov.br), 2023.
