@@ -36,9 +36,36 @@ Para organizar o que foi aprendido, a equipe usa **Canvas**, que são quadros vi
 
 ---
 
+## Uso de Canvas na Descoberta
+
+- [ ] **Preencha o Mapa de Empatia com informações tiradas da pesquisa com as pessoas.** [[5]](#ref-5)
+    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Mapa de Empatia (FigJam / Miro)`
+    ??? info "Como auditar / Passo a passo"
+        1. Escolha três anotações de partes diferentes do Mapa de Empatia.
+        2. Pergunte à equipe de qual entrevista ou observação cada uma veio.
+        3. O critério é atendido quando todas as anotações escolhidas têm origem na pesquisa.
+
+- [ ] **Ligue cada funcionalidade do Canvas de Proposta de Valor a uma dor ou a um desejo real das pessoas.** [[6]](#ref-6)
+    - `👤 Persona: Usuário final, incluindo pessoas com deficiência` `⚖️ Norma/Base: Osterwalder et al. (2014)` `🛠️ Ferramenta: Canvas de Proposta de Valor`
+    ??? info "Como auditar / Passo a passo"
+        1. Liste as funcionalidades do produto que aparecem no canvas.
+        2. Para cada uma, encontre a dor ou o desejo que ela atende.
+        3. O critério é atendido quando nenhuma funcionalidade fica sem uma dor ou desejo ligado a ela.
+
+- [ ] **Deixe claro no UX Canvas o que a equipe acredita sobre os usuários e como isso será testado com eles.** [[7]](#ref-7)
+    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Gothelf e Seiden (2021)` `🛠️ Ferramenta: UX Canvas`
+    ??? info "Como auditar / Passo a passo"
+        1. Verifique se o canvas mostra o problema, o público, os objetivos e as ideias a testar.
+        2. O critério é atendido quando cada ideia importante tem um teste com usuários previsto antes de virar funcionalidade.
+
+---
+
 ## Referências Bibliográficas e Documentais
 
 1. <a id="ref-1"></a> BARBOSA, S. D. J.; SILVA, B. S.; SILVEIRA, M. S.; GASPARINI, I.; DARIN, T.; BARBOSA, G. D. J. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação, 2021. Disponível em: <https://leanpub.com/ihc-ux>.
 2. <a id="ref-2"></a> DINIZ, V. et al. **Guia de Boas Práticas para Acessibilidade Digital**. Brasília: Governo Digital (Gov.br), 2023.
 3. <a id="ref-3"></a> MICROSOFT. **Inclusive Design Toolkit**. 2016. Disponível em: <https://inclusive.microsoft.design/>.
 4. <a id="ref-4"></a> GRAY, Dave; BROWN, Sunni; MACANUFO, James. **Gamestorming: A Playbook for Innovators, Rulebreakers, and Changemakers**. Sebastopol: O'Reilly Media, 2010.
+5. <a id="ref-5"></a> KALBACH, Jim. **Mapeamento de Experiências: um guia para criar valor por meio de jornadas, blueprints e diagramas**. Rio de Janeiro: Alta Books, 2017.
+6. <a id="ref-6"></a> OSTERWALDER, Alexander; PIGNEUR, Yves; BERNARDA, Gregory; SMITH, Alan. **Value Proposition Design: How to Create Products and Services Customers Want**. Hoboken: Wiley, 2014.
+7. <a id="ref-7"></a> GOTHELF, Jeff; SEIDEN, Josh. **Lean UX: Creating Great Products with Agile Teams**. 3. ed. Sebastopol: O'Reilly Media, 2021.
