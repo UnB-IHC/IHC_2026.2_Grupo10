@@ -39,6 +39,7 @@
       firstHref: "03-cognicao-ui-figma/cognicao-usabilidade.html",
       pages: [
         "03-cognicao-ui-figma/cognicao-usabilidade.html",
+        "03-cognicao-ui-figma/heuristicas-nielsen.html",
         "03-cognicao-ui-figma/ui-prototipacao-figma.html",
       ],
     },
