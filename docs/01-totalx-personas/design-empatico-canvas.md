@@ -60,6 +60,23 @@ Para organizar o que foi aprendido, a equipe usa **Canvas**, que são quadros vi
 
 ---
 
+## Da Empatia à Interface
+
+- [ ] **Justifique as principais decisões da interface com algo que foi aprendido com as pessoas.** [[8]](#ref-8)
+    - `👤 Persona: Pessoa idosa ou com pouca familiaridade digital` `⚖️ Norma/Base: ABNT NBR ISO 9241-210` `🛠️ Ferramenta: Tabela "aprendizado → decisão"`
+    ??? info "Como auditar / Passo a passo"
+        1. Escolha de três a cinco decisões da interface, como as etapas de um formulário, as palavras usadas ou a posição de um botão.
+        2. Peça à equipe o aprendizado da pesquisa que justificou cada uma.
+        3. O critério é atendido quando toda decisão escolhida tem uma justificativa vinda da pesquisa.
+
+- [ ] **Atualize os Mapas de Empatia e Canvas sempre que um teste com usuários trouxer algo novo.** [[5]](#ref-5)
+    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Teste com usuários e revisão do Mapa de Empatia`
+    ??? info "Como auditar / Passo a passo"
+        1. Compare a data da última atualização dos artefatos com a data dos últimos testes.
+        2. O critério é atendido quando o que foi aprendido nos testes foi incluído nos Mapas e Canvas.
+
+---
+
 ## Referências Bibliográficas e Documentais
 
 1. <a id="ref-1"></a> BARBOSA, S. D. J.; SILVA, B. S.; SILVEIRA, M. S.; GASPARINI, I.; DARIN, T.; BARBOSA, G. D. J. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação, 2021. Disponível em: <https://leanpub.com/ihc-ux>.
@@ -69,3 +86,4 @@ Para organizar o que foi aprendido, a equipe usa **Canvas**, que são quadros vi
 5. <a id="ref-5"></a> KALBACH, Jim. **Mapeamento de Experiências: um guia para criar valor por meio de jornadas, blueprints e diagramas**. Rio de Janeiro: Alta Books, 2017.
 6. <a id="ref-6"></a> OSTERWALDER, Alexander; PIGNEUR, Yves; BERNARDA, Gregory; SMITH, Alan. **Value Proposition Design: How to Create Products and Services Customers Want**. Hoboken: Wiley, 2014.
 7. <a id="ref-7"></a> GOTHELF, Jeff; SEIDEN, Josh. **Lean UX: Creating Great Products with Agile Teams**. 3. ed. Sebastopol: O'Reilly Media, 2021.
+8. <a id="ref-8"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **ABNT NBR ISO 9241-210**: Ergonomia da interação humano-sistema — Projeto centrado no ser humano para sistemas interativos. Rio de Janeiro: ABNT, 2011.
