@@ -46,9 +46,35 @@ Só que a experiência vai além da tela. A **Experiência do Cliente (CX)** inc
 
 ---
 
+## Experiência do Colaborador (EX)
+
+- [ ] **Garanta que os sistemas usados pela equipe interna sejam tão acessíveis quanto a interface do cliente.** [[5]](#ref-5)
+    - `👤 Persona: Colaborador com deficiência` `⚖️ Norma/Base: WCAG 2.2` `🛠️ Ferramenta: Leitor de tela NVDA`
+    ??? info "Como auditar / Passo a passo"
+        1. Faça uma tarefa comum do colaborador, como buscar um cliente e registrar um atendimento, usando só o teclado e um leitor de tela.
+        2. O critério é atendido quando a tarefa é concluída sem travar em nenhuma etapa.
+
+- [ ] **Mostre ao atendente o histórico do cliente, para que ele não precise pedir informações já passadas.** [[6]](#ref-6)
+    - `👤 Persona: Atendente de suporte` `👤 Persona: Cliente com dificuldade de fala ou de memória` `⚖️ Norma/Base: Total Experience (Gartner)` `🛠️ Ferramenta: Acompanhamento de atendimentos`
+    ??? info "Como auditar / Passo a passo"
+        1. Acompanhe alguns atendimentos ao lado do atendente.
+        2. Anote quantas vezes ele precisa perguntar algo que o cliente já tinha informado.
+        3. O critério é atendido quando o atendente tem as informações na tela e o cliente não precisa se repetir.
+
+- [ ] **Transforme as dificuldades relatadas pela equipe de atendimento em melhorias no produto e nas ferramentas internas.** [[7]](#ref-7)
+    - `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Morgan (2017)` `🛠️ Ferramenta: Conversa com a equipe e lista de melhorias`
+    ??? info "Como auditar / Passo a passo"
+        1. Verifique se existe um jeito fácil de a equipe relatar problemas frequentes.
+        2. O critério é atendido quando há exemplos de melhorias que surgiram desses relatos.
+
+---
+
 ## Referências Bibliográficas e Documentais
 
 1. <a id="ref-1"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **ABNT NBR ISO 9241-210**: Ergonomia da interação humano-sistema — Projeto centrado no ser humano para sistemas interativos. Rio de Janeiro: ABNT, 2011.
 2. <a id="ref-2"></a> BARBOSA, S. D. J.; SILVA, B. S.; SILVEIRA, M. S.; GASPARINI, I.; DARIN, T.; BARBOSA, G. D. J. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação, 2021. Disponível em: <https://leanpub.com/ihc-ux>.
 3. <a id="ref-3"></a> NIELSEN, Jakob. **10 Usability Heuristics for User Interface Design**. Nielsen Norman Group, 1994 (atualizado em 2024). Disponível em: <https://www.nngroup.com/articles/ten-usability-heuristics/>.
 4. <a id="ref-4"></a> BRASIL. **Lei nº 8.078, de 11 de setembro de 1990** (Código de Defesa do Consumidor). Disponível em: <https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm>.
+5. <a id="ref-5"></a> W3C. **Web Content Accessibility Guidelines (WCAG) 2.2**. 2023. Disponível em: <https://www.w3.org/TR/WCAG22/>.
+6. <a id="ref-6"></a> GARTNER. **Gartner Identifies the Top Strategic Technology Trends for 2021**. 2020. Disponível em: <https://www.gartner.com/en/newsroom/press-releases/2020-10-19-gartner-identifies-the-top-strategic-technology-trends-for-2021>.
+7. <a id="ref-7"></a> MORGAN, Jacob. **The Employee Experience Advantage**. Hoboken: Wiley, 2017.
