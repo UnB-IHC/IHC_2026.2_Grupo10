@@ -23,6 +23,7 @@ Nosso repositório utiliza **3 níveis de branches**:
 | **Sprint 05** — Cognição, UI & Figma | `sprint/05-cognicao-ui-figma` | `docs/03-cognicao-ui-figma/` |
 | **Sprint 06** — Web, Conteúdo & Normas | `sprint/06-web-conteudo-normas` | `docs/04-web-normas/` |
 | **Sprint 07** — Ferramentas Avaliadas | `sprint/07-ferramentas-avaliadas` | `docs/05-ferramentas/` |
+| **Sprint 08** — Heurísticas de Nielsen | `sprint/08-heuristicas-nielsen` | `docs/03-cognicao-ui-figma/` |
 
 > **Regra de ouro:** Edite apenas os arquivos `.md` atribuídos à sua Sprint. Não altere `mkdocs.yml`, CSS ou JS sem alinhar antes com a coordenação para evitar conflitos de merge.
 
