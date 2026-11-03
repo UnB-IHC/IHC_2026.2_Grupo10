@@ -2,7 +2,7 @@
 
 A garantia de acessibilidade e de uma boa experiência de uso (UX) em produtos digitais exige mais do que boas intenções na hora de codificar; demanda a aplicação de métodos sistemáticos de Interação Humano-Computador (IHC). Como discutido nas aulas da disciplina, nenhuma ferramenta automatizada isolada é capaz de encontrar e interpretar todos os problemas de acessibilidade, usabilidade e carga cognitiva de um sistema. 
 
-Para que a auditoria seja eficaz, é necessário combinar validações automatizadas rápidas (ideais para estrutura de código e contraste) com testes manuais e heurísticos (fundamentais para avaliar o fluxo de navegação e o uso prático com tecnologias assistivas). A matriz e o checklist abaixo formalizam o uso estratégico dessas ferramentas no ciclo de desenvolvimento do projeto.
+Para que a auditoria seja eficaz, é necessário combinar validações automatizadas rápidas (ideais para estrutura de código e contraste) com testes manuais e heurísticos (fundamentais para avaliar o fluxo de navegação e o uso prático com tecnologias assistivas). A matriz e o checklist abaixo formalizam o uso estratégico dessas ferramentas no ciclo de desenvolvimento do projeto [[5]](#ref-5).
 
 ---
 
@@ -19,13 +19,10 @@ Para que a auditoria seja eficaz, é necessário combinar validações automatiz
 
 ---
 
-## Checklist de Cobertura da Bateria de Testes
-
-
 ## 1. Validação de Código e Estrutura Semântica
 
 - [ ] **O código HTML possui uma estrutura semântica válida e os atributos ARIA estão aplicados corretamente nos componentes interativos?** [[1]](#ref-1)
-- `👤 Persona: Pessoas usuárias de leitor de tela` `⚖️ Norma/Base: WCAG 2.1 - 4.1.2 Nome, Função, Valor` `🛠️ Ferramenta: Axe DevTools e Lighthouse`
+    - `👤 Persona: Pessoas usuárias de leitor de tela` `⚖️ Norma/Base: WCAG 2.1 - 4.1.2 Nome, Função, Valor` `🛠️ Ferramenta: Axe DevTools e Lighthouse`
     ??? info "Como auditar / Passo a passo"
         1. Abra o navegador na página em desenvolvimento e rode o Lighthouse para obter o diagnóstico geral.
         2. Acesse a aba do Axe DevTools no inspecionar (`F12`) e execute o "Scan ALL of my page".
@@ -37,10 +34,8 @@ Para que a auditoria seja eficaz, é necessário combinar validações automatiz
 ## 2. Validação Visual e Contraste
 
 - [ ] **A interface apresenta um índice de contraste visual adequado para facilitar a leitura de todas as informações textuais e componentes?** [[2]](#ref-2)
-- `👤 Persona: Pessoas com baixa visão ou daltonismo` `⚖️ Norma/Base: WCAG 2.1 - 1.4.3 Contraste (Mínimo)` `🛠️ Ferramenta: WAVE e Stark`
-  
+    - `👤 Persona: Pessoas com baixa visão ou daltonismo` `⚖️ Norma/Base: WCAG 2.1 - 1.4.3 Contraste (Mínimo)` `🛠️ Ferramenta: WAVE e Stark`
     ??? info "Como auditar / Passo a passo"
-  
         1. Na fase de design, utilize o plugin Stark no Figma para simular a visão com daltonismo e verificar o contraste.
         2. Na página já codificada, ative a extensão WAVE e filtre pelos alertas vermelhos de "Contrast Errors".
         3. **Resultado esperado:** Textos normais devem passar na proporção mínima de 4.5:1 (Nível AA da WCAG), e a leitura deve ser viável independentemente do uso exclusivo de cores.
@@ -50,10 +45,8 @@ Para que a auditoria seja eficaz, é necessário combinar validações automatiz
 ## 3. Tecnologias Assistivas e Navegação Manual
 
 - [ ] **É possível navegar, mover o foco e interagir com todas as funcionalidades da tela utilizando exclusivamente o teclado?** [[3]](#ref-3)
-- `👤 Persona: Pessoas cegas e pessoas com deficiência motora` `⚖️ Norma/Base: WCAG 2.1 - 2.1.1 Teclado` `🛠️ Ferramenta: NVDA`
-  
+    - `👤 Persona: Pessoas cegas e pessoas com deficiência motora` `⚖️ Norma/Base: WCAG 2.1 - 2.1.1 Teclado` `🛠️ Ferramenta: NVDA`
     ??? info "Como auditar / Passo a passo"
-  
         1. Inicie a aplicação, ative o leitor de tela NVDA (com o Visualizador de Fala ativado) e solte o mouse.
         2. Percorra todo o fluxo da tarefa usando apenas as teclas `Tab`, `Shift + Tab` e `Enter`.
         3. Verifique se o foco visual não fica "preso" em nenhuma janela modal (Keyboard Trap).
@@ -64,13 +57,13 @@ Para que a auditoria seja eficaz, é necessário combinar validações automatiz
 ## 4. Consistência e Prevenção de Erros
 
 - [ ] **O sistema fornece caminhos claros de navegação e saídas de emergência imediatas caso o usuário cometa um erro?** [[4]](#ref-4)
-- `👤 Persona: Todas as pessoas usuárias do sistema` `⚖️ Norma/Base: Heurísticas 3 e 4 de Nielsen` `🛠️ Ferramenta: Figma (A11y Focus Order) e Miro`
-  
+    - `👤 Persona: Todas as pessoas usuárias do sistema` `⚖️ Norma/Base: Heurísticas 3 e 4 de Nielsen` `🛠️ Ferramenta: Figma (A11y Focus Order) e Miro`
     ??? info "Como auditar / Passo a passo"
-  
         1. Avalie o fluxo mapeado no Miro e o protótipo desenhado no Figma.
         2. Procure por processos longos (como formulários ou modais) e verifique se existe um botão visível de "Cancelar", "Fechar" (X) ou "Voltar".
         3. **Resultado esperado:** Elementos idênticos mantêm o mesmo comportamento visual (Heurística 4) e o usuário consegue reverter ações sem a perda indesejada de dados (Heurística 3).
+
+---
 
 ## Referências Bibliográficas e Documentais
 

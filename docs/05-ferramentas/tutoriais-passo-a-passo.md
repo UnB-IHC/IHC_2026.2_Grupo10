@@ -6,12 +6,12 @@ Esta página reúne cinco ferramentas testadas na prática pelo grupo (axe DevTo
 
 ---
 
-## 1. Axe DevTools (Deque)
+## 1. Axe DevTools (Deque) [[5]](#ref-5)
 
 - **🎯 Para que é mais adequada:** Triagem técnica rápida de código HTML, atributos ARIA, rótulos de formulários e contraste diretamente no DevTools do navegador.
 - **🧪 Comentário crítico do teste prático:** Identifica falhas objetivas em segundos sem falsos positivos, mas não avalia se o texto de um `alt` ou mensagem de erro realmente faz sentido humano.
 
-??? info"Passo a passo de como usar o Axe DevTools"
+??? info "Passo a passo de como usar o Axe DevTools"
 
     1. Instale a extensão gratuita **axe DevTools** na loja do Google Chrome ou Microsoft Edge.
     2. Abra a página que deseja auditar, pressione `F12` e selecione a aba **axe DevTools**.
@@ -20,7 +20,7 @@ Esta página reúne cinco ferramentas testadas na prática pelo grupo (axe DevTo
 
 ---
 
-## 2. WAVE — Web Accessibility Evaluation Tool
+## 2. WAVE — Web Accessibility Evaluation Tool [[6]](#ref-6)
 
 - **🎯 Para que é mais adequada:** Inspeção visual didática da estrutura de cabeçalhos, regiões semânticas, links redundantes e contraste.
 - **🧪 Comentário crítico do teste prático:** Excelente para alinhar designers, redatores e desenvolvedores graças aos ícones visuais aplicados direto sobre a interface avaliada.
@@ -33,7 +33,7 @@ Esta página reúne cinco ferramentas testadas na prática pelo grupo (axe DevTo
 
 ---
 
-## 3. Google Lighthouse 
+## 3. Google Lighthouse [[7]](#ref-7)
 
 - **🎯 Para que é mais adequada:** Obter uma visão geral e uma "nota" rápida de acessibilidade, dispensando a instalação de programas externos (já vem nas DevTools do Chrome). Gera pontuações de 0 a 100 para a categoria Acessibilidade, lista de auditorias reprovadas e uma lista de itens para checagem manual. Boa para acompanhar a evolução entre versões.
 - **🧪 Comentário crítico do teste prático:** O sistema de pontuação pode ser equivocado. Por ser um sistema apenas de "passou ou falhou", pode acontecer de um erro simples abaixar drasticamente os pontos. Por outro lado, obter a nota 100 não significa que o site está perfeito, já que só é validado o que dá para automatizar.
@@ -46,7 +46,7 @@ Esta página reúne cinco ferramentas testadas na prática pelo grupo (axe DevTo
 
 ---
 
-## 4. NVDA (NonVisual Desktop Access)
+## 4. NVDA (NonVisual Desktop Access) [[8]](#ref-8)
 
 - **🎯 Para que é mais adequada:** Simular a navegação de quem não enxerga a tela. Ajuda a testar se os nomes dos botões são lidos direito e se é possível utilizar o sistema inteiro apenas com o teclado. 
 - **🧪 Comentário crítico do teste prático:** A curva de aprendizado exige um maior conhecimento prévio, pois é necessário memorizar alguns atalhos. Quem enxerga tende a usar o leitor diferente de usuários experientes, então o teste complementa, mas não substitui, a avaliação com pessoas usuárias reais.
@@ -59,7 +59,7 @@ Esta página reúne cinco ferramentas testadas na prática pelo grupo (axe DevTo
 
 ---
 
-## 5. Stark no Figma
+## 5. Stark no Figma [[9]](#ref-9)
 
 - **🎯 Para que é mais adequada:** Prevenir problemas de usabilidade visual antes mesmo de começar a codar o front-end. Usado na etapa de prototipação para checar contraste e simular daltonismo. 
 - **🧪 Comentário crítico do teste prático:** A versão gratuita tem limite de uso em algumas funcionalidades, mas o verificador de contraste de texto e o simulador de visão compensam muito. Evita a perda de tempo programando uma tela que fatalmente seria reprovada depois na auditoria do WAVE. 
