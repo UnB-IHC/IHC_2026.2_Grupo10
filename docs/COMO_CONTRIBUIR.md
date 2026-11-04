@@ -5,9 +5,9 @@ hide:
 
 # Padrão Editorial da Equipe — PrismaIHC (Grupo 10)
 
-O **PrismaIHC** separa páginas puras de **`📖 Guia Metodológico`** (sem checkboxes) de páginas de **`📋 Checklist de Auditoria Web`** (critérios verificáveis na tela de qualquer site).
+O **PrismaIHC** separa páginas de **`📖 Guia Metodológico`** (concepção, pesquisa e prototipação, sem checkboxes) de páginas de **`📋 Checklist de Auditoria Web`** (critérios verificáveis na interface de qualquer site publicado). Para o fluxo Git completo, consulte o `CONTRIBUTING.md` na raiz do repositório.
 
-## Molde de Página de Checklist (`📋`)
+## 1. Molde de Página de Checklist (`📋`)
 
 ````markdown
 ---
@@ -19,7 +19,7 @@ hide:
 
 # Título da Página
 
-Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da página.
+Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da página [[1]](#ref-1).
 
 ---
 
@@ -38,7 +38,15 @@ Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da pá
 1. <a id="ref-1"></a> SOBRENOME, Nome. **Título da Obra ou Norma**. Ano. Disponível em: <https://link-oficial>.
 ````
 
+## 2. Catálogo Oficial de Etiquetas (Filtros Unificados)
+
+Use exatamente estes nomes para manter os menus suspensos (`<select>`) padronizados em todas as páginas:
+
+* **`👤 Persona` (11):** `👤 Leitor de Tela`, `👤 Baixa Visão`, `👤 Daltonismo`, `👤 Surdez / Libras`, `👤 Motora / Teclado`, `👤 Controle por Voz`, `👤 Cognitiva / TDAH`, `👤 TEA / Autismo`, `👤 Dislexia`, `👤 Idoso / Baixo Letramento`, `👤 Epilepsia / Vestibular`.
+* **`⚖️ Norma / Base` (10):** `⚖️ ABNT NBR 17225:2025`, `⚖️ ABNT NBR 17060:2022`, `⚖️ WCAG 2.2`, `⚖️ eMAG / Gov.br`, `⚖️ LBI (Lei 13.146/2015)`, `⚖️ Linguagem Simples (Lei 15.263/2025)`, `⚖️ W3C COGA`, `⚖️ Heurísticas de Nielsen`, `⚖️ Kalbach (Jornadas/Canais)`, `⚖️ Service Blueprint (Morgan & Miller)`.
+* **`🛠️ Ferramenta` (11):** `🛠️ Inspeção Manual / Heurística`, `🛠️ Teclado (Tab / Esc)`, `🛠️ DevTools (Zoom, Refluxo & Visão)`, `🛠️ WAVE`, `🛠️ Axe DevTools`, `🛠️ Google Lighthouse`, `🛠️ Accessibility Insights`, `🛠️ Colour Contrast Analyser (CCA)`, `🛠️ ASES Web (Gov.br)`, `🛠️ NVDA / VoiceOver`, `🛠️ TalkBack / VoiceOver Mobile`.
+
 !!! tip "Regras essenciais para os filtros e acordeões"
-    1. **Apenas um `---` no topo:** O primeiro `---` após o parágrafo introdutório é convertido automaticamente no painel de progresso e dropdowns de filtro.
-    2. **Etiquetas curtas padronizadas:** Use rótulos curtos nas badges (`👤`, `⚖️`, `🛠️`) para manter os menus suspensos limpos.
+    1. **Sempre inclua `hide: - toc`** no topo do arquivo.
+    2. **Apenas um `---` após a introdução:** O primeiro `---` é convertido automaticamente no painel de progresso e dropdowns de filtro.
     3. **Recuo de 4 e 8 espaços:** Recue as etiquetas e o `??? info` com **4 espaços** e os passos internos com **8 espaços**.

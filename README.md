@@ -1,8 +1,8 @@
-# PrismaIHC — Guia de Auditoria em UX, IHC & Acessibilidade
+# PrismaIHC — Guia de Concepção & Checklist de Auditoria em UX, IHC e Acessibilidade
 
 <div align="center">
   <img src="docs/imagens/logo-prismaihc.svg" alt="Logo PrismaIHC: prisma geométrico sobre fundo escuro com símbolo de verificação" width="108" />
-  <p><strong>Guia interativo de auditoria em Experiência Total, Interação Humano-Computador e Acessibilidade Digital</strong></p>
+  <p><strong>Plataforma interativa de concepção centrada no humano e auditoria prática de sites em UX, IHC e Acessibilidade Digital</strong></p>
   <p>
     <a href="https://unb-ihc.github.io/IHC_2026.2_Grupo10/">🌐 Acessar o Guia Online (GitHub Pages)</a> •
     <a href="CONTRIBUTING.md">📋 Guia de Contribuição & Fluxo Git</a> •
@@ -14,23 +14,34 @@
 
 ## Sobre o Projeto
 
-O **PrismaIHC** é um guia prático e interativo desenvolvido pelo **Grupo 10 (2026.2)** na disciplina de **Interação Humano-Computador (FGA0173)** da **Universidade de Brasília (UnB)**, ministrada pela docente **Rejane Maria da Costa Figueiredo**.
+O **PrismaIHC** é uma plataforma prática e interativa desenvolvida pelo **Grupo 10 (2026.2)** na disciplina de **Interação Humano-Computador (FGA0173)** da **Universidade de Brasília (UnB)**, ministrada pela Profa. **Rejane Maria da Costa Figueiredo**.
 
-A proposta evolui e amplia o conceito de *Pockets/Guias de Acessibilidade* construídos em semestres anteriores da disciplina (como o template base *VerificAAA* e inspirações arquiteturais do *Grupo 10 / 2026.1*), integrando toda a jornada de projeto de IHC com conformidade técnica e normativa atualizada:
+Evoluindo os guias *Pocket* construídos em semestres anteriores da disciplina (como *VerificAAA* e referências do *Grupo 10 / 2026.1*), o **PrismaIHC** organiza todo o ciclo de IHC em **duas frentes complementares** aplicáveis a qualquer sistema web:
 
-- **🌐 Total Experience & Personas:** Articulação entre CX, UX, EX e TX (*Total Experience*), Design Empático, Canvas de UX, criação metodológica de Personas Inclusivas e Personas Ecossistêmicas.
-- **🗺️ Jornadas, Blueprints & Omnicanalidade:** Alinhamento entre *User Journey* e *User Flows*, *Service Blueprints* (modelos de Morgan & Miller e aplicações situacionais de Jim Kalbach) e continuidade omnicanal.
-- **🧠 Cognição, Usabilidade, UI & Figma:** Acessibilidade Cognitiva e Neurodiversidade (TDAH, TEA, Dislexia), Heurísticas de Usabilidade, Design de Interface (UI) e Prototipação Inclusiva no Figma.
-- **💻 Web, Conteúdo & Normas Técnicas:** HTML5 semântico, mídia acessível, Linguagem Simples (*Gov.br* / *ABNT NBR ISO 24495-1*), **WCAG 2.2**, **ABNT NBR 17225:2025** (Web) e **ABNT NBR 17060:2022** (Mobile).
-- **🛠️ Guia Prático de Ferramentas:** Comparativo de adequação, comentários críticos de testes reais e tutoriais passo a passo.
+1. **📖 Guias Metodológicos (8 páginas — Concepção, Serviço, Prototipação & Ferramentas):** Diretrizes visuais em quadros e matrizes para orientar pesquisa empática, personas, mapeamento *As-Is → To-Be*, handoff acessível no Figma e bancada de ferramentas (sem checkboxes que distorçam auditorias externas).
+2. **📋 Checklists de Auditoria Web (8 páginas — 69 critérios práticos):** Critérios objetivos, diretos e verificáveis na interface de **qualquer site publicado**, cobrindo fluxos, omnicanalidade, reflexos de bastidores, acessibilidade cognitiva (**W3C COGA**), **Heurísticas de Nielsen**, **Design Visual de UI**, HTML semântico, **Linguagem Simples (Lei nº 15.263/2025)**, **WCAG 2.2**, **ABNT NBR 17225:2025** e **ABNT NBR 17060:2022**.
 
 ---
 
-## Principais Funcionalidades do Guia
+## Arquitetura das Abas no Site
 
-- **Painel Geral com Donuts SVG Reativos:** Acompanhamento visual automático da conformidade geral e por eixo temático na página inicial, salvo localmente no navegador (`localStorage`).
-- **Checklists Auditáveis com *Smart Badges*:** Filtros clicáveis em cada critério por `👤 Persona`, `⚖️ Norma/Base` e `🛠️ Ferramenta`.
-- **Gavetas *"Como auditar / Passo a passo"*:** Instruções diretas de inspeção prática e exportação de relatório consolidado em Markdown (`.md`).
+| Aba Principal | Páginas e Escopo |
+| :--- | :--- |
+| **🏠 Início** | Painel Geral com Donuts SVG reativos (69 critérios), exportação global de relatório `.md`, atalhos para os guias e evolução normativa do PrismaIHC. |
+| **🌐 Total X & Personas** | `📖 UX, CX, EX e TX` • `📖 Design Empático & Canvas` • `📖 Personas Inclusivas` (11 perfis dos filtros) • `📖 Personas Ecossistêmicas`. |
+| **🗺️ Jornadas, Blueprint & Omnicanal** | `📋 Fluxos de Navegação` (`FLX-01`–`05`) • `📋 Omnicanalidade` (`OMN-01`–`05`) • `📋 Palco vs. Bastidores` (`BPR-01`–`06`) • `📖 Mapeamento As-Is → To-Be (Kalbach)`. |
+| **🧠 Cognição, IHC, UI & Figma** | `📋 Acessibilidade Cognitiva & COGA` (`COG-01`–`11`) • `📋 Heurísticas de Nielsen` (`H01`–`H10`) • `📋 Design Visual de UI` (`UI-01`–`05`) • `📖 Prototipação & Handoff no Figma`. |
+| **💻 Web, NBR 17225 & WCAG 2.2** | `📋 Código Semântico, Mídia & Conteúdo` (`WEB-01`–`13`) • `📋 Normas NBR 17225, 17060 & WCAG 2.2` (`NBR-01`–`14`). |
+| **🛠️ Ferramentas** | `📖 Qual Ferramenta Usar (Comparativo)` • `📖 Testes Práticos & Passo a Passo` (11 ferramentas dos filtros + pré-código no Figma). |
+
+---
+
+## Principais Funcionalidades Interativas
+
+- **Painel Geral com Donuts SVG e Cálculo Justo (`N/A`):** Progresso global e por eixo calculado automaticamente no navegador (`localStorage`). Critérios marcados como **`N/A`** (ex.: sites sem vídeo ou sem área logada) saem do denominador para não penalizar o índice de conformidade.
+- **4 Filtros em Dropdown Unificados:** Seletores suspensos padronizados em todos os checklists para cruzar **👤 Persona (11 perfis)**, **⚖️ Norma / Base (10 referenciais)**, **🛠️ Ferramenta (11 métodos/extensões)** e **📌 Status**, com opção de reexibir itens ocultos na própria seção.
+- **Critérios em Acordeão Expansíveis pelo Título:** Interface limpa de baixa carga visual — cada item exibe código, pergunta e botões `✓` / `✕` / `N/A`, revelando o passo a passo de inspeção, tags e fontes bibliográficas ao clicar no título.
+- **Severidade de Nielsen (1–4) & Exportação de Laudo (`.md`):** Ao reprovar um critério (`✕`), abre-se a classificação de **Severidade (1 — Cosmético a 4 — Catastrófico)** e o campo de local/evidência para gerar automaticamente o relatório técnico fundamentado em Markdown.
 
 ---
 
@@ -41,6 +52,8 @@ A proposta evolui e amplia o conceito de *Pockets/Guias de Acessibilidade* const
 python -m venv .venv
 # Windows (PowerShell):
 .\.venv\Scripts\Activate.ps1
+# Linux / WSL / macOS:
+source .venv/bin/activate
 
 # 2. Instalar dependências do MkDocs Material
 pip install -r requirements.txt
@@ -49,7 +62,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Acesse `http://127.0.0.1:8000` no navegador. Para contribuir com conteúdo em sua Sprint Temática, consulte o [CONTRIBUTING.md](CONTRIBUTING.md).
+Acesse `http://127.0.0.1:8000/IHC_2026.2_Grupo10/` no navegador. Para diretrizes editoriais, moldes `.md` e fluxo Git da equipe, consulte o [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
