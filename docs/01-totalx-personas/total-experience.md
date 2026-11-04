@@ -1,88 +1,61 @@
+---
+hide:
+  - toc
+---
+
+<span class="prisma-pill-tag">📖 Guia Metodológico • Concepção &amp; Serviço</span>
+
 # UX, Design UX e Total Experience — CX, UX, EX, TX
 
-A **Experiência do Usuário (UX)** é tudo o que uma pessoa percebe e sente ao usar ou ao se preparar para usar um produto ou serviço. Ele precisa ser funcional, fácil e confiável. O **Design UX** é o trabalho de projetar essa experiência de propósito, entendendo quem são os usuários, envolvendo essas pessoas no projeto e melhorando a solução a cada rodada de testes.
+A **Total Experience (TX)** integra a interação na tela (**UX**), a relação em todos os pontos de contato (**CX**) e as ferramentas internas da equipe (**EX**), evitando que sistemas de bastidores precários ou canais desconectados gerem barreiras ao usuário final [[1]](#ref-1) [[6]](#ref-6). Este guia consolida como alinhar essas quatro dimensões na concepção ou no redesenho de serviços digitais.
 
-Só que a experiência vai além da tela. A **Experiência do Cliente (CX)** inclui todos os contatos da pessoa com a organização, do anúncio ao suporte. A **Experiência do Colaborador (EX)** trata das ferramentas e do dia a dia de quem atende e opera o serviço nos bastidores. A **Total Experience (TX)** junta tudo isso em uma visão só, porque um atendente com um sistema ruim acaba entregando um atendimento ruim ao cliente. Por isso, é importante verificar se o projeto cuida tanto de quem usa quanto de quem atende e se todos os canais passam a mesma mensagem.
+## As 4 Dimensões e Suas Diretrizes Práticas
 
----
+<div class="prisma-guide-grid" markdown>
 
-## Experiência do Usuário (UX)
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--teal">1 • Experiência do Usuário (UX)</h3>
+<span class="prisma-card-subtitle">Interação centrada em pessoas reais</span>
 
-- [ ] **Defina quem são os usuários, o que precisam fazer e em que situações usam o serviço, com base em pesquisa feita com o público.** [[1]](#ref-1)
-    - `👤 Persona: Usuário final, incluindo pessoas com deficiência` `⚖️ Norma/Base: ABNT NBR ISO 9241-210` `🛠️ Ferramenta: UX Canvas`
-    ??? info "Como auditar / Passo a passo"
-        1. Peça os materiais de pesquisa do projeto, como personas, entrevistas e a descrição dos usuários.
-        2. Verifique se há pelo menos um perfil de pessoa com deficiência ou em situação difícil de uso, como alguém com pressa ou usando uma mão só.
-        3. O critério é atendido quando os perfis foram construídos a partir de pesquisa com pessoas reais.
+* **Contextos reais de uso:** Definir usuários, tarefas e situações adversas (pressa, uso com uma só mão, tecnologias assistivas) a partir de pesquisa com o público [[1]](#ref-1).
+* **Testes iterativos:** Validar desde os primeiros protótipos com usuários reais em pelo menos duas rodadas, convertendo falhas em ajustes concretos [[1]](#ref-1).
+* **Qualidade percebida:** Avaliar não só a conclusão da tarefa, mas sentimentos de confiança, frustração ou insegurança após o uso [[2]](#ref-2).
+</div>
 
-- [ ] **Teste o produto com usuários reais em várias etapas do projeto, desde os primeiros protótipos.** [[1]](#ref-1)
-    - `👤 Persona: Usuário final e usuário de tecnologia assistiva` `⚖️ Norma/Base: ABNT NBR ISO 9241-210` `🛠️ Ferramenta: Teste de usabilidade com protótipos`
-    ??? info "Como auditar / Passo a passo"
-        1. Veja quando foram feitos os testes com usuários e quais versões foram testadas.
-        2. O critério é atendido quando houve pelo menos dois testes ao longo do projeto e os problemas encontrados geraram mudanças.
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--blue">2 • Experiência do Cliente (CX)</h3>
+<span class="prisma-card-subtitle">Coerência em todos os contatos</span>
 
-- [ ] **Avalie, além da conclusão das tarefas, como a pessoa se sentiu ao usar o serviço.** [[2]](#ref-2)
-    - `👤 Persona: Usuário final, em especial pessoas inseguras com tecnologia` `⚖️ Norma/Base: Barbosa et al. (2021)` `🛠️ Ferramenta: Questionário de satisfação e entrevista após o uso`
-    ??? info "Como auditar / Passo a passo"
-        1. Verifique se o projeto registra a opinião e os sentimentos dos usuários, como confiança, frustração ou insegurança.
-        2. O critério é atendido quando a satisfação das pessoas é medida e usada para decidir melhorias.
+* **Unidade entre canais:** Manter os mesmos rótulos, ícones, cores semânticas e comportamentos entre site, aplicativo, e-mails, notificações e suporte [[3]](#ref-3).
+* **Transparência comercial e pública:** Apresentar preços, prazos, regras e condições em linguagem simples antes de qualquer confirmação, sem divergências entre canais [[4]](#ref-4).
+</div>
 
----
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--purple">3 • Experiência do Colaborador (EX)</h3>
+<span class="prisma-card-subtitle">Retaguarda acessível e com contexto</span>
 
-## Experiência do Cliente (CX)
+* **Backoffice inclusivo:** Garantir que sistemas internos usados por atendentes e operadores atendam à WCAG 2.2 (teclado e leitor de tela NVDA) [[5]](#ref-5).
+* **Histórico visível:** Exibir ao atendente os dados já informados pelo usuário para eliminar perguntas repetitivas [[6]](#ref-6).
+* **Escuta da linha de frente:** Converter dificuldades recorrentes relatadas pelo suporte em melhorias de produto [[7]](#ref-7).
+</div>
 
-- [ ] **Use os mesmos nomes, cores e comportamentos em todos os canais, como site, app, e-mail, notificações e atendimento.** [[3]](#ref-3)
-    - `👤 Persona: Pessoa idosa ou com baixa visão` `⚖️ Norma/Base: Heurísticas de Nielsen (Consistência)` `🛠️ Ferramenta: Comparação de telas entre canais (FigJam / Miro)`
-    ??? info "Como auditar / Passo a passo"
-        1. Faça a mesma tarefa em dois ou mais canais e tire capturas de tela.
-        2. Compare os nomes dos botões, os ícones, as cores de erro e sucesso e o tom das mensagens.
-        3. O critério é atendido quando a mesma ação tem o mesmo nome e funciona do mesmo jeito em todos os canais.
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--amber">4 • Total Experience (TX)</h3>
+<span class="prisma-card-subtitle">Visão unificada de ponta a ponta</span>
 
-- [ ] **Mostre preço, prazos e condições de forma clara antes de o cliente confirmar qualquer coisa, sem diferenças entre os canais.** [[4]](#ref-4)
-    - `👤 Persona: Pessoa com pouca familiaridade digital` `⚖️ Norma/Base: Código de Defesa do Consumidor` `🛠️ Ferramenta: Cliente oculto`
-    ??? info "Como auditar / Passo a passo"
-        1. Simule uma compra ou solicitação em dois canais até a tela de confirmação.
-        2. O critério é atendido quando as condições aparecem antes da confirmação, em linguagem simples e iguais nos dois canais.
+* **Mapa integrado:** Manter jornada do usuário e *Service Blueprint* lado a lado para rastrear a causa de reclamações até o processo interno correspondente [[8]](#ref-8).
+* **Indicadores conjuntos:** Analisar em um único painel a satisfação de clientes, usuários finais e equipe interna antes de priorizar evoluções [[6]](#ref-6).
+</div>
 
----
+</div>
 
-## Experiência do Colaborador (EX)
+## Síntese — Como Conectar o Guia à Auditoria Web
 
-- [ ] **Garanta que os sistemas usados pela equipe interna sejam tão acessíveis quanto a interface do cliente.** [[5]](#ref-5)
-    - `👤 Persona: Colaborador com deficiência` `⚖️ Norma/Base: WCAG 2.2` `🛠️ Ferramenta: Leitor de tela NVDA`
-    ??? info "Como auditar / Passo a passo"
-        1. Faça uma tarefa comum do colaborador, como buscar um cliente e registrar um atendimento, usando só o teclado e um leitor de tela.
-        2. O critério é atendido quando a tarefa é concluída sem travar em nenhuma etapa.
-
-- [ ] **Mostre ao atendente o histórico do cliente, para que ele não precise pedir informações já passadas.** [[6]](#ref-6)
-    - `👤 Persona: Atendente de suporte` `👤 Persona: Cliente com dificuldade de fala ou de memória` `⚖️ Norma/Base: Total Experience (Gartner)` `🛠️ Ferramenta: Acompanhamento de atendimentos`
-    ??? info "Como auditar / Passo a passo"
-        1. Acompanhe alguns atendimentos ao lado do atendente.
-        2. Anote quantas vezes ele precisa perguntar algo que o cliente já tinha informado.
-        3. O critério é atendido quando o atendente tem as informações na tela e o cliente não precisa se repetir.
-
-- [ ] **Transforme as dificuldades relatadas pela equipe de atendimento em melhorias no produto e nas ferramentas internas.** [[7]](#ref-7)
-    - `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Morgan (2017)` `🛠️ Ferramenta: Conversa com a equipe e lista de melhorias`
-    ??? info "Como auditar / Passo a passo"
-        1. Verifique se existe um jeito fácil de a equipe relatar problemas frequentes.
-        2. O critério é atendido quando há exemplos de melhorias que surgiram desses relatos.
-
----
-
-## Total Experience (TX)
-
-- [ ] **Mantenha um mapa que mostre, lado a lado, a jornada do cliente e o que acontece nos bastidores para atendê-lo.** [[8]](#ref-8)
-    - `👤 Persona: Cliente` `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Service Blueprint`
-    ??? info "Como auditar / Passo a passo"
-        1. Peça o mapa da jornada ou o blueprint do serviço.
-        2. Escolha uma reclamação comum de clientes e procure no mapa de onde ela vem nos bastidores.
-        3. O critério é atendido quando o mapa existe, está atualizado e ajuda a achar a causa dos problemas.
-
-- [ ] **Reúna em um só lugar a satisfação de clientes, usuários e equipe interna para analisar os resultados em conjunto.** [[6]](#ref-6)
-    - `👤 Persona: Cliente` `👤 Persona: Atendente de suporte` `⚖️ Norma/Base: Total Experience (Gartner)` `🛠️ Ferramenta: Painel de indicadores`
-    ??? info "Como auditar / Passo a passo"
-        1. Veja quais pesquisas de satisfação existem e quem cuida de cada uma.
-        2. O critério é atendido quando os resultados são discutidos juntos antes de decidir melhorias.
+| Dimensão | Artefato Interno da Equipe | Onde Reflete na Auditoria do Site (`📋 Checklists`) |
+| :--- | :--- | :--- |
+| **UX** | Pesquisa de campo, UX Canvas e rodadas de teste de usabilidade [[1]](#ref-1) [[2]](#ref-2) | [Acessibilidade Cognitiva](../03-cognicao-ui-figma/cognicao-usabilidade.md) (`COG-01`–`COG-11`) e [Heurísticas de Nielsen](../03-cognicao-ui-figma/heuristicas-nielsen.md) |
+| **CX** | Comparativo multicanal (FigJam/Miro) e cliente oculto [[3]](#ref-3) [[4]](#ref-4) | [Fluxos de Navegação](../02-jornadas-blueprints/user-journey-vs-flows.md) (`FLX-04`) e [Omnicanalidade](../02-jornadas-blueprints/omnicanalidade.md) (`OMN-01`–`OMN-05`) |
+| **EX & TX** | *Service Blueprint* e painel conjunto de indicadores [[6]](#ref-6) [[7]](#ref-7) [[8]](#ref-8) | [Palco vs. Bastidores](../02-jornadas-blueprints/blueprint-morgan-miller.md) (`BPR-01`–`BPR-06`) e [Normas Web](../04-web-normas/normas-nbr-wcag.md) |
 
 ---
 

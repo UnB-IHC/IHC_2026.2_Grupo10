@@ -1,61 +1,65 @@
-# Service Blueprint — Modelo Estrutural (Morgan & Miller)
+---
+hide:
+  - toc
+---
 
-O **Service Blueprint**, conforme a estrutura clássica de Morgan & Miller, é uma ferramenta de orquestração essencial para mapear a jornada do usuário em profunda conexão com os ecossistemas internos da organização. Ele é estruturado em camadas fundamentais: as Evidências Físicas/Digitais (o que o usuário toca, vê e percebe como prova do serviço) e as Ações do Usuário, que ocorrem no **Palco (Frontstage)**. As interações diretas entre clientes e a interface ou funcionários são divididas pela Linha de Interação, abaixo da qual operam silenciosamente os **Bastidores (Backstage)**. A Linha de Visibilidade demarca tudo aquilo que o usuário não pode (e muitas vezes não deve) ver, mas que sustenta sua experiência por meio de sistemas estruturais, tecnologias e Processos de Suporte.
+<span class="prisma-pill-tag">📋 Checklist de Auditoria Web • Reflexos no Palco</span>
 
-Compreender e auditar essa estrutura em projetos de **UX, IHC e Acessibilidade** é crucial para garantir que as operações de retaguarda funcionem em harmonia com o palco. Quando há falhas de sincronia entre essas camadas, o usuário frequentemente se depara com "esperas cegas", loops de incerteza, jargões operacionais vazados e sobrecarga cognitiva. O blueprint permite identificar gargalos na integração desses fluxos, garantindo uma prestação de serviço transparente e fluida, certificando-se de que a complexidade da máquina do negócio não se torne um obstáculo na jornada de quem o utiliza.
+# Palco vs. Bastidores — Service Blueprint (Morgan & Miller)
+
+No **Service Blueprint** de Morgan & Miller, falhas de sincronia entre os **Bastidores (*Backstage*)** e o **Palco (*Frontstage*)** vazam para o usuário na forma de esperas cegas, jargões internos e falta de comprovantes [[1]](#ref-1) [[2]](#ref-2). Este checklist audita diretamente na tela do site esses reflexos visíveis da operação interna.
 
 ---
 
-## Sincronia entre Palco (Frontstage) e Bastidores (Backstage)
+## Sincronia na Linha de Visibilidade
 
-- [ ] **Todo processamento assíncrono nos bastidores (abaixo da linha de visibilidade) comunica status claro e acessível no palco** [[1]](#ref-1)
-    - `👤 Persona: Leitor de Tela` `👤 Persona: TDAH / Ansiedade` `⚖️ Norma/Base: Service Blueprint (Morgan & Miller)` `🛠️ Ferramenta: Template Service Blueprint`
+- [ ] **BPR-01: Processamentos assíncronos de bastidores comunicam status claro e acessível no palco, sem deixar o usuário em "espera cega"?** [[1]](#ref-1)
+    - `👤 Leitor de Tela` `👤 Cognitiva / TDAH` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ WCAG 2.2` `🛠️ NVDA / VoiceOver` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Analise cada etapa em que uma ação do usuário depende de processamento interno ou validação da equipe.
-        2. Confirme se há feedback compreensível e anúncio programático (`aria-live`) sem deixar a interface travada.
+        1. Execute ações que dependam de resposta do servidor, busca, filtro ou análise interna.
+        2. Verifique se a interface informa claramente o estado atual (*"Enviando..."*, *"Em análise — prazo de 2 dias úteis"*) e anuncia mudanças relevantes via `aria-live` / `role="status"` sem travar a tela.
+        3. **✅ Critério de aprovação:** Nenhum processamento interno deixa a interface muda, congelada ou sem estimativa compreensível do que acontecerá a seguir.
 
-- [ ] **Falhas nos processos de suporte possuem plano de contingência sem expor erros técnicos criptografados ao usuário final** [[1]](#ref-1)
-    - `👤 Persona: Equipe de Suporte (EX)` `⚖️ Norma/Base: Heurísticas de Nielsen (H9)` `🛠️ Ferramenta: Miro / FigJam`
+- [ ] **BPR-02: A Linha de Visibilidade blinda a interface contra códigos técnicos de banco/servidor, siglas internas e jargões burocráticos?** [[1]](#ref-1) [[2]](#ref-2)
+    - `👤 Idoso / Baixo Letramento` `👤 Dislexia` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ Linguagem Simples (Lei 15.263/2025)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Simule indisponibilidade ou erro de serviço externo e verifique se a mensagem orienta o próximo passo em linguagem humana.
+        1. Revise alertas, status de solicitações, telas de erro e notificações emitidas pelo site.
+        2. Procure vazamentos de nomenclatura interna de bastidores (ex.: `ERR_SQL_500`, códigos de tabelas, siglas de setores internos desconhecidas pelo cidadão/cliente).
+        3. **✅ Critério de aprovação:** Toda comunicação no palco utiliza o vocabulário do usuário final, ocultando a complexidade interna da organização.
 
-- [ ] **A Linha de Visibilidade blinda o palco (Frontstage) contra jargões operacionais e burocráticos exclusivos dos bastidores** [[2]](#ref-2)
-    - `👤 Persona: Usuário Final (CX)` `⚖️ Norma/Base: Isto é Design de Serviço na Prática` `🛠️ Ferramenta: UX Writing / Leitura Crítica`
+- [ ] **BPR-03: Quando serviços externos ou processos de suporte falham, o site oferece mensagem humana de contingência orientando o próximo passo?** [[1]](#ref-1)
+    - `👤 Idoso / Baixo Letramento` `👤 Cognitiva / TDAH` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ Heurísticas de Nielsen` `🛠️ DevTools (Zoom, Refluxo & Visão)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Revise notificações de status, alertas e e-mails automáticos enviados ao usuário.
-        2. Verifique se os textos utilizam o modelo mental do usuário final, eliminando códigos de banco de dados, siglas de departamentos internos ou processos logísticos não essenciais.
+        1. Avalie telas de indisponibilidade, falha de integração externa (ex.: busca de CEP, pagamento, emissão de documento) ou páginas `404`/`500`.
+        2. Verifique se o site explica o ocorrido sem culpar o usuário e oferece alternativa imediata (tentar novamente, preencher manualmente ou acessar outro canal).
+        3. **✅ Critério de aprovação:** Falhas de bastidores contam com rota de contingência clara em vez de páginas quebradas ou mensagens técnicas.
 
-## Evidências Físicas/Digitais e Ações do Usuário
+## Evidências Digitais e Processos de Suporte
 
-- [ ] **Cada ação crítica do usuário resulta na emissão imediata de uma evidência tangível ou digital comprobatória** [[1]](#ref-1)
-    - `👤 Persona: Idosos / Baixa Literacia Digital` `⚖️ Norma/Base: Service Blueprint (Morgan & Miller)` `🛠️ Ferramenta: Mapa de Jornada`
+- [ ] **BPR-04: Cada ação crítica concluída gera imediatamente uma evidência digital clara e consultável (tela de confirmação, resumo, recibo ou e-mail)?** [[1]](#ref-1)
+    - `👤 Idoso / Baixo Letramento` `👤 Cognitiva / TDAH` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Complete uma jornada de alto valor, como finalização de compra, agendamento ou cadastro.
-        2. Valide se o sistema entrega uma evidência clara, como e-mail de confirmação, número de protocolo visível ou tela de sucesso, fornecendo segurança imediata sobre a ação.
+        1. Conclua ou inspecione o encerramento de uma ação relevante no site (envio de formulário, candidatura, agendamento, cadastro ou pedido).
+        2. Confira se o usuário recebe prova imediata e permanente da operação (com data, resumo ou comprovante salvável), além de mero *toast* que desaparece em segundos.
+        3. **✅ Critério de aprovação:** O usuário tem certeza imediata de que sua ação foi registrada e consegue consultar a confirmação depois.
 
-- [ ] **O esforço cognitivo exigido na Ação do Usuário é compatível com o valor percebido no serviço** [[2]](#ref-2)
-    - `👤 Persona: TDAH / Deficiência Cognitiva` `⚖️ Norma/Base: Design Empático` `🛠️ Ferramenta: Auditoria Heurística`
+- [ ] **BPR-05: Os processos de suporte poupam esforço do usuário automatizando buscas previsíveis (autocompletar via CEP, dados já cadastrados ou máscaras)?** [[2]](#ref-2)
+    - `👤 Motora / Teclado` `👤 Cognitiva / TDAH` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ WCAG 2.2` `🛠️ Inspeção Manual / Heurística` `🛠️ Teclado (Tab / Esc)`
     ??? info "Como auditar / Passo a passo"
-        1. Analise a quantidade de passos e informações exigidas do usuário na linha de ação, como no preenchimento de formulários.
-        2. Verifique se é possível automatizar ou transferir parte dessa carga para os Processos de Suporte, como autocompletar via CEP ou buscar dados pré-existentes.
+        1. Analise os formulários e fluxos de entrada de dados do site.
+        2. Verifique se tarefas que o sistema pode resolver nos bastidores (preencher logradouro pelo CEP, puxar dados do perfil logado, formatar CPF/data automaticamente) foram automatizadas sem rigidez punitiva.
+        3. **✅ Critério de aprovação:** A carga operacional repetitiva fica nos bastidores do sistema, exigindo do usuário apenas entradas realmente necessárias.
 
-## Processos de Suporte e Conexão Sistêmica
-
-- [ ] **Sistemas de terceiros e bancos de dados estão mapeados e não causam gargalos de tempo de resposta sem mitigação na interface** [[2]](#ref-2)
-    - `👤 Persona: Usuário Final (CX)` `⚖️ Norma/Base: Heurísticas de Nielsen (Visibilidade do Status)` `🛠️ Ferramenta: Diagrama de Sequência / DevTools`
+- [ ] **BPR-06: O site mitiga tempos de resposta com indicadores visuais adequados (*skeletons*/progresso) e valida regras de negócio antes do envio final?** [[1]](#ref-1) [[2]](#ref-2)
+    - `👤 Cognitiva / TDAH` `👤 Baixa Visão` `⚖️ Service Blueprint (Morgan & Miller)` `⚖️ Heurísticas de Nielsen` `🛠️ DevTools (Zoom, Refluxo & Visão)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Identifique tarefas que exigem carregamento de dados pesados ou respostas de APIs externas.
-        2. Confirme se a interface lida bem com a latência usando indicadores reais de progresso ou *skeleton screens*, evitando carregadores infinitos.
-
-- [ ] **Regras de negócio e validações do sistema de suporte ocorrem de forma antecipada para o usuário no palco** [[1]](#ref-1)
-    - `👤 Persona: Usuário Iniciante` `⚖️ Norma/Base: Prevenção de Erros (H5)` `🛠️ Ferramenta: Inspeção de Interface`
-    ??? info "Como auditar / Passo a passo"
-        1. Interaja com campos que dependem de validação no banco de dados, como disponibilidade de estoque ou verificação de formato de documento.
-        2. Certifique-se de que a validação sistêmica ocorre em tempo real (*inline*), antes que o usuário submeta o formulário.
+        1. Observe o carregamento de listas/páginas pesadas (inclusive simulando rede *Fast 3G* na aba Network do DevTools) e o preenchimento de campos com regras específicas (formato de documento, senha, disponibilidade).
+        2. Confira se há indicadores estruturais de carregamento e se restrições de formato são avisadas no próprio campo antes de submeter a página inteira.
+        3. **✅ Critério de aprovação:** Latências são suavizadas com feedback progressivo e validações previsíveis ocorrem de forma antecipada (*inline*).
 
 ---
 
 ## Referências Bibliográficas e Documentais
 
-1. <a id="ref-1"></a> Notas de Aula FGA0173 — Interação Humano-Computador (UnB, 2026.2): **Service Blueprint (Morgan & Miller)**.
-2. <a id="ref-2"></a> STICKDORN, Marc et al. **Isto é Design de Serviço na Prática: Como Aplicar o Design de Serviço no Mundo Real**. 2019.
+1. <a id="ref-1"></a> UNIVERSIDADE DE BRASÍLIA (UnB). Notas de Aula FGA0173 — Interação Humano-Computador: **Service Blueprint (Morgan & Miller)**. 2026.2.
+2. <a id="ref-2"></a> STICKDORN, Marc et al. **Isto é Design de Serviço na Prática: Como Aplicar o Design de Serviço no Mundo Real**. Porto Alegre: Bookman, 2019.
