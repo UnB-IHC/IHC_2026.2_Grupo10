@@ -1,62 +1,55 @@
-# Personas Inclusivas e Ecossistêmicas
-
-A modelagem de **Personas Inclusivas** garante que a diversidade funcional, cognitiva e socioeconômica seja representada no design, prevendo o uso de tecnologias assistivas e diferentes níveis de letramento digital. Já as **Personas Ecossistêmicas** ampliam essa modelagem centrada no indivíduo isolado para enxergar toda a rede sociotécnica ao redor do sistema: familiares mediadores, cuidadores, comunidade local, operadores de suporte (EX) e os impactos sistêmicos da tecnologia.
-
+---
+hide:
+  - toc
 ---
 
-## Criação de Personas Inclusivas
+<span class="prisma-pill-tag">📖 Guia Metodológico • Rede Sociotécnica</span>
 
-- [ ] **Os perfis contemplam diversidade funcional, uso de tecnologias assistivas e limitações temporárias ou situacionais?** [[2]](#ref-2)
-    - `👤 Persona: Deficiência Visual / Motora` `⚖️ Norma/Base: ABNT NBR 17225:2025` `🛠️ Ferramenta: Ficha de Persona`
-    ??? info "Como auditar / Passo a passo"
-        1. Revise a documentação (fichas) das personas do projeto.
-        2. O critério é atendido se houver descrição de uso de tecnologias como leitores de tela (ex: NVDA), navegação apenas por teclado ou ampliação de tela (zoom 200%).
+# Personas Ecossistêmicas
 
-- [ ] **As personas refletem níveis distintos de letramento digital e barreiras socioeconômicas, sem cair em estereótipos?** [[3]](#ref-3)
-    - `👤 Persona: Baixo Letramento Digital / Conexão Instável` `⚖️ Norma/Base: Design Empático` `🛠️ Ferramenta: Mapa de Empatia`
-    ??? info "Como auditar / Passo a passo"
-        1. Verifique se o contexto de uso das personas inclui limitações de pacote de dados, conexões lentas (3G) ou dificuldade de acesso.
-        2. O critério é atendido se as dores reais estiverem mapeadas no Mapa de Empatia de forma objetiva, influenciando decisões de design (ex: interface de carregamento leve).
+Enquanto as personas clássicas modelam o usuário direto, as **Personas Ecossistêmicas** ampliam o olhar de IHC para toda a rede sociotécnica ao redor do serviço: familiares mediadores, cuidadores, operadores de atendimento e a comunidade impactada pelas decisões automatizadas do sistema [[1]](#ref-1) [[4]](#ref-4).
 
----
+## Matriz de Atores Indiretos no Ecossistema
 
-## Atores Indiretos e Impacto Sistêmico
+| Papel no Ecossistema | Relação com o Serviço Digital | Requisitos de Design e Segurança |
+| :--- | :--- | :--- |
+| **Mediadores, Familiares e Cuidadores** [[1]](#ref-1) [[2]](#ref-2) | Auxiliam pessoas com autonomia reduzida, idosos ou usuários em situação de dependência parcial em cadastros, agendamentos e suporte. | Oferecer **permissões delegadas seguras** (sem exigir compartilhamento de senha pessoal) e canais alternativos de recuperação de conta e suporte [[2]](#ref-2). |
+| **Titular Assistido** [[1]](#ref-1) | Pessoa em nome de quem a ação é realizada com apoio parcial ou eventual de terceiros. | Preservar privacidade e autonomia com **notificações claras e histórico transparente** indicando quais ações foram feitas pelo titular ou pelo mediador. |
+| **Operadores de Retaguarda (EX)** [[1]](#ref-1) | Funcionários de triagem, suporte e operação que dependem de sistemas internos (*backoffice*) para resolver exceções. | Evitar interfaces punitivas, excesso de alertas e falta de contexto prévio que gerem sobrecarga cognitiva no atendente e retrabalho ao cidadão. |
+| **Comunidade e Atores Excluídos** [[3]](#ref-3) [[4]](#ref-4) | Pessoas com baixo acesso à internet (3G/pacote restrito), sem smartphone próprio ou afetadas indiretamente quando um serviço vira 100% digital. | Analisar consequências negativas no mapa de *stakeholders*, manter interfaces leves e preservar rotas presenciais ou assistidas contra a exclusão digital. |
 
-- [ ] **O projeto identifica e apoia mediadores, cuidadores ou familiares que auxiliam usuários em situação de dependência parcial?** [[1]](#ref-1)
-    - `👤 Persona: Mediador / Cuidador` `⚖️ Norma/Base: Personas Ecossistêmicas (IHC)` `🛠️ Ferramenta: Mapa de Ecossistema`
-    ??? info "Como auditar / Passo a passo"
-        1. Navegue pelos fluxos críticos de conta ou agendamento.
-        2. Verifique se o sistema permite acompanhamento assistido com segurança (ex: permissões delegadas, histórico de acessos), respeitando a autonomia e privacidade do titular.
+## Diretrizes para Modelar o Ecossistema no Projeto
 
-- [ ] **Consequências negativas para atores indiretos e para a comunidade foram analisadas e mitigadas no desenho da solução?** [[4]](#ref-4)
-    - `👤 Persona: Comunidade Local` `⚖️ Norma/Base: Design Sistêmico / Ética` `🛠️ Ferramenta: Miro / FigJam`
-    ??? info "Como auditar / Passo a passo"
-        1. Avalie o mapa de stakeholders do projeto e as decisões automatizadas.
-        2. O critério é atendido caso a equipe tenha documentado quem sofre impacto se o serviço falhar, garantindo caminhos alternativos para mitigar a exclusão digital.
+<div class="prisma-guide-grid prisma-guide-grid--3" markdown>
 
-- [ ] **Os fluxos de recuperação de senha e suporte permitem a intermediação assistida por canais alternativos?** [[2]](#ref-2)
-    - `👤 Persona: Usuário Primário / Mediador` `⚖️ Norma/Base: Omnicanalidade` `🛠️ Ferramenta: Service Blueprint`
-    ??? info "Como auditar / Passo a passo"
-        1. Acesse o fluxo de recuperação de conta ou a central de ajuda.
-        2. O critério é atendido se houver uma via documentada de suporte que não dependa exclusivamente de e-mail (ex: atendimento telefônico ou presencial), facilitando a ação do mediador.
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--teal">1 • Delegação Segura</h3>
+<span class="prisma-card-subtitle">Acompanhamento transparente sem violar autonomia</span>
 
-- [ ] **O fluxo operacional e a arquitetura do sistema preservam o bem-estar cognitivo dos operadores de retaguarda (backstage), evitando sobrecarga ou interfaces punitivas?** [[1]](#ref-1)
-    - `👤 Persona: Operador de Suporte (EX)` `⚖️ Norma/Base: Total Experience (TX) / Ergonomia Cognitiva` `🛠️ Ferramenta: Jornada do Colaborador`
-    ??? info "Como auditar / Passo a passo"
-        1. Mapeie a interface de retaguarda (backoffice) utilizada pelo funcionário/operador do sistema.
-        2. O critério é atendido se a ferramenta de trabalho apoiar o funcionário, fornecendo contexto prévio (para que o cidadão não precise repetir dados no atendimento) e evitando excesso de notificações.
+Ao projetar contas gov, bancárias, educacionais ou de saúde, diferencie o perfil do representante/mediador do perfil do titular, mantendo registro auditável em linguagem clara de quem executou cada solicitação [[1]](#ref-1).
+</div>
 
-- [ ] **A interface apresenta notificações claras e registros de auditoria acessíveis tanto para o usuário primário quanto para o mediador?** [[1]](#ref-1)
-    - `👤 Persona: Usuário com Autonomia Reduzida` `⚖️ Norma/Base: Heurística 1 de Nielsen` `🛠️ Ferramenta: Inspeção de Interface`
-    ??? info "Como auditar / Passo a passo"
-        1. Realize uma ação crítica utilizando a conta do mediador (ou simule a delegação).
-        2. O critério é atendido se o sistema registrar claramente de onde partiu a ação no histórico do usuário primário, mantendo a transparência.
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--blue">2 • Recuperação Assistida</h3>
+<span class="prisma-card-subtitle">Alternativas ao bloqueio digital</span>
+
+Garanta que fluxos críticos como recuperação de acesso, contestação e agendamento não dependam de um único dispositivo pessoal inacessível, permitindo intermediação assistida documentada [[2]](#ref-2).
+</div>
+
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--amber">3 • Impacto Sistêmico &amp; Ética</h3>
+<span class="prisma-card-subtitle">Prevenção da exclusão sociotécnica</span>
+
+Mapeie no Miro/FigJam quem sofre impacto caso uma regra automatizada falhe ou bloqueie um perfil legítimo, estabelecendo canais humanos de revisão e contingência [[3]](#ref-3) [[4]](#ref-4).
+</div>
+
+</div>
 
 ---
 
 ## Referências Bibliográficas e Documentais
 
 1. <a id="ref-1"></a> UNIVERSIDADE DE BRASÍLIA (UnB). Notas de Aula FGA0173 — Interação Humano-Computador: **Personas Ecossistêmicas**. 2026.2.
-2. <a id="ref-2"></a> DINIZ, V. et al. **Guia de Boas Práticas para Acessibilidade Digital**. Governo Digital, 2023.
-3. <a id="ref-3"></a> BARBOSA, S. D. J.; SILVA, B. S. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação / Campus.
-4. <a id="ref-4"></a> KALBACH, Jim. **Mapeamento de Experiências: Um guia para criar valor por meio de jornadas, blueprints e diagramas**. Alta Books, 2017.
+2. <a id="ref-2"></a> DINIZ, V. et al. **Guia de Boas Práticas para Acessibilidade Digital**. Brasília: Governo Digital (Gov.br), 2023.
+3. <a id="ref-3"></a> BARBOSA, S. D. J.; SILVA, B. S.; SILVEIRA, M. S.; GASPARINI, I.; DARIN, T.; BARBOSA, G. D. J. **Interação Humano-Computador e Experiência do Usuário**. Autopublicação, 2021.
+4. <a id="ref-4"></a> KALBACH, Jim. **Mapeamento de Experiências: um guia para criar valor por meio de jornadas, blueprints e diagramas**. Rio de Janeiro: Alta Books, 2017.

@@ -1,96 +1,104 @@
-# Avaliação Heurística de Usabilidade & 10 Heurísticas de Nielsen
+---
+hide:
+  - toc
+---
 
-A **Avaliação Heurística** (Nielsen, 1994) é um método ágil de inspeção em IHC que diagnostica problemas de usabilidade confrontando a interface com princípios ergonômicos e cognitivos fundamentais.
+<span class="prisma-pill-tag">📋 Checklist de Auditoria Web • Inspeção Heurística</span>
 
-Este guia reúne o checklist interativo das **10 Heurísticas de Nielsen** aliado à **Escala de Severidade (0 a 4)** para direcionar e priorizar melhorias de forma prática no PrismaIHC.
+# 10 Heurísticas de Usabilidade de Nielsen (H01–H10)
+
+A **Avaliação Heurística** (Nielsen, 1994) inspeciona a usabilidade da interface confrontando fluxos reais com dez princípios ergonômicos fundamentais [[1]](#ref-1) [[3]](#ref-3). Ao reprovar qualquer item com **`✕`**, selecione a **Severidade (1 a 4)** de Nielsen [[2]](#ref-2) e descreva o local exato no site para gerar o relatório fundamentado.
 
 ---
 
-## Metodologia de Inspeção & Escala de Severidade
+??? info "Consultar referência rápida — Escala de Severidade de Nielsen (0 a 4)"
+    | Nível | Classificação | Critério de Impacto e Prioridade |
+    | :---: | :--- | :--- |
+    | **0** | **Não é problema** | Não afeta a usabilidade nem a compreensão da tarefa. |
+    | **1** | **Problema Cosmético** | Detalhe estético superficial; corrigir apenas se houver tempo disponível. |
+    | **2** | **Problema Simples (Menor)** | Pequeno atrito ou dúvida pontual da qual o usuário se recupera facilmente. |
+    | **3** | **Problema Grave (Maior)** | Dificulta de forma importante a tarefa, gerando frustração ou risco de abandono. |
+    | **4** | **Catástrofe de Usabilidade** | Bloqueia a conclusão da tarefa essencial ou causa perda de dados; correção imediata. |
 
-A inspeção heurística deve ser conduzida idealmente por 3 a 5 avaliadores de forma independente em duas passadas: uma inicial exploratória para familiarização com o fluxo da aplicação e outra minuciosa de confronto com cada heurística. Cada problema identificado deve ser classificado segundo a escala de severidade proposta por Nielsen (1995):
+## H01 a H05 — Controle, Prevenção e Consistência
 
-| Nível de Severidade | Classificação | Critério de Impacto e Encaminhamento |
-| :---: | :--- | :--- |
-| **0** | **Não é problema** | Não afeta a usabilidade ou conformidade da interface. Nenhuma ação necessária. |
-| **1** | **Problema Cosmético** | Não impede a execução da tarefa; afeta apenas detalhes estéticos superficiais. Corrigir se houver tempo livre. |
-| **2** | **Problema Simples (Menor)** | Causa pequeno incômodo ou ligeiro atraso, mas o usuário recupera-se facilmente. Baixa prioridade de correção. |
-| **3** | **Problema Grave (Maior)** | Dificulta substancialmente a realização da tarefa, gerando frustração ou abandono frequente. Alta prioridade de correção. |
-| **4** | **Catástrofe de Usabilidade** | Bloqueia a conclusão da tarefa essencial, impede o usuário de continuar ou provoca perda irreparável de dados. Correção obrigatória e imediata antes do release. |
-
----
-
-## H1 a H5 — Fundamentos de Controle, Prevenção e Consistência
-
-- [ ] **H1: O sistema informa continuamente o status da operação ao usuário com feedback visual e sonoro imediato em tempo razoável** [[1]](#ref-1)
-    - `👤 Persona: Usuário Geral` `👤 Persona: Baixa Visão` `⚖️ Norma/Base: Heurísticas de Nielsen (H1)` `🛠️ Ferramenta: Inspeção Heurística`
+- [ ] **H01: Visibilidade do status do sistema — A interface informa continuamente o que está acontecendo com feedback imediato?** [[1]](#ref-1) [[4]](#ref-4)
+    - `👤 Baixa Visão` `👤 Leitor de Tela` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística` `🛠️ NVDA / VoiceOver`
     ??? info "Como auditar / Passo a passo"
-        1. Submeta formulários, filtros e carregamento de listas; verifique se há *spinners*, esqueletos (*skeletons*), barras de progresso ou confirmações textuais e via `aria-live`.
-        2. O sistema deve responder em até 100ms para ações imediatas e apresentar indicadores visíveis para esperas superiores a 1 segundo.
+        1. Acione buscas, filtros, envios e downloads; observe se há feedback visual imediato (mudança de estado, *spinner*, barra de progresso ou confirmação).
+        2. Verifique se esperas superiores a 1 segundo exibem indicador claro de processamento.
+        3. **✅ Critério de aprovação:** Nenhuma ação do usuário fica sem resposta perceptível em tempo razoável.
 
-- [ ] **H2: A interface adota linguagem, termos e metáforas do mundo real familiares ao usuário, evitando jargões técnicos do sistema** [[1]](#ref-1)
-    - `👤 Persona: Usuário Leigo` `👤 Persona: Idoso` `⚖️ Norma/Base: Heurísticas de Nielsen (H2)` `🛠️ Ferramenta: Análise Lexical de UI`
+- [ ] **H02: Correspondência com o mundo real — O site usa palavras, conceitos e convenções familiares ao público, sem jargões técnicos?** [[1]](#ref-1) [[3]](#ref-3)
+    - `👤 Idoso / Baixo Letramento` `👤 Surdez / Libras` `⚖️ Heurísticas de Nielsen` `⚖️ Linguagem Simples (Lei 15.263/2025)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Analise todos os rótulos de botões, cabeçalhos e mensagens de retorno, confirmando que utilizam terminologia da área de negócio e da cultura do usuário.
-        2. Certifique-se de que nenhum código de exceção interna (ex.: `NullPointerException`, `ORA-00001`) ou termo de arquitetura de software é exposto diretamente na tela.
+        1. Inspecione menus, rótulos de botões, categorias e mensagens de retorno.
+        2. Confira se termos estrangeiros desnecessários, códigos internos de sistema ou expressões técnicas foram substituídos por linguagem cotidiana do usuário.
+        3. **✅ Critério de aprovação:** Textos e metáforas seguem o modelo mental do público-alvo em ordem natural.
 
-- [ ] **H3: A interface oferece saídas de emergência claramente visíveis, permitindo desfazer, refazer ou cancelar ações a qualquer momento** [[1]](#ref-1)
-    - `👤 Persona: TDAH / Impulsividade` `👤 Persona: Usuário Móvel` `⚖️ Norma/Base: Heurísticas de Nielsen (H3)` `🛠️ Ferramenta: Inspeção de Fluxo e Teclado`
+- [ ] **H03: Controle e liberdade do usuário — Há saídas de emergência visíveis para cancelar, fechar ou desfazer ações indesejadas?** [[1]](#ref-1)
+    - `👤 Cognitiva / TDAH` `👤 Motora / Teclado` `⚖️ Heurísticas de Nielsen` `🛠️ Teclado (Tab / Esc)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Inicie um fluxo de etapas (wizard, modal, exclusão) e confirme a existência de botão "Cancelar" ou botão de fechar (`Esc`).
-        2. Verifique se operações reversíveis contam com mecanismo rápido de "Desfazer" (*Undo* / `Ctrl+Z`) em notificação temporária (*toast/snackbar*).
+        1. Abra modais, menus sobrepostos, filtros e etapas de formulários.
+        2. Confirme se há botão claro de *Cancelar*, *Fechar* (`Esc`) ou *Desfazer* sem obrigar recarregamento da página.
+        3. **✅ Critério de aprovação:** O usuário sai facilmente de estados indesejados sem ficar preso nem perder o controle.
 
-- [ ] **H4: Elementos de interface mantêm consistência visual, comportamental e de nomenclatura ao longo de todas as telas** [[1]](#ref-1)
-    - `👤 Persona: Autista (TEA)` `👤 Persona: Dislexia` `⚖️ Norma/Base: Heurísticas de Nielsen (H4)` `🛠️ Ferramenta: Design System / Figma Tokens`
+- [ ] **H04: Consistência e padrões — Termos, ícones, cores de ação e posições de menus seguem um padrão coerente em todo o site?** [[1]](#ref-1) [[3]](#ref-3)
+    - `👤 TEA / Autismo` `👤 Dislexia` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Verifique se o mesmo botão, ícone ou termo tem o mesmo significado e localização relativa em diferentes páginas do produto.
-        2. Valide conformidade com as diretrizes do design system da organização ou convenções padrão de plataforma (web/iOS/Android).
+        1. Navegue por pelo menos quatro páginas distintas do site comparando cabeçalho, botões primários/secundários e nomenclatura.
+        2. Verifique se ações iguais mantêm o mesmo rótulo e se convenções consagradas da web são respeitadas.
+        3. **✅ Critério de aprovação:** Não há contradições visuais ou terminológicas entre páginas do mesmo produto.
 
-- [ ] **H5: O sistema projeta mecanismos para prevenir a ocorrência de erros antes que eles aconteçam, eliminando condições de falha** [[1]](#ref-1)
-    - `👤 Persona: Motora / Tremor` `👤 Persona: Idoso` `⚖️ Norma/Base: Heurísticas de Nielsen (H5)` `🛠️ Ferramenta: Teste de Limites de Entrada`
+- [ ] **H05: Prevenção de erros — O design evita falhas antes que ocorram por meio de restrições úteis, exemplos de formato e confirmação em ações destrutivas?** [[1]](#ref-1)
+    - `👤 Motora / Teclado` `👤 Idoso / Baixo Letramento` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Verifique se campos restritos utilizam seletores, máscaras de entrada e desativação preventiva de ações inválidas.
-        2. Confirme que ações críticas ou destrutivas exigem diálogo de confirmação explícito com foco inicial na opção de cancelamento.
+        1. Teste campos de data, valores, documentos e ações críticas (exclusão, envio definitivo).
+        2. Verifique se há dicas de formato visíveis antes da digitação, seletores adequados e confirmação explícita para operações irreversíveis.
+        3. **✅ Critério de aprovação:** Condições propensas a erro de digitação ou clique acidental são prevenidas proativamente.
 
----
+## H06 a H10 — Reconhecimento, Eficiência e Recuperação
 
-## H6 a H10 — Reconhecimento, Eficiência e Resiliência a Falhas
-
-- [ ] **H6: A interface minimiza a carga de memória do usuário tornando objetos, ações e opções claramente visíveis na tela** [[1]](#ref-1)
-    - `👤 Persona: TDAH / Memória de Trabalho` `👤 Persona: Idoso` `⚖️ Norma/Base: Heurísticas de Nielsen (H6)` `🛠️ Ferramenta: Avaliação de Carga Cognitiva`
+- [ ] **H06: Reconhecimento em vez de memorização — Opções, filtros ativos e instruções permanecem visíveis no momento da decisão?** [[1]](#ref-1)
+    - `👤 Cognitiva / TDAH` `👤 Idoso / Baixo Letramento` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística` `🛠️ WAVE`
     ??? info "Como auditar / Passo a passo"
-        1. Navegue por processos de compra ou preenchimento de dados de múltiplas etapas e certifique-se de que informações anteriores permanecem visíveis como resumo.
-        2. O usuário não deve ser forçado a memorizar dados ou códigos de uma tela para digitar em outra.
+        1. Verifique buscas recentes, filtros aplicados em listagens e resumos de escolhas ao longo de tarefas.
+        2. Confirme que rótulos e instruções de preenchimento não desaparecem ao clicar no campo (como ocorre quando se usa apenas `placeholder`).
+        3. **✅ Critério de aprovação:** Todas as informações necessárias para decidir estão visíveis na própria tela.
 
-- [ ] **H7: A interface oferece aceleradores e atalhos que atendem tanto a usuários novatos quanto a usuários experientes** [[1]](#ref-1)
-    - `👤 Persona: Power User` `👤 Persona: Deficiência Motora / Teclado` `⚖️ Norma/Base: Heurísticas de Nielsen (H7)` `🛠️ Ferramenta: Teste de Atalhos de Teclado`
+- [ ] **H07: Flexibilidade e eficiência de uso — O site atende bem iniciantes e oferece atalhos ou aceleradores para usuários frequentes?** [[1]](#ref-1)
+    - `👤 Motora / Teclado` `👤 Controle por Voz` `⚖️ Heurísticas de Nielsen` `🛠️ Teclado (Tab / Esc)` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Teste o acionamento das principais operações por atalhos de teclado configurados e documentados (ex.: `Ctrl+S`, `Ctrl+K` para busca global).
-        2. Avalie a existência de opções de personalização de interface, buscas salvas ou ações em lote para usuários frequentes.
+        1. Avalie se há recursos que agilizam tarefas repetitivas: busca rápida acessível, filtros diretos, itens recentes/favoritos ou submissão natural com `Enter`.
+        2. Verifique se esses aceleradores não atrapalham quem está usando o site pela primeira vez.
+        3. **✅ Critério de aprovação:** Tanto novatos quanto usuários experientes concluem tarefas com rapidez e conforto.
 
-- [ ] **H8: O layout apresenta design estético e minimalista, exibindo apenas informações essenciais para a tarefa em foco** [[1]](#ref-1)
-    - `👤 Persona: Baixa Visão` `👤 Persona: Neurodivergente` `⚖️ Norma/Base: Heurísticas de Nielsen (H8)` `🛠️ Ferramenta: Análise de Ruído Visual`
+- [ ] **H08: Estética e design minimalista — As telas priorizam a informação essencial, sem blocos supérfluos competindo com a ação principal?** [[1]](#ref-1)
+    - `👤 Baixa Visão` `👤 Cognitiva / TDAH` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística` `🛠️ DevTools (Zoom, Refluxo & Visão)`
     ??? info "Como auditar / Passo a passo"
-        1. Avalie a hierarquia visual e espaçamento de tela, garantindo que elementos secundários não concorram com as chamadas de ação primárias.
-        2. Remova ou oculte em seções secundárias dados redundantes, gráficos puramente ornamentais ou blocos de texto excessivos.
+        1. Inspecione a densidade informacional da página inicial e das páginas de tarefa principal.
+        2. Verifique se elementos decorativos, avisos secundários ou textos redundantes ofuscam o botão ou conteúdo primário.
+        3. **✅ Critério de aprovação:** A relação sinal-ruído destaca imediatamente o conteúdo e as ações prioritárias.
 
-- [ ] **H9: Mensagens de erro são expressas em linguagem clara, sem códigos crípticos, diagnosticam com precisão o problema e sugerem solução** [[1]](#ref-1)
-    - `👤 Persona: Usuário Leigo` `👤 Persona: Dislexia` `⚖️ Norma/Base: Heurísticas de Nielsen (H9)` `🛠️ Ferramenta: Teste de Exceções e Respostas de Erro`
+- [ ] **H09: Recuperação de erros — As mensagens de erro explicam claramente o que houve e apontam como corrigir de forma construtiva?** [[1]](#ref-1) [[2]](#ref-2)
+    - `👤 Dislexia` `👤 Idoso / Baixo Letramento` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística` `🛠️ NVDA / VoiceOver`
     ??? info "Como auditar / Passo a passo"
-        1. Provoque intencionalmente falhas de validação (campos vazios, formatos incorretos, queda de conexão).
-        2. Confirme que a mensagem indica exatamente qual campo falhou, a causa humana do erro e qual ação corretiva o usuário deve tomar para prosseguir.
+        1. Submeta formulários com dados incompletos ou formato inválido e acesse uma URL inexistente (`404`).
+        2. Confira se a mensagem está próxima ao problema, evita tom punitivo ou códigos técnicos e explica exatamente como resolver.
+        3. **✅ Critério de aprovação:** Toda mensagem de erro identifica a causa em linguagem clara e oferece solução imediata.
 
-- [ ] **H10: O sistema disponibiliza documentação e ajuda contextual facilmente acessíveis, concisas e focadas na tarefa do usuário** [[1]](#ref-1)
-    - `👤 Persona: Usuário Novato` `👤 Persona: Idoso` `⚖️ Norma/Base: Heurísticas de Nielsen (H10)` `🛠️ Ferramenta: Inspeção de Tooltips e Central de Ajuda`
+- [ ] **H10: Ajuda e documentação — O site oferece ajuda fácil de localizar, pesquisável e focada nos passos práticos da tarefa?** [[1]](#ref-1) [[4]](#ref-4)
+    - `👤 Idoso / Baixo Letramento` `👤 Cognitiva / TDAH` `⚖️ Heurísticas de Nielsen` `🛠️ Inspeção Manual / Heurística`
     ??? info "Como auditar / Passo a passo"
-        1. Localize a presença de *tooltips*, botões de ajuda contextual `(?)` ao lado de campos complexos e link para a central de documentação/FAQ.
-        2. Verifique se os artigos de ajuda trazem passos numerados e objetivos para resolver tarefas cotidianas sem requerer leitura extensiva.
+        1. Procure dicas contextuais ao lado de campos complexos e acesse a seção de Ajuda / Perguntas Frequentes (FAQ).
+        2. Avalie se o conteúdo responde dúvidas reais em passos curtos e diretos, com busca funcional.
+        3. **✅ Critério de aprovação:** A ajuda está facilmente acessível e orienta a tarefa em passos objetivos.
 
 ---
 
 ## Referências Bibliográficas e Documentais
 
-1. <a id="ref-1"></a> NIELSEN, Jakob. **10 Usability Heuristics for User Interface Design**. Nielsen Norman Group, 1994. Disponível em: <https://www.nngroup.com/articles/ten-usability-heuristics/>.
+1. <a id="ref-1"></a> NIELSEN, Jakob. **10 Usability Heuristics for User Interface Design**. Nielsen Norman Group, 1994 (atualizado em 2024). Disponível em: <https://www.nngroup.com/articles/ten-usability-heuristics/>.
 2. <a id="ref-2"></a> NIELSEN, Jakob. **Severity Ratings for Usability Problems**. Nielsen Norman Group, 1995. Disponível em: <https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/>.
 3. <a id="ref-3"></a> BARBOSA, Simone Diniz Junqueira; SILVA, Bruno Santana da. **Interação Humano-Computador**. Rio de Janeiro: Elsevier / Campus, 2010.
 4. <a id="ref-4"></a> NIELSEN, Jakob; MACK, Robert L. **Usability Inspection Methods**. New York: John Wiley & Sons, 1994.
