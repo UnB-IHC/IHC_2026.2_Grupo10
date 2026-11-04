@@ -137,4 +137,4 @@ Acesse `http://127.0.0.1:8000/IHC_2026.2_Grupo10/` no navegador. Para diretrizes
 
 ## Créditos e Licença
 
-Projeto distribuído sob a [Licença MIT](LICENSE.md). Construído a partir da evolução colaborativa dos projetos da disciplina de IHC/UnB (incluindo o repositório base *VerificAAA* — Vitor Feijó, Carlos Eduardo, Harleny Angéllica, Erick Santos e Maykon Júnio — e referências estruturais do *Grupo 10 / 2026.1*).
+Projeto distribuído sob a [Licença MIT](LICENSE.md). Construído a partir da evolução colaborativa dos projetos da disciplina de IHC/UnB (incluindo o repositório base *VerificAAA* — Vitor Feijó, Carlos Eduardo, Harleny Angéllica, Erick Santos e Maykon Júnio — e referências estruturais do *Grupo 10 / 2025.2*).
