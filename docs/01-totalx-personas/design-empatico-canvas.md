@@ -1,79 +1,48 @@
+---
+hide:
+  - toc
+---
+
+<span class="prisma-pill-tag">📖 Guia Metodológico • Pesquisa &amp; Descoberta</span>
+
 # Design Empático & Canvas em IHC
 
-O **Design Empático** parte do que as pessoas realmente vivem, ou seja, do que pensam, sentem, dizem e fazem e das dificuldades que enfrentam no dia a dia. Para chegar a esse entendimento, a equipe conversa com pessoas reais e acompanha o uso no dia a dia, incluindo pessoas com deficiência, registrando suas limitações físicas, sensoriais, cognitivas, emocionais e situacionais. Com essas informações em mãos, as decisões do projeto passam a se apoiar no que foi visto e ouvido em campo.
+O **Design Empático** fundamenta decisões de interface na escuta e observação direta de pessoas reais em seu contexto cotidiano — contemplando deficiências permanentes, limitações temporárias e restrições situacionais — e organiza esses achados em quadros visuais de uma página (**Canvas**) antes de desenhar telas [[1]](#ref-1) [[3]](#ref-3) [[5]](#ref-5).
 
-Para organizar o que foi aprendido, a equipe usa **Canvas**, que são quadros visuais de uma página. Os mais comuns são o **Mapa de Empatia**, que reúne o que a pessoa vê, ouve, pensa, sente, diz e faz, o **Canvas de Proposta de Valor**, que liga as dores e os desejos das pessoas às soluções do produto, e o **UX Canvas**, que resume o problema, o público, os objetivos e as ideias a testar. Nessa etapa, é importante garantir que as decisões do projeto nasçam dessa escuta.
+## 1. Princípios da Escuta Empática em Campo
 
----
+<div class="prisma-guide-grid" markdown>
 
-## Pesquisa com Pessoas Reais
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--teal">1 • Evidência de Campo</h3>
+<span class="prisma-card-subtitle">Conversas e observação contextual</span>
 
-- [ ] **Baseie os aprendizados do projeto em conversas e observações com pessoas reais do público.** [[1]](#ref-1)
-    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Barbosa et al. (2021)` `🛠️ Ferramenta: Entrevista e observação em campo`
-    ??? info "Como auditar / Passo a passo"
-        1. Peça os registros da pesquisa, como roteiros, anotações e número de participantes.
-        2. Verifique se as pessoas foram ouvidas ou observadas no lugar onde realmente usam o serviço.
-        3. O critério é atendido quando cada aprendizado indica de qual conversa ou observação veio.
+* Registrar aprendizados a partir de entrevistas e observações no ambiente real de uso, mantendo vínculo rastreável entre cada achado e a fala/comportamento observado [[1]](#ref-1).
+* Capturar também **estados emocionais** recorrentes durante o uso — medo de errar, ansiedade em pagamentos, confusão ou desconfiança [[4]](#ref-4).
+</div>
 
-- [ ] **Garanta que pessoas com deficiência participem diretamente da pesquisa, contando suas próprias experiências.** [[2]](#ref-2)
-    - `👤 Persona: Pessoa com deficiência` `⚖️ Norma/Base: Guia de Boas Práticas Gov.br` `🛠️ Ferramenta: Entrevista com pessoas com deficiência`
-    ??? info "Como auditar / Passo a passo"
-        1. Veja quantos participantes da pesquisa têm alguma deficiência.
-        2. Confira se a pesquisa foi acessível para eles, com intérprete de Libras, uso do próprio leitor de tela ou local adaptado, por exemplo.
-        3. O critério é atendido quando as falas dessas pessoas aparecem nos Mapas de Empatia e Canvas.
+<div class="prisma-guide-card" markdown>
+<h3 class="prisma-card-heading--purple">2 • Participação Direta &amp; Espectro</h3>
+<span class="prisma-card-subtitle">Inclusão de PcDs e barreiras situacionais</span>
 
-- [ ] **Considere dificuldades temporárias e do ambiente, como braço engessado, sol forte na tela, barulho ou internet ruim.** [[3]](#ref-3)
-    - `👤 Persona: Limitação temporária ou situacional` `⚖️ Norma/Base: Microsoft Inclusive Design` `🛠️ Ferramenta: Mapa de Empatia`
-    ??? info "Como auditar / Passo a passo"
-        1. Procure nos artefatos situações de uso fora do cenário ideal, como pressa, uma mão ocupada, pouca luz ou conexão instável.
-        2. O critério é atendido quando o projeto leva em conta essas situações do uso real.
+* Garantir participação direta de **pessoas com deficiência** na pesquisa com sessões acessíveis (intérprete de Libras, leitor de tela próprio, material adaptado) [[2]](#ref-2).
+* Mapear limitações **temporárias e ambientais** (*Microsoft Inclusive Design*): braço imobilizado, sol forte na tela, ruído externo, pressa ou conexão móvel instável [[3]](#ref-3).
+</div>
 
-- [ ] **Registre também o que a pessoa sente durante o uso, como medo de errar, ansiedade, confusão ou desconfiança.** [[4]](#ref-4)
-    - `👤 Persona: Pessoa idosa ou com ansiedade` `⚖️ Norma/Base: Mapa de Empatia` `🛠️ Ferramenta: Mapa de Empatia`
-    ??? info "Como auditar / Passo a passo"
-        1. Olhe a parte "Pensa e Sente" e as dores do Mapa de Empatia.
-        2. O critério é atendido quando os sentimentos registrados vêm de falas ou comportamentos observados e foram levados em conta no design.
+</div>
 
----
+## 2. Qual Canvas Utilizar na Descoberta
 
-## Uso de Canvas na Descoberta
+| Artefato Visual | Estrutura Central | Regra de Qualidade Metodológica |
+| :--- | :--- | :--- |
+| **Mapa de Empatia** [[4]](#ref-4) [[5]](#ref-5) | O que a pessoa *vê, ouve, pensa e sente, diz e faz*, além de suas *dores* e *ganhos*. | Toda anotação nos quadrantes deve ter origem verificável em entrevistas ou observações reais, nunca em suposições internas. |
+| **Canvas de Proposta de Valor** [[6]](#ref-6) | Pareamento entre o perfil do usuário (*tarefas, dores, desejos*) e o mapa de valor (*aliviadores de dor e criadores de ganho*). | Nenhuma funcionalidade entra no escopo sem estar explicitamente ligada a uma dor ou necessidade real identificada. |
+| **UX Canvas (Lean UX)** [[7]](#ref-7) | Problema de negócio, público/personas, resultados esperados, hipóteses e experimentos. | Explicitar o que ainda é hipótese da equipe e definir como cada ideia crítica será testada com usuários antes de virar código. |
 
-- [ ] **Preencha o Mapa de Empatia com informações tiradas da pesquisa com as pessoas.** [[5]](#ref-5)
-    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Mapa de Empatia (FigJam / Miro)`
-    ??? info "Como auditar / Passo a passo"
-        1. Escolha três anotações de partes diferentes do Mapa de Empatia.
-        2. Pergunte à equipe de qual entrevista ou observação cada uma veio.
-        3. O critério é atendido quando todas as anotações escolhidas têm origem na pesquisa.
+## 3. Rastreabilidade: Da Empatia à Interface
 
-- [ ] **Ligue cada funcionalidade do Canvas de Proposta de Valor a uma dor ou a um desejo real das pessoas.** [[6]](#ref-6)
-    - `👤 Persona: Usuário final, incluindo pessoas com deficiência` `⚖️ Norma/Base: Osterwalder et al. (2014)` `🛠️ Ferramenta: Canvas de Proposta de Valor`
-    ??? info "Como auditar / Passo a passo"
-        1. Liste as funcionalidades do produto que aparecem no canvas.
-        2. Para cada uma, encontre a dor ou o desejo que ela atende.
-        3. O critério é atendido quando nenhuma funcionalidade fica sem uma dor ou desejo ligado a ela.
-
-- [ ] **Deixe claro no UX Canvas o que a equipe acredita sobre os usuários e como isso será testado com eles.** [[7]](#ref-7)
-    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Gothelf e Seiden (2021)` `🛠️ Ferramenta: UX Canvas`
-    ??? info "Como auditar / Passo a passo"
-        1. Verifique se o canvas mostra o problema, o público, os objetivos e as ideias a testar.
-        2. O critério é atendido quando cada ideia importante tem um teste com usuários previsto antes de virar funcionalidade.
-
----
-
-## Da Empatia à Interface
-
-- [ ] **Justifique as principais decisões da interface com algo que foi aprendido com as pessoas.** [[8]](#ref-8)
-    - `👤 Persona: Pessoa idosa ou com pouca familiaridade digital` `⚖️ Norma/Base: ABNT NBR ISO 9241-210` `🛠️ Ferramenta: Tabela "aprendizado → decisão"`
-    ??? info "Como auditar / Passo a passo"
-        1. Escolha de três a cinco decisões da interface, como as etapas de um formulário, as palavras usadas ou a posição de um botão.
-        2. Peça à equipe o aprendizado da pesquisa que justificou cada uma.
-        3. O critério é atendido quando toda decisão escolhida tem uma justificativa vinda da pesquisa.
-
-- [ ] **Atualize os Mapas de Empatia e Canvas sempre que um teste com usuários trouxer algo novo.** [[5]](#ref-5)
-    - `👤 Persona: Usuário final` `⚖️ Norma/Base: Kalbach (2017)` `🛠️ Ferramenta: Teste com usuários e revisão do Mapa de Empatia`
-    ??? info "Como auditar / Passo a passo"
-        1. Compare a data da última atualização dos artefatos com a data dos últimos testes.
-        2. O critério é atendido quando o que foi aprendido nos testes foi incluído nos Mapas e Canvas.
+1. **Matriz Aprendizado → Decisão de UI:** Para escolhas estruturais da interface (divisão de etapas em formulário, vocabulário dos botões, destaque de ações), documentar qual achado da pesquisa justificou a solução [[8]](#ref-8).
+2. **Artefatos vivos:** Revisar e atualizar os Mapas de Empatia e Canvas a cada rodada de teste de usabilidade que revele novas barreiras ou comportamentos inesperados [[5]](#ref-5).
 
 ---
 
