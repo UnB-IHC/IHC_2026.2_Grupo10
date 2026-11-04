@@ -1,0 +1,975 @@
+/* ==========================================================================
+   PrismaIHC — Tema Customizado, Donuts SVG, Acordeões, Dropdowns e Guias
+   ========================================================================== */
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0f4c5c;
+  --md-primary-fg-color--light: #146c78;
+  --md-primary-fg-color--dark: #0b3b49;
+  --md-accent-fg-color: #0f766e;
+  --prisma-surface: #ffffff;
+  --prisma-surface-alt: #f8fafc;
+  --prisma-border: #cbd5e1;
+  --prisma-border-soft: #e2e8f0;
+  --prisma-text: #0f172a;
+  --prisma-muted: #475569;
+  --prisma-active-nav: #0f766e;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #14b8a6;
+  --md-primary-fg-color--light: #2dd4bf;
+  --md-primary-fg-color--dark: #0d9488;
+  --md-accent-fg-color: #5eead4;
+  --prisma-surface: #1e293b;
+  --prisma-surface-alt: #0f172a;
+  --prisma-border: #334155;
+  --prisma-border-soft: #293548;
+  --prisma-text: #f8fafc;
+  --prisma-muted: #cbd5e1;
+  --prisma-active-nav: #5eead4;
+}
+
+.md-header {
+  background: linear-gradient(95deg, #0f172a 0%, #134e4a 55%, #1e3a8a 100%) !important;
+}
+
+.md-tabs {
+  background: #0b1526 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  height: auto !important;
+  min-height: 2.8rem !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+.md-tabs__list {
+  min-height: 2.8rem !important;
+  display: flex !important;
+  align-items: stretch !important;
+  contain: none !important;
+}
+
+.md-tabs__item {
+  height: auto !important;
+  min-height: 2.8rem !important;
+  display: flex !important;
+  align-items: stretch !important;
+  padding-left: 0.55rem !important;
+  padding-right: 0.55rem !important;
+}
+
+.md-tabs__link {
+  margin-top: 0 !important;
+  padding: 0.58rem 0.22rem 0.52rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  opacity: 0.88 !important;
+  border-bottom: 3px solid transparent !important;
+  white-space: nowrap !important;
+}
+
+.md-header--lifted ~ .md-container .md-sidebar {
+  top: 5.4rem !important;
+}
+
+.md-tabs__link:hover {
+  opacity: 1 !important;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  opacity: 1 !important;
+  color: #5eead4 !important;
+  font-weight: 800 !important;
+  border-bottom: 3px solid #2dd4bf !important;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+/* Menu lateral esquerdo maior, legível e com destaque claro do tópico ativo */
+.md-nav--primary .md-nav__title {
+  font-size: 0.96rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.45rem !important;
+}
+
+.md-nav--primary .md-nav__link {
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  padding: 0.38rem 0.6rem !important;
+  border-radius: 0.48rem;
+  margin: 0.1rem 0 !important;
+}
+
+.md-nav--primary .md-nav__link--active,
+.md-nav--primary .md-nav__item--active > .md-nav__link {
+  color: var(--prisma-active-nav) !important;
+  font-weight: 700 !important;
+  background: rgba(20, 184, 166, 0.13);
+}
+
+.md-typeset {
+  font-size: 0.92rem !important;
+  line-height: 1.62 !important;
+}
+
+.md-typeset h1 {
+  color: var(--prisma-text) !important;
+  font-size: 1.95rem !important;
+  font-weight: 800 !important;
+  line-height: 1.24 !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.md-typeset h2 {
+  margin-top: 2rem !important;
+  margin-bottom: 0.9rem !important;
+  padding-bottom: 0.38rem;
+  border-bottom: 1px solid var(--prisma-border-soft);
+  font-size: 1.42rem !important;
+  font-weight: 800 !important;
+  color: var(--prisma-text) !important;
+}
+
+.md-typeset h3 {
+  font-size: 1.14rem !important;
+  font-weight: 700 !important;
+  color: var(--prisma-text) !important;
+}
+
+/* Remove barra lateral direita duplicada ("Índice") para ampliar a área útil */
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+/* Foco visível acessível em todos os botões e controles customizados */
+.prisma-btn:focus-visible,
+.prisma-select:focus-visible,
+.prisma-note-input:focus-visible,
+.prisma-status-btn:focus-visible,
+.prisma-card-title-btn:focus-visible,
+.smart-badge:focus-visible,
+.prisma-reveal-hidden-bar:focus-visible,
+.prisma-link-btn:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   PÁGINA INICIAL (HERO + DASHBOARD DE DONUTS SVG + GUIAS)
+   ========================================================================== */
+.prisma-home-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 0.35rem;
+}
+
+.prisma-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 1.85rem;
+  border-radius: 1rem;
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.prisma-hero__logo {
+  width: 4.8rem;
+  height: 4.8rem;
+  flex-shrink: 0;
+}
+
+.prisma-hero__body {
+  flex: 1 1 320px;
+}
+
+.prisma-pill-tag {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(13, 148, 136, 0.14);
+  color: #0f766e;
+  border: 1px solid rgba(13, 148, 136, 0.35);
+  margin-bottom: 0.45rem;
+}
+
+[data-md-color-scheme="slate"] .prisma-pill-tag {
+  color: #5eead4;
+}
+
+.prisma-hero__body h1 {
+  margin: 0.15rem 0 0.5rem !important;
+  font-size: 1.55rem !important;
+  line-height: 1.25;
+}
+
+.prisma-hero__body p {
+  margin: 0 0 0.95rem;
+  font-size: 0.88rem;
+  color: var(--prisma-muted);
+  line-height: 1.55;
+}
+
+.prisma-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.prisma-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  cursor: pointer;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-text) !important;
+  transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.prisma-btn:hover {
+  border-color: #0d9488;
+}
+
+.prisma-btn--primary {
+  background: #0f766e !important;
+  color: #ffffff !important;
+  border-color: #0f766e !important;
+}
+
+.prisma-btn--primary:hover {
+  background: #0d9488 !important;
+}
+
+.prisma-dash-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.prisma-dash-header h2 {
+  margin: 0 !important;
+  font-size: 1.12rem !important;
+}
+
+.prisma-dash-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.prisma-main-donut-card {
+  grid-column: span 4;
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 1rem;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.prisma-sector-grid {
+  grid-column: span 8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .prisma-main-donut-card,
+  .prisma-sector-grid {
+    grid-column: span 12;
+  }
+}
+
+.prisma-donut-svg-wrap {
+  position: relative;
+  width: 9.8rem;
+  height: 9.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.6rem 0;
+}
+
+.prisma-donut-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+}
+
+.prisma-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.prisma-donut-pct {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--prisma-text);
+  line-height: 1.1;
+}
+
+.prisma-donut-sub {
+  font-size: 0.72rem;
+  color: var(--prisma-muted);
+}
+
+.prisma-sector-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.9rem;
+  padding: 0.95rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.prisma-sector-card:hover {
+  border-color: rgba(13, 148, 136, 0.6);
+}
+
+.prisma-sector-card__title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--prisma-text);
+}
+
+.prisma-sector-card__sub {
+  font-size: 0.75rem;
+  color: var(--prisma-muted);
+  margin: 0.1rem 0 0.3rem;
+}
+
+.prisma-sector-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  color: var(--prisma-muted);
+  margin-bottom: 0.25rem;
+}
+
+.prisma-sector-card__link {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.prisma-mini-donut {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prisma-mini-donut span {
+  position: absolute;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--prisma-text);
+}
+
+.prisma-steps-grid,
+.prisma-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.05rem;
+  margin: 1rem 0 1.45rem;
+}
+
+.prisma-guide-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Nunca deixa 1 quadro estreito "sobrando" sozinho na linha de baixo */
+.prisma-guide-grid:not(.prisma-guide-grid--3) > .prisma-guide-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 960px) {
+  .prisma-guide-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .prisma-guide-grid--3 > .prisma-guide-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .prisma-steps-grid,
+  .prisma-guide-grid,
+  .prisma-guide-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prisma-step-card,
+.prisma-guide-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.9rem;
+  padding: 1.2rem 1.35rem;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.prisma-step-card h3,
+.prisma-guide-card h3 {
+  margin: 0.05rem 0 0.2rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  color: var(--prisma-text) !important;
+}
+
+.prisma-guide-card h3.prisma-card-heading--teal,
+.prisma-step-card h3.prisma-card-heading--teal {
+  color: #0f766e !important;
+}
+.prisma-guide-card h3.prisma-card-heading--blue,
+.prisma-step-card h3.prisma-card-heading--blue {
+  color: #0369a1 !important;
+}
+.prisma-guide-card h3.prisma-card-heading--purple,
+.prisma-step-card h3.prisma-card-heading--purple {
+  color: #6d28d9 !important;
+}
+.prisma-guide-card h3.prisma-card-heading--amber,
+.prisma-step-card h3.prisma-card-heading--amber {
+  color: #b45309 !important;
+}
+.prisma-guide-card h3.prisma-card-heading--red,
+.prisma-step-card h3.prisma-card-heading--red {
+  color: #dc2626 !important;
+}
+
+[data-md-color-scheme="slate"] .prisma-guide-card h3.prisma-card-heading--teal,
+[data-md-color-scheme="slate"] .prisma-step-card h3.prisma-card-heading--teal {
+  color: #2dd4bf !important;
+}
+[data-md-color-scheme="slate"] .prisma-guide-card h3.prisma-card-heading--blue,
+[data-md-color-scheme="slate"] .prisma-step-card h3.prisma-card-heading--blue {
+  color: #38bdf8 !important;
+}
+[data-md-color-scheme="slate"] .prisma-guide-card h3.prisma-card-heading--purple,
+[data-md-color-scheme="slate"] .prisma-step-card h3.prisma-card-heading--purple {
+  color: #c084fc !important;
+}
+[data-md-color-scheme="slate"] .prisma-guide-card h3.prisma-card-heading--amber,
+[data-md-color-scheme="slate"] .prisma-step-card h3.prisma-card-heading--amber {
+  color: #fbbf24 !important;
+}
+[data-md-color-scheme="slate"] .prisma-guide-card h3.prisma-card-heading--red,
+[data-md-color-scheme="slate"] .prisma-step-card h3.prisma-card-heading--red {
+  color: #f87171 !important;
+}
+
+.prisma-card-subtitle {
+  display: block;
+  margin: 0 0 0.55rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: var(--prisma-muted) !important;
+  line-height: 1.4 !important;
+}
+
+.prisma-step-card p,
+.prisma-guide-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--prisma-muted);
+  line-height: 1.58;
+}
+
+.prisma-guide-card ul {
+  margin: 0.55rem 0 0 !important;
+  padding-left: 1.2rem !important;
+  font-size: 0.9rem;
+  color: var(--prisma-muted);
+  line-height: 1.58;
+}
+
+.prisma-guide-card li {
+  margin: 0.3rem 0 !important;
+}
+
+.prisma-guide-card strong {
+  color: var(--prisma-text);
+}
+
+.md-typeset table:not([class]) {
+  font-size: 0.88rem !important;
+  border-radius: 0.65rem;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   PAINEL DE CONTROLE E DROPDOWNS DE FILTRO
+   ========================================================================== */
+.prisma-page-panel {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.85rem;
+  padding: 0.9rem 1.1rem;
+  margin: 0.9rem 0 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.prisma-page-panel__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.prisma-page-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.prisma-filter-bar {
+  border-top: 1px solid var(--prisma-border-soft);
+  padding-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.prisma-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+@media (max-width: 860px) {
+  .prisma-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .prisma-filter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prisma-filter-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--prisma-muted);
+}
+
+.prisma-select,
+.prisma-note-input {
+  width: 100%;
+  padding: 0.42rem 0.6rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-text);
+  font-size: 0.78rem;
+  font-family: inherit;
+}
+
+.prisma-active-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--prisma-muted);
+  background: var(--prisma-surface-alt);
+  padding: 0.38rem 0.65rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--prisma-border-soft);
+}
+
+.prisma-link-btn {
+  background: none;
+  border: none;
+  color: var(--prisma-active-nav);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+}
+
+.prisma-link-btn:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   CARDS DE CHECKLIST EM ACORDEÃO (EXPANSÍVEIS PELO TÍTULO)
+   ========================================================================== */
+.md-typeset ul.task-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.5rem 0 0.75rem !important;
+}
+
+.md-typeset li.task-list-item.prisma-audit-card {
+  background: var(--prisma-surface);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.75rem;
+  padding: 0 !important;
+  margin-bottom: 0.6rem !important;
+  overflow: hidden;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.md-typeset li.task-list-item.prisma-audit-card.status-pass {
+  border-color: rgba(16, 185, 129, 0.55);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.md-typeset li.task-list-item.prisma-audit-card.status-fail {
+  border-color: rgba(239, 68, 68, 0.55);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.md-typeset li.task-list-item.prisma-audit-card.status-na {
+  opacity: 0.78;
+}
+
+.md-typeset li.task-list-item.prisma-audit-card.is-revealed-outside-filter {
+  border-style: dashed;
+}
+
+.prisma-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.76rem 1rem;
+}
+
+@media (max-width: 580px) {
+  .prisma-card-header {
+    flex-wrap: wrap;
+  }
+}
+
+.prisma-status-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  flex-shrink: 0;
+}
+
+.prisma-status-btn {
+  min-width: 2rem;
+  height: 1.9rem;
+  padding: 0 0.48rem;
+  border-radius: 0.42rem;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.prisma-status-btn:hover {
+  border-color: var(--prisma-text);
+  color: var(--prisma-text);
+}
+
+.prisma-status-btn.is-pass.is-active {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.prisma-status-btn.is-fail.is-active {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+.prisma-status-btn.is-na.is-active {
+  background: #475569;
+  border-color: #475569;
+  color: #ffffff;
+}
+
+.prisma-card-title-btn {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  padding: 0.22rem 0.2rem;
+  text-align: left;
+  color: var(--prisma-text);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.48;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.prisma-card-title-btn:hover .prisma-card-title-text {
+  color: var(--prisma-active-nav);
+}
+
+.prisma-card-title-text {
+  display: inline;
+}
+
+.prisma-code-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.12rem 0.48rem;
+  margin-right: 0.4rem;
+  border-radius: 0.35rem;
+  background: rgba(13, 148, 136, 0.14);
+  color: var(--prisma-active-nav);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  vertical-align: baseline;
+}
+
+.prisma-card-chevron {
+  font-size: 0.95rem;
+  color: var(--prisma-muted);
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.prisma-audit-card.is-expanded .prisma-card-chevron {
+  transform: rotate(180deg);
+}
+
+.prisma-card-body {
+  border-top: 1px solid var(--prisma-border-soft);
+  padding: 0.9rem 1.15rem 1rem;
+  background: var(--prisma-surface-alt);
+  font-size: 0.9rem;
+}
+
+.prisma-fail-box {
+  margin-bottom: 0.7rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.prisma-fail-box__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.prisma-fail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--prisma-text);
+}
+
+.prisma-fail-field--sev {
+  flex: 0 1 200px;
+}
+
+.prisma-fail-field--note {
+  flex: 1 1 260px;
+}
+
+.prisma-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.prisma-card-refs {
+  font-size: 0.72rem;
+  color: var(--prisma-muted);
+  margin-left: 0.25rem;
+}
+
+.prisma-card-steps p {
+  margin: 0.3rem 0 !important;
+}
+
+.prisma-card-steps ol,
+.prisma-card-steps ul {
+  margin: 0.35rem 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+.prisma-card-steps li {
+  margin: 0.2rem 0 !important;
+}
+
+/* Reexibição de critérios ocultos por filtro na seção */
+.prisma-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.prisma-heading-hidden-toggle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--prisma-border);
+  background: var(--prisma-surface-alt);
+  color: var(--prisma-active-nav);
+  cursor: pointer;
+}
+
+.prisma-reveal-hidden-bar {
+  width: 100%;
+  text-align: left;
+  padding: 0.45rem 0.75rem;
+  margin: -0.25rem 0 0.85rem;
+  border-radius: 0.5rem;
+  border: 1px dashed var(--prisma-border);
+  background: transparent;
+  color: var(--prisma-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prisma-reveal-hidden-bar:hover {
+  color: var(--prisma-active-nav);
+  border-color: var(--prisma-active-nav);
+}
+
+/* Smart Badges curtas e limpas */
+.smart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.badge-persona {
+  background: rgba(139, 92, 246, 0.13);
+  color: #6d28d9;
+  border-color: rgba(139, 92, 246, 0.32);
+}
+
+[data-md-color-scheme="slate"] .badge-persona {
+  color: #c4b5fd;
+}
+
+.badge-norma {
+  background: rgba(245, 158, 11, 0.14);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.36);
+}
+
+[data-md-color-scheme="slate"] .badge-norma {
+  color: #fcd34d;
+}
+
+.badge-ferramenta {
+  background: rgba(13, 148, 136, 0.14);
+  color: #0f766e;
+  border-color: rgba(13, 148, 136, 0.35);
+}
+
+[data-md-color-scheme="slate"] .badge-ferramenta {
+  color: #5eead4;
+}
+
+/* Modal de Relatório Markdown */
+.prisma-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.prisma-modal-backdrop.is-open {
+  display: flex;
+}
+
+.prisma-modal {
+  background: var(--prisma-surface);
+  color: var(--prisma-text);
+  border: 1px solid var(--prisma-border);
+  border-radius: 1rem;
+  max-width: 46rem;
+  width: 100%;
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.prisma-modal pre {
+  background: var(--prisma-surface-alt);
+  border: 1px solid var(--prisma-border);
+  border-radius: 0.6rem;
+  padding: 0.85rem;
+  font-size: 0.75rem;
+  max-height: 20rem;
+  overflow: auto;
+  white-space: pre-wrap;
+}
