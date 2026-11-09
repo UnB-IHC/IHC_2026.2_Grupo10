@@ -21,7 +21,9 @@ hide:
       <div class="prisma-cta-row">
         <a href="02-jornadas-blueprints/user-journey-vs-flows.html" class="prisma-btn prisma-btn--primary">Iniciar Auditoria Web</a>
         <a href="01-totalx-personas/total-experience.html" class="prisma-btn">Guias Metodológicos</a>
-        <a href="05-ferramentas/comparativo-ferramentas.html" class="prisma-btn">Ferramentas de Teste</a>
+        <a href="relatorios/Relatorio_Auditoria_Acessibilidade_LinkedIn_Grupo10.pdf" target="_blank" rel="noopener" class="prisma-btn">Relatório de Auditoria (PDF)</a>
+        <a href="relatorios/Relatorio_Teste_Usabilidade_LinkedIn_Grupo10.pdf" target="_blank" rel="noopener" class="prisma-btn">Relatório de Teste de Usabilidade (PDF)</a>
+        <a href="prototipo_filtro_vagas.html" target="_blank" rel="noopener" class="prisma-btn">Protótipo de Solução (PR-01)</a>
         <button type="button" id="prisma-export-global" class="prisma-btn">Exportar Relatório Geral (.md)</button>
       </div>
     </div>
