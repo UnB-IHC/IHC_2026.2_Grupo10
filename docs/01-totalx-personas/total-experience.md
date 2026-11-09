@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Concepção &amp; Serviço</span>
+<span class="prisma-pill-tag">Guia Metodológico • Concepção &amp; Serviço</span>
 
-# UX, Design UX e Total Experience — CX, UX, EX, TX
+# UX, Design UX e Total Experience: CX, UX, EX, TX
 
 A **Total Experience (TX)** integra a interação na tela (**UX**), a relação em todos os pontos de contato (**CX**) e as ferramentas internas da equipe (**EX**), evitando que sistemas de bastidores precários ou canais desconectados gerem barreiras ao usuário final [[1]](#ref-1) [[6]](#ref-6). Este guia consolida como alinhar essas quatro dimensões na concepção ou no redesenho de serviços digitais.
 
@@ -49,13 +49,13 @@ A **Total Experience (TX)** integra a interação na tela (**UX**), a relação 
 
 </div>
 
-## Síntese — Como Conectar o Guia à Auditoria Web
+## Síntese: Como Conectar o Guia à Auditoria Web
 
-| Dimensão | Artefato Interno da Equipe | Onde Reflete na Auditoria do Site (`📋 Checklists`) |
+| Dimensão | Artefato Interno da Equipe | Onde Reflete na Auditoria do Site (`Checklists`) |
 | :--- | :--- | :--- |
 | **UX** | Pesquisa de campo, UX Canvas e rodadas de teste de usabilidade [[1]](#ref-1) [[2]](#ref-2) | [Acessibilidade Cognitiva](../03-cognicao-ui-figma/cognicao-usabilidade.md) (`COG-01`–`COG-11`) e [Heurísticas de Nielsen](../03-cognicao-ui-figma/heuristicas-nielsen.md) |
 | **CX** | Comparativo multicanal (FigJam/Miro) e cliente oculto [[3]](#ref-3) [[4]](#ref-4) | [Fluxos de Navegação](../02-jornadas-blueprints/user-journey-vs-flows.md) (`FLX-04`) e [Omnicanalidade](../02-jornadas-blueprints/omnicanalidade.md) (`OMN-01`–`OMN-05`) |
-| **EX & TX** | *Service Blueprint* e painel conjunto de indicadores [[6]](#ref-6) [[7]](#ref-7) [[8]](#ref-8) | [Palco vs. Bastidores](../02-jornadas-blueprints/blueprint-morgan-miller.md) (`BPR-01`–`BPR-06`) e [Normas Web](../04-web-normas/normas-nbr-wcag.md) |
+| **EX e TX** | *Service Blueprint* e painel conjunto de indicadores [[6]](#ref-6) [[7]](#ref-7) [[8]](#ref-8) | [Palco vs. Bastidores](../02-jornadas-blueprints/blueprint-morgan-miller.md) (`BPR-01`–`BPR-06`) e [Normas Web](../04-web-normas/normas-nbr-wcag.md) |
 
 ---
 

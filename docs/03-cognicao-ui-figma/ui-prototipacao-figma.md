@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Prototipação &amp; Handoff</span>
+<span class="prisma-pill-tag">Guia Metodológico • Prototipação &amp; Handoff</span>
 
-# Prototipação Acessível & Handoff no Figma
+# Prototipação Acessível e Handoff no Figma
 
 A prototipação permite prevenir barreiras visuais e de interação antes de escrever código, comunicando à equipe de desenvolvimento cores, alvos, estados de foco, erros, variantes e ordem de teclado [[1]](#ref-1) [[5]](#ref-5) [[7]](#ref-7). Como um protótipo não substitui o DOM real, toda decisão documentada no Figma deve ser homologada depois na aplicação funcional [[2]](#ref-2) [[3]](#ref-3).
 

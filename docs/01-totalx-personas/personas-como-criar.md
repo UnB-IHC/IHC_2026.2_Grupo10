@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Modelagem de Perfis</span>
+<span class="prisma-pill-tag">Guia Metodológico • Modelagem de Perfis</span>
 
 # Personas Inclusivas: Como Criar e Perfis de Referência
 
@@ -38,19 +38,19 @@ Personas inclusivas sintetizam comportamentos, objetivos, contextos e tecnologia
 
 </div>
 
-## Catálogo dos 11 Perfis Funcionais (Filtros `👤 Persona` do PrismaIHC)
+## Catálogo dos 11 Perfis Funcionais (Filtros `Perfil: Persona` do PrismaIHC)
 
 Todos os checklists do PrismaIHC exibem os mesmos **11 perfis funcionais** no seletor **👤 Persona**, permitindo isolar em qualquer aba os critérios que afetam cada grupo (alinhado ao Anexo B da ABNT NBR 17225:2025 e ao Guia Gov.br [[2]](#ref-2)):
 
 | Perfil nos Filtros | Tecnologias Assistivas / Contexto de Uso | Principais Barreiras a Eliminar no Site |
 | :--- | :--- | :--- |
-| **`👤 Leitor de Tela`** | NVDA, JAWS, VoiceOver, TalkBack e linha braille (cegueira ou baixa visão severa). | Imagens sem `alt`, botões `<div>` sem nome/papel, falta de cabeçalhos `H1–H6` ou marcos e mudanças de status mudas. |
-| **`👤 Baixa Visão` / `👤 Daltonismo`** | Zoom de 200% a 400%, fontes ampliadas do sistema, alto contraste e filtros de cor. | Baixo contraste (< 4,5:1 ou < 3:1), rolagem horizontal no zoom, textos cortados e erros/gráficos baseados só em cor. |
-| **`👤 Surdez / Libras`** | Português escrito como segunda língua (L2), legendas descritivas, transcrição e Libras. | Vídeos/áudios sem legenda sincronizada ou transcrição, suporte exclusivo por telefone e textos burocráticos complexos. |
-| **`👤 Motora / Teclado` / `👤 Controle por Voz`** | Navegação exclusiva por `Tab`/`Enter`/`Esc`, acionadores, teclados adaptados e comando de voz. | Armadilhas de teclado, foco invisível ou encoberto, alvos minúsculos (< 24×24 px), gestos de arrastar sem alternativa e rótulos ocultos divergentes. |
-| **`👤 Cognitiva / TDAH` / `👤 TEA / Autismo` / `👤 Dislexia`** | Necessidade de previsibilidade, baixo ruído visual, apoio à memória e leitura escaneável. | Animações automáticas sem pausa, ícones ambíguos sem texto, perda de dados em formulários, bloqueio ao colar senha e paredes de texto. |
-| **`👤 Idoso / Baixo Letramento`** | Presbiopia, menor precisão de toque, conexão limitada ou menor familiaridade digital. | Jargões técnicos/inglês desnecessário, fluxos sem botão claro de voltar/cancelar, falta de comprovante e sessões que expiram sem aviso. |
-| **`👤 Epilepsia / Vestibular`** | Fotossensibilidade e distúrbios vestibulares/labirínticos sensíveis a flashes e movimento (`prefers-reduced-motion`). | Flashes > 3×/s, carrosséis/vídeos em movimento contínuo sem botão de pausa e efeitos de paralaxe forçados na rolagem. |
+| **`Perfil: Leitor de Tela`** | NVDA, JAWS, VoiceOver, TalkBack e linha braille (cegueira ou baixa visão severa). | Imagens sem `alt`, botões `<div>` sem nome/papel, falta de cabeçalhos `H1–H6` ou marcos e mudanças de status mudas. |
+| **`Perfil: Baixa Visão` / `Perfil: Daltonismo`** | Zoom de 200% a 400%, fontes ampliadas do sistema, alto contraste e filtros de cor. | Baixo contraste (< 4,5:1 ou < 3:1), rolagem horizontal no zoom, textos cortados e erros/gráficos baseados só em cor. |
+| **`Perfil: Surdez / Libras`** | Português escrito como segunda língua (L2), legendas descritivas, transcrição e Libras. | Vídeos/áudios sem legenda sincronizada ou transcrição, suporte exclusivo por telefone e textos burocráticos complexos. |
+| **`Perfil: Motora / Teclado` / `Perfil: Controle por Voz`** | Navegação exclusiva por `Tab`/`Enter`/`Esc`, acionadores, teclados adaptados e comando de voz. | Armadilhas de teclado, foco invisível ou encoberto, alvos minúsculos (< 24×24 px), gestos de arrastar sem alternativa e rótulos ocultos divergentes. |
+| **`Perfil: Cognitiva / TDAH` / `Perfil: TEA / Autismo` / `Perfil: Dislexia`** | Necessidade de previsibilidade, baixo ruído visual, apoio à memória e leitura escaneável. | Animações automáticas sem pausa, ícones ambíguos sem texto, perda de dados em formulários, bloqueio ao colar senha e paredes de texto. |
+| **`Perfil: Idoso / Baixo Letramento`** | Presbiopia, menor precisão de toque, conexão limitada ou menor familiaridade digital. | Jargões técnicos/inglês desnecessário, fluxos sem botão claro de voltar/cancelar, falta de comprovante e sessões que expiram sem aviso. |
+| **`Perfil: Epilepsia / Vestibular`** | Fotossensibilidade e distúrbios vestibulares/labirínticos sensíveis a flashes e movimento (`prefers-reduced-motion`). | Flashes > 3×/s, carrosséis/vídeos em movimento contínuo sem botão de pausa e efeitos de paralaxe forçados na rolagem. |
 
 ---
 

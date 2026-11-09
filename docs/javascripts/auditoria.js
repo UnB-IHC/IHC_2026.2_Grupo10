@@ -8,7 +8,7 @@
   const AXES = [
     {
       id: "jornadas",
-      label: "🗺️ Jornadas, Fluxos & Canais",
+      label: "Jornadas, Fluxos e Canais",
       subtitle: "User Flows • Omnicanalidade • Palco vs. Bastidores",
       color: "#0284c7",
       firstHref: "02-jornadas-blueprints/user-journey-vs-flows.html",
@@ -20,7 +20,7 @@
     },
     {
       id: "cognicao",
-      label: "🧠 Cognição, Heurísticas & UI",
+      label: "Cognição, Heurísticas e UI",
       subtitle: "Acessibilidade Cognitiva (COGA) • Nielsen • Design Visual UI",
       color: "#0d9488",
       firstHref: "03-cognicao-ui-figma/cognicao-usabilidade.html",
@@ -32,8 +32,8 @@
     },
     {
       id: "webnormas",
-      label: "💻 Web, NBR 17225 & WCAG 2.2",
-      subtitle: "HTML Semântico • Mídia & Texto • NBR 17225 • NBR 17060",
+      label: "Web, NBR 17225 e WCAG 2.2",
+      subtitle: "HTML Semântico • Mídia e Texto • NBR 17225 • NBR 17060",
       color: "#d97706",
       firstHref: "04-web-normas/web-semantica-conteudo.html",
       pages: [
@@ -75,12 +75,12 @@
       "W3C COGA",
       "Heurísticas de Nielsen",
       "Kalbach (Jornadas/Canais)",
-      "Service Blueprint (Morgan & Miller)",
+      "Service Blueprint (Morgan e Miller)",
     ],
     ferramenta: [
       "Inspeção Manual / Heurística",
       "Teclado (Tab / Esc)",
-      "DevTools (Zoom, Refluxo & Visão)",
+      "DevTools (Zoom, Refluxo e Visão)",
       "WAVE",
       "Axe DevTools",
       "Google Lighthouse",
@@ -182,10 +182,21 @@
 
   function cleanBadgeLabel(txt) {
     return txt
-      .replace(/^👤\s*(Persona:\s*)?/i, "")
-      .replace(/^⚖️\s*(Norma\/Base:\s*)?/i, "")
-      .replace(/^🛠️\s*(Ferramenta:\s*)?/i, "")
+      .replace(/^(?:👤\s*)?(?:Persona:|Perfil:)\s*/i, "")
+      .replace(/^👤\s*/i, "")
+      .replace(/^(?:⚖️\s*)?(?:Norma\/Base:|Norma:|Base:)\s*/i, "")
+      .replace(/^⚖️\s*/i, "")
+      .replace(/^(?:🛠️\s*)?(?:Ferramenta:|Método:)\s*/i, "")
+      .replace(/^🛠️\s*/i, "")
+      .replace(/\s*&\s*/g, " e ")
       .trim();
+  }
+
+  function detectBadgeKind(txt) {
+    if (/^(?:👤|Persona:|Perfil:)/i.test(txt)) return "persona";
+    if (/^(?:⚖️|Norma\/Base:|Norma:|Base:)/i.test(txt)) return "norma";
+    if (/^(?:🛠️|Ferramenta:|Método:)/i.test(txt)) return "ferramenta";
+    return null;
   }
 
   function extractDocBadges(li) {
@@ -195,9 +206,10 @@
     li.querySelectorAll("code").forEach((codeEl) => {
       if (codeEl.closest("pre") || codeEl.closest("details")) return;
       const txt = codeEl.textContent.trim();
-      if (txt.startsWith("👤")) persona.push(cleanBadgeLabel(txt));
-      else if (txt.startsWith("⚖️")) norma.push(cleanBadgeLabel(txt));
-      else if (txt.startsWith("🛠️")) ferramenta.push(cleanBadgeLabel(txt));
+      const kind = detectBadgeKind(txt);
+      if (kind === "persona") persona.push(cleanBadgeLabel(txt));
+      else if (kind === "norma") norma.push(cleanBadgeLabel(txt));
+      else if (kind === "ferramenta") ferramenta.push(cleanBadgeLabel(txt));
     });
     return { persona, norma, ferramenta };
   }
@@ -314,8 +326,8 @@
                 <div class="prisma-sector-card__title">${ax.label}</div>
                 <div class="prisma-sector-card__sub">${ax.subtitle}</div>
                 <div class="prisma-sector-card__meta">
-                  <span><strong style="color:#10b981;">${ax.pass}</strong> ✅</span>
-                  <span><strong style="color:#ef4444;">${ax.fail}</strong> ❌</span>
+                  <span><strong style="color:#10b981;">${ax.pass}</strong> Atendidos</span>
+                  <span><strong style="color:#ef4444;">${ax.fail}</strong> Falhas</span>
                   <span><strong>${ax.na}</strong> N/A</span>
                   <span>• ${ax.pending} pendentes</span>
                 </div>
@@ -334,10 +346,10 @@
       resetBtn.addEventListener("click", () => {
         if (!confirmStep) {
           confirmStep = true;
-          resetBtn.textContent = "⚠️ Confirmar zerar tudo?";
+          resetBtn.textContent = "Confirmar zerar tudo?";
           setTimeout(() => {
             confirmStep = false;
-            resetBtn.textContent = "↺ Zerar progresso";
+            resetBtn.textContent = "Zerar progresso";
           }, 3200);
           return;
         }
@@ -347,7 +359,7 @@
           }
         });
         confirmStep = false;
-        resetBtn.textContent = "↺ Zerar progresso";
+        resetBtn.textContent = "Zerar progresso";
         initHomeDashboard();
       });
     }
@@ -370,7 +382,7 @@
       `# ${reportTitle}`,
       "",
       `- **Índice de Conformidade (sobre itens aplicáveis):** ${stats.pct}% (${stats.pass}/${stats.applicable})`,
-      `- **Resumo:** ${stats.pass} Atendidos (✅) • ${stats.fail} Falhas (❌) • ${stats.na} Não Aplicáveis (N/A) • ${stats.pending} Pendentes`,
+      `- **Resumo:** ${stats.pass} Atendidos • ${stats.fail} Falhas • ${stats.na} Não Aplicáveis (N/A) • ${stats.pending} Pendentes`,
       "",
     ];
 
@@ -403,12 +415,12 @@
       g.entries.forEach((e) => {
         const sym =
           e.status === "pass"
-            ? "✅ Atende"
+            ? "Atende"
             : e.status === "fail"
-            ? `❌ Falha (Sev. ${e.severity || 3})`
+            ? `Falha (Sev. ${e.severity || 3})`
             : e.status === "na"
-            ? "⚪ N/A"
-            : "⏳ Pendente";
+            ? "N/A"
+            : "Pendente";
         const noteSuffix = e.status === "fail" && e.note ? ` — _Evidência: ${e.note}_` : "";
         lines.push(`- **${sym}** | ${e.title}${noteSuffix}`);
       });
@@ -475,10 +487,7 @@
       li.querySelectorAll("code").forEach((codeEl) => {
         if (codeEl.closest("pre") || codeEl.closest("details")) return;
         const txt = codeEl.textContent.trim();
-        let kind = null;
-        if (txt.startsWith("👤")) kind = "persona";
-        else if (txt.startsWith("⚖️")) kind = "norma";
-        else if (txt.startsWith("🛠️")) kind = "ferramenta";
+        const kind = detectBadgeKind(txt);
         if (!kind) return;
 
         const clean = cleanBadgeLabel(txt);
@@ -487,8 +496,8 @@
         if (kind === "norma") normaSet.add(clean);
         if (kind === "ferramenta") ferramentaSet.add(clean);
 
-        const prefixIcon = kind === "persona" ? "👤" : kind === "norma" ? "⚖️" : "🛠️";
-        badgeElements.push({ kind, clean, label: `${prefixIcon} ${clean}` });
+        const prefixLabel = kind === "persona" ? "Perfil:" : kind === "norma" ? "Base:" : "Ferramenta:";
+        badgeElements.push({ kind, clean, label: `${prefixLabel} ${clean}` });
       });
 
       // Extrair conteúdo do bloco "Como auditar" (details)
@@ -686,37 +695,37 @@
           <button type="button" id="prisma-mark-visible" class="prisma-btn prisma-btn--primary">✓ Atender visíveis</button>
           <button type="button" id="prisma-toggle-details" class="prisma-btn">▾ Expandir todos</button>
           <button type="button" id="prisma-clear-page" class="prisma-btn">↺ Limpar</button>
-          <button type="button" id="prisma-export-page" class="prisma-btn">📋 Relatório (.md)</button>
+          <button type="button" id="prisma-export-page" class="prisma-btn">Exportar Relatório (.md)</button>
         </div>
       </div>
       <div class="prisma-filter-bar">
         <div class="prisma-filter-grid">
           <label class="prisma-filter-select-wrap">
-            <span>👤 Persona</span>
+            <span>Perfil / Persona</span>
             <select id="prisma-sel-persona" class="prisma-select">
               <option value="">Todas as personas</option>
             </select>
           </label>
           <label class="prisma-filter-select-wrap">
-            <span>⚖️ Norma / Base</span>
+            <span>Norma / Base</span>
             <select id="prisma-sel-norma" class="prisma-select">
               <option value="">Todas as normas</option>
             </select>
           </label>
           <label class="prisma-filter-select-wrap">
-            <span>🛠️ Ferramenta</span>
+            <span>Ferramenta</span>
             <select id="prisma-sel-ferramenta" class="prisma-select">
               <option value="">Todas as ferramentas</option>
             </select>
           </label>
           <label class="prisma-filter-select-wrap">
-            <span>📌 Status</span>
+            <span>Status</span>
             <select id="prisma-sel-status" class="prisma-select">
               <option value="">Todos os status</option>
-              <option value="pending">⏳ Pendentes</option>
-              <option value="pass">✅ Atendidos</option>
-              <option value="fail">❌ Com falha</option>
-              <option value="na">⚪ Não aplicáveis (N/A)</option>
+              <option value="pending">Pendentes</option>
+              <option value="pass">Atendidos</option>
+              <option value="fail">Com falha</option>
+              <option value="na">Não aplicáveis (N/A)</option>
             </select>
           </label>
         </div>
@@ -860,7 +869,7 @@
       const cntSpan = document.getElementById("prisma-page-count");
       if (pctSpan) pctSpan.textContent = `${stats.pct}%`;
       if (cntSpan) {
-        cntSpan.innerHTML = `<strong>${stats.pass}</strong> ✅ • <strong>${stats.fail}</strong> ❌ • <strong>${stats.na}</strong> N/A • ${stats.pending} pendentes`;
+        cntSpan.innerHTML = `<strong>${stats.pass}</strong> atendidos • <strong>${stats.fail}</strong> falhas • <strong>${stats.na}</strong> N/A • ${stats.pending} pendentes`;
       }
 
       const active = hasActiveFilter();
@@ -1002,7 +1011,7 @@
         <pre id="prisma-modal-pre"></pre>
         <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.65rem; margin-top:0.85rem;">
           <span id="prisma-copy-ok" style="font-size:0.78rem; color:#10b981; display:none; font-weight:700;">✓ Copiado!</span>
-          <button type="button" id="prisma-modal-copy" class="prisma-btn prisma-btn--primary">📋 Copiar Markdown</button>
+          <button type="button" id="prisma-modal-copy" class="prisma-btn prisma-btn--primary">Copiar Markdown</button>
         </div>
       </div>
     `;

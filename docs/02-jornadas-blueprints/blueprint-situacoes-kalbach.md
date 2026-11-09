@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Diagnóstico &amp; Redesenho</span>
+<span class="prisma-pill-tag">Guia Metodológico • Diagnóstico &amp; Redesenho</span>
 
 # Mapeamento As-Is → To-Be em Diferentes Situações (Kalbach)
 

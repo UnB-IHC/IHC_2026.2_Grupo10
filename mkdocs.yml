@@ -1,5 +1,5 @@
 site_name: PrismaIHC
-site_description: Guia Prático de Auditoria em UX, Interação Humano-Computador e Acessibilidade Digital — Grupo 10 (UnB 2026.2)
+site_description: Guia de Concepção e Checklist de Auditoria em IHC e Acessibilidade Digital - Grupo 10 (UnB 2026.2)
 site_url: https://unb-ihc.github.io/IHC_2026.2_Grupo10/
 repo_url: https://github.com/UnB-IHC/IHC_2026.2_Grupo10
 repo_name: UnB-IHC/IHC_2026.2_Grupo10
@@ -58,28 +58,28 @@ extra_javascript:
 nav:
   - Início: index.md
 
-  - Total X & Personas:
-    - "📖 UX, CX, EX e TX (Total X)": 01-totalx-personas/total-experience.md
-    - "📖 Design Empático & Canvas": 01-totalx-personas/design-empatico-canvas.md
-    - "📖 Personas Inclusivas": 01-totalx-personas/personas-como-criar.md
-    - "📖 Personas Ecossistêmicas": 01-totalx-personas/personas-ecossistemicas.md
+  - Total X e Personas:
+    - "UX, CX, EX e TX (Total X)": 01-totalx-personas/total-experience.md
+    - "Design Empático e Canvas": 01-totalx-personas/design-empatico-canvas.md
+    - "Personas Inclusivas": 01-totalx-personas/personas-como-criar.md
+    - "Personas Ecossistêmicas": 01-totalx-personas/personas-ecossistemicas.md
 
-  - Jornadas, Blueprint & Omnicanal:
-    - "📋 Fluxos de Navegação — User Flows": 02-jornadas-blueprints/user-journey-vs-flows.md
-    - "📋 Omnicanalidade & Paridade": 02-jornadas-blueprints/omnicanalidade.md
-    - "📋 Palco vs. Bastidores — Blueprint": 02-jornadas-blueprints/blueprint-morgan-miller.md
-    - "📖 Mapeamento As-Is → To-Be (Kalbach)": 02-jornadas-blueprints/blueprint-situacoes-kalbach.md
+  - Jornadas, Blueprint e Omnicanal:
+    - "Fluxos de Navegação (User Flows)": 02-jornadas-blueprints/user-journey-vs-flows.md
+    - "Omnicanalidade e Paridade": 02-jornadas-blueprints/omnicanalidade.md
+    - "Palco e Bastidores (Blueprint)": 02-jornadas-blueprints/blueprint-morgan-miller.md
+    - "Mapeamento As-Is para To-Be (Kalbach)": 02-jornadas-blueprints/blueprint-situacoes-kalbach.md
 
-  - Cognição, IHC, UI & Figma:
-    - "📋 Acessibilidade Cognitiva & COGA": 03-cognicao-ui-figma/cognicao-usabilidade.md
-    - "📋 Heurísticas de Nielsen (H01–H10)": 03-cognicao-ui-figma/heuristicas-nielsen.md
-    - "📋 Design Visual de UI": 03-cognicao-ui-figma/design-ui.md
-    - "📖 Prototipação & Handoff no Figma": 03-cognicao-ui-figma/ui-prototipacao-figma.md
+  - Cognição, IHC, UI e Figma:
+    - "Acessibilidade Cognitiva e COGA": 03-cognicao-ui-figma/cognicao-usabilidade.md
+    - "Heurísticas de Nielsen (H01 a H10)": 03-cognicao-ui-figma/heuristicas-nielsen.md
+    - "Design Visual de UI": 03-cognicao-ui-figma/design-ui.md
+    - "Prototipação e Handoff no Figma": 03-cognicao-ui-figma/ui-prototipacao-figma.md
 
-  - Web, NBR 17225 & WCAG 2.2:
-    - "📋 Código Semântico, Mídia & Conteúdo": 04-web-normas/web-semantica-conteudo.md
-    - "📋 Normas NBR 17225, 17060 & WCAG 2.2": 04-web-normas/normas-nbr-wcag.md
+  - Web, NBR 17225 e WCAG 2.2:
+    - "Código Semântico, Mídia e Conteúdo": 04-web-normas/web-semantica-conteudo.md
+    - "Normas NBR 17225, 17060 e WCAG 2.2": 04-web-normas/normas-nbr-wcag.md
 
   - Ferramentas:
-    - "📖 Qual Ferramenta Usar (Comparativo)": 05-ferramentas/comparativo-ferramentas.md
-    - "📖 Testes Práticos & Passo a Passo": 05-ferramentas/tutoriais-passo-a-passo.md
+    - "Comparativo de Ferramentas": 05-ferramentas/comparativo-ferramentas.md
+    - "Roteiros de Teste Passo a Passo": 05-ferramentas/tutoriais-passo-a-passo.md

@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Pesquisa &amp; Descoberta</span>
+<span class="prisma-pill-tag">Guia Metodológico • Pesquisa &amp; Descoberta</span>
 
-# Design Empático & Canvas em IHC
+# Design Empático e Canvas em IHC
 
 O **Design Empático** fundamenta decisões de interface na escuta e observação direta de pessoas reais em seu contexto cotidiano — contemplando deficiências permanentes, limitações temporárias e restrições situacionais — e organiza esses achados em quadros visuais de uma página (**Canvas**) antes de desenhar telas [[1]](#ref-1) [[3]](#ref-3) [[5]](#ref-5).
 

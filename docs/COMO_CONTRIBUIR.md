@@ -3,11 +3,11 @@ hide:
   - toc
 ---
 
-# Padrão Editorial da Equipe — PrismaIHC (Grupo 10)
+# Padrão Editorial da Equipe: PrismaIHC (Grupo 10)
 
-O **PrismaIHC** separa páginas de **`📖 Guia Metodológico`** (concepção, pesquisa e prototipação, sem checkboxes) de páginas de **`📋 Checklist de Auditoria Web`** (critérios verificáveis na interface de qualquer site publicado). Para o fluxo Git completo, consulte o `CONTRIBUTING.md` na raiz do repositório.
+O **PrismaIHC** separa páginas de **`Guia Metodológico`** (concepção, pesquisa e prototipação, sem checkboxes) de páginas de **`Checklist de Auditoria Web`** (critérios verificáveis na interface de qualquer site publicado). Para o fluxo Git completo, consulte o `CONTRIBUTING.md` na raiz do repositório.
 
-## 1. Molde de Página de Checklist (`📋`)
+## 1. Molde de Página de Checklist (``)
 
 ````markdown
 ---
@@ -15,7 +15,7 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📋 Checklist de Auditoria Web • Subtítulo</span>
+<span class="prisma-pill-tag">Checklist de Auditoria Web • Subtítulo</span>
 
 # Título da Página
 
@@ -23,7 +23,7 @@ Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da pá
 
 ---
 
-??? info "Consultar referência rápida — Escala de Severidade de Nielsen (0 a 4)"
+??? info "Consultar referência rápida: Escala de Severidade de Nielsen (0 a 4)"
     | Nível | Classificação | Critério de Impacto e Prioridade |
     | :---: | :--- | :--- |
     | **0** | **Não é problema** | Não afeta a usabilidade nem a compreensão da tarefa. |
@@ -35,10 +35,10 @@ Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da pá
 ## Nome da Seção
 
 - [ ] **COD-01: Pergunta curta, direta e verificável na interface?** [[1]](#ref-1)
-    - `👤 Leitor de Tela` `⚖️ ABNT NBR 17225:2025` `🛠️ NVDA / VoiceOver`
+    - `Perfil: Leitor de Tela` `Base: ABNT NBR 17225:2025` `Ferramenta: NVDA / VoiceOver`
     ??? info "Como auditar / Passo a passo"
         1. Passo objetivo de verificação.
-        2. **✅ Critério de aprovação:** Condição clara para marcar `✓`.
+        2. **Critério de aprovação:** Condição clara para marcar `✓`.
 
 ---
 
@@ -51,9 +51,9 @@ Parágrafo único, direto e enxuto (2 a 3 linhas) contextualizando o foco da pá
 
 Use exatamente estes nomes para manter os menus suspensos (`<select>`) padronizados em todas as páginas:
 
-* **`👤 Persona` (11):** `👤 Leitor de Tela`, `👤 Baixa Visão`, `👤 Daltonismo`, `👤 Surdez / Libras`, `👤 Motora / Teclado`, `👤 Controle por Voz`, `👤 Cognitiva / TDAH`, `👤 TEA / Autismo`, `👤 Dislexia`, `👤 Idoso / Baixo Letramento`, `👤 Epilepsia / Vestibular`.
-* **`⚖️ Norma / Base` (10):** `⚖️ ABNT NBR 17225:2025`, `⚖️ ABNT NBR 17060:2022`, `⚖️ WCAG 2.2`, `⚖️ eMAG / Gov.br`, `⚖️ LBI (Lei 13.146/2015)`, `⚖️ Linguagem Simples (Lei 15.263/2025)`, `⚖️ W3C COGA`, `⚖️ Heurísticas de Nielsen`, `⚖️ Kalbach (Jornadas/Canais)`, `⚖️ Service Blueprint (Morgan & Miller)`.
-* **`🛠️ Ferramenta` (11):** `🛠️ Inspeção Manual / Heurística`, `🛠️ Teclado (Tab / Esc)`, `🛠️ DevTools (Zoom, Refluxo & Visão)`, `🛠️ WAVE`, `🛠️ Axe DevTools`, `🛠️ Google Lighthouse`, `🛠️ Accessibility Insights`, `🛠️ Colour Contrast Analyser (CCA)`, `🛠️ ASES Web (Gov.br)`, `🛠️ NVDA / VoiceOver`, `🛠️ TalkBack / VoiceOver Mobile`.
+* **`Perfil: Persona` (11):** `Perfil: Leitor de Tela`, `Perfil: Baixa Visão`, `Perfil: Daltonismo`, `Perfil: Surdez / Libras`, `Perfil: Motora / Teclado`, `Perfil: Controle por Voz`, `Perfil: Cognitiva / TDAH`, `Perfil: TEA / Autismo`, `Perfil: Dislexia`, `Perfil: Idoso / Baixo Letramento`, `Perfil: Epilepsia / Vestibular`.
+* **`Base: Norma / Base` (10):** `Base: ABNT NBR 17225:2025`, `Base: ABNT NBR 17060:2022`, `Base: WCAG 2.2`, `Base: eMAG / Gov.br`, `Base: LBI (Lei 13.146/2015)`, `Base: Linguagem Simples (Lei 15.263/2025)`, `Base: W3C COGA`, `Base: Heurísticas de Nielsen`, `Base: Kalbach (Jornadas/Canais)`, `Base: Service Blueprint (Morgan e Miller)`.
+* **`Ferramenta: Ferramenta` (11):** `Ferramenta: Inspeção Manual / Heurística`, `Ferramenta: Teclado (Tab / Esc)`, `Ferramenta: DevTools (Zoom, Refluxo e Visão)`, `Ferramenta: WAVE`, `Ferramenta: Axe DevTools`, `Ferramenta: Google Lighthouse`, `Ferramenta: Accessibility Insights`, `Ferramenta: Colour Contrast Analyser (CCA)`, `Ferramenta: ASES Web (Gov.br)`, `Ferramenta: NVDA / VoiceOver`, `Ferramenta: TalkBack / VoiceOver Mobile`.
 
 !!! tip "Regras essenciais para os filtros e acordeões"
     1. **Sempre inclua `hide: - toc`** no topo do arquivo.

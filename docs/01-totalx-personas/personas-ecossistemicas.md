@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-<span class="prisma-pill-tag">📖 Guia Metodológico • Rede Sociotécnica</span>
+<span class="prisma-pill-tag">Guia Metodológico • Rede Sociotécnica</span>
 
 # Personas Ecossistêmicas
 
