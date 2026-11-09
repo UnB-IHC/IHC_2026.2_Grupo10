@@ -11,6 +11,15 @@ A **omnicanalidade** garante continuidade de contexto, consistência de vocabul�
 
 ---
 
+??? info "Consultar referência rápida — Escala de Severidade de Nielsen (0 a 4)"
+    | Nível | Classificação | Critério de Impacto e Prioridade |
+    | :---: | :--- | :--- |
+    | **0** | **Não é problema** | Não afeta a usabilidade nem a compreensão da tarefa. |
+    | **1** | **Problema Cosmético** | Detalhe estético superficial; corrigir apenas se houver tempo disponível. |
+    | **2** | **Problema Simples (Menor)** | Pequeno atrito ou dúvida pontual da qual o usuário se recupera facilmente. |
+    | **3** | **Problema Grave (Maior)** | Dificulta de forma importante a tarefa, gerando frustração ou risco de abandono. |
+    | **4** | **Catástrofe de Usabilidade** | Bloqueia a conclusão da tarefa essencial ou causa perda de dados; correção imediata. |
+
 ## Continuidade e Consistência Digital
 
 - [ ] **OMN-01: O site mantém paridade funcional entre Desktop e Mobile Web, sem suprimir recursos ou informações essenciais na tela menor?** [[1]](#ref-1) [[2]](#ref-2) [[3]](#ref-3)

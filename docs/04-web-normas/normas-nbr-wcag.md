@@ -19,6 +19,15 @@ Este checklist consolida os requisitos normativos e legais verificáveis no site
     | **WCAG 2.2 (W3C, 2023)** [[3]](#ref-3) [[4]](#ref-4) | Padrão internacional A, AA e AAA | Acrescenta 9 critérios de foco, alvo mínimo, arrastar, entrada redundante, ajuda consistente e autenticação acessível. |
     | **LBI, LAI, Decreto 5.296 e eMAG** [[6]](#ref-6)–[[9]](#ref-9) | Obrigação legal no Brasil (empresas e órgãos públicos) | Fundamentam a exigência jurídica de acessibilidade, atalhos/barra de acessibilidade e canal de relato. |
 
+??? info "Consultar referência rápida — Escala de Severidade de Nielsen (0 a 4)"
+    | Nível | Classificação | Critério de Impacto e Prioridade |
+    | :---: | :--- | :--- |
+    | **0** | **Não é problema** | Não afeta a usabilidade nem a compreensão da tarefa. |
+    | **1** | **Problema Cosmético** | Detalhe estético superficial; corrigir apenas se houver tempo disponível. |
+    | **2** | **Problema Simples (Menor)** | Pequeno atrito ou dúvida pontual da qual o usuário se recupera facilmente. |
+    | **3** | **Problema Grave (Maior)** | Dificulta de forma importante a tarefa, gerando frustração ou risco de abandono. |
+    | **4** | **Catástrofe de Usabilidade** | Bloqueia a conclusão da tarefa essencial ou causa perda de dados; correção imediata. |
+
 ## Página de Acessibilidade e Itens Críticos (Anexo A)
 
 - [ ] **NBR-01: O site disponibiliza página/declaração de acessibilidade, recursos de acesso rápido (eMAG) e canal acessível para relatar barreiras?** [[1]](#ref-1) [[5]](#ref-5) [[6]](#ref-6) [[7]](#ref-7) [[8]](#ref-8) [[9]](#ref-9)

@@ -11,6 +11,15 @@ A acessibilidade web nasce na árvore semântica do HTML (papel, nome e estado e
 
 ---
 
+??? info "Consultar referência rápida — Escala de Severidade de Nielsen (0 a 4)"
+    | Nível | Classificação | Critério de Impacto e Prioridade |
+    | :---: | :--- | :--- |
+    | **0** | **Não é problema** | Não afeta a usabilidade nem a compreensão da tarefa. |
+    | **1** | **Problema Cosmético** | Detalhe estético superficial; corrigir apenas se houver tempo disponível. |
+    | **2** | **Problema Simples (Menor)** | Pequeno atrito ou dúvida pontual da qual o usuário se recupera facilmente. |
+    | **3** | **Problema Grave (Maior)** | Dificulta de forma importante a tarefa, gerando frustração ou risco de abandono. |
+    | **4** | **Catástrofe de Usabilidade** | Bloqueia a conclusão da tarefa essencial ou causa perda de dados; correção imediata. |
+
 ## Estrutura Semântica HTML
 
 - [ ] **WEB-01: Cada página possui `<title>` único e descritivo e declara o idioma principal (`lang="pt-BR"`) e eventuais trechos em outro idioma?** [[1]](#ref-1) [[2]](#ref-2)
