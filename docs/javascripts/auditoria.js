@@ -367,14 +367,367 @@
     const exportBtn = document.getElementById("prisma-export-global");
     if (exportBtn) {
       exportBtn.onclick = () => {
-        const md = buildMarkdownReport(
-          "Relatório Consolidado de Auditoria Web — PrismaIHC",
-          globalStats,
-          axisResults
-        );
-        openReportModal(md);
+        const title = "Relatório Consolidado de Auditoria Web — PrismaIHC";
+        const html = buildHtmlReport(title, globalStats, axisResults);
+        const md = buildMarkdownReport(title, globalStats, axisResults);
+        openReportModal(title, html, md, () => {
+          triggerPdfPrint(html, title);
+        });
       };
     }
+  }
+
+  function buildHtmlReport(reportTitle, stats, groups) {
+    const dateStr = new Date().toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    const allFailures = [];
+    groups.forEach((g) => {
+      g.entries.forEach((e) => {
+        if (e.status === "fail") allFailures.push(e);
+      });
+    });
+
+    let failuresHtml = "";
+    if (allFailures.length > 0) {
+      allFailures.sort((a, b) => Number(b.severity || 3) - Number(a.severity || 3));
+      failuresHtml = `
+        <h3 class="print-h3">2. Inadequações e Barreiras Identificadas (Ordenadas por Severidade)</h3>
+        <table class="print-table">
+          <thead>
+            <tr>
+              <th style="width: 12%;">Código</th>
+              <th style="width: 32%;">Critério Violado</th>
+              <th style="width: 20%;">Base Normativa</th>
+              <th style="width: 14%;">Severidade (Nielsen)</th>
+              <th style="width: 22%;">Local / Evidência no Site</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${allFailures
+              .map((f) => {
+                const ref = f.normas && f.normas.length ? f.normas.join("; ") : "PrismaIHC";
+                const sev = SEVERITY_LABELS[f.severity] || `${f.severity} — Grave`;
+                const ev = f.note ? escapeHtml(f.note) : "<em>Sem anotação de evidência</em>";
+                return `
+                <tr>
+                  <td><strong>${escapeHtml(f.code || "")}</strong></td>
+                  <td>${escapeHtml(f.title || "")}</td>
+                  <td><small>${escapeHtml(ref)}</small></td>
+                  <td><span class="print-sev-badge sev-${f.severity || 3}">${escapeHtml(sev)}</span></td>
+                  <td>${ev}</td>
+                </tr>
+              `;
+              })
+              .join("")}
+          </tbody>
+        </table>
+      `;
+    } else {
+      failuresHtml = `
+        <h3 class="print-h3">2. Inadequações e Barreiras Identificadas</h3>
+        <p style="color: #059669; font-weight: 600;">Nenhuma falha de conformidade registrada nos critérios avaliados.</p>
+      `;
+    }
+
+    let groupsHtml = `
+      <h3 class="print-h3">3. Detalhamento Consolidado por Eixo e Seção</h3>
+    `;
+    groups.forEach((g) => {
+      groupsHtml += `
+        <div class="print-group-block">
+          <h4 class="print-h4">${escapeHtml(g.label)} — ${g.pct}% de Conformidade (${g.pass}/${g.applicable} aplicáveis)</h4>
+          <ul class="print-list">
+            ${g.entries
+              .map((e) => {
+                let statusLabel = "";
+                let statusClass = "";
+                if (e.status === "pass") {
+                  statusLabel = "Atende";
+                  statusClass = "status-pass";
+                } else if (e.status === "fail") {
+                  statusLabel = `Falha (Sev. ${e.severity || 3})`;
+                  statusClass = "status-fail";
+                } else if (e.status === "na") {
+                  statusLabel = "N/A";
+                  statusClass = "status-na";
+                } else {
+                  statusLabel = "Pendente";
+                  statusClass = "status-pending";
+                }
+                const noteHtml =
+                  e.status === "fail" && e.note
+                    ? ` <span class="print-note">— <em>Evidência: ${escapeHtml(e.note)}</em></span>`
+                    : "";
+                return `<li><span class="print-badge ${statusClass}">${statusLabel}</span> <strong>${escapeHtml(
+                  e.code || ""
+                )}</strong>: ${escapeHtml(e.title || "")}${noteHtml}</li>`;
+              })
+              .join("")}
+          </ul>
+        </div>
+      `;
+    });
+
+    return `
+      <div class="print-report-container">
+        <header class="print-header">
+          <div class="print-header__top">
+            <strong>UNIVERSIDADE DE BRASÍLIA • FACULDADE DO GAMA (UnB/FGA)</strong>
+            <span>FGA0173 — Interação Humano-Computador (2026.2) • Grupo 10</span>
+          </div>
+          <h1 class="print-title">${escapeHtml(reportTitle)}</h1>
+          <div class="print-meta">
+            <span><strong>Emissão:</strong> ${dateStr}</span> •
+            <span><strong>Plataforma Avaliada:</strong> LinkedIn (Busca e Filtro de Vagas)</span> •
+            <span><strong>Sistema:</strong> Guia PrismaIHC</span>
+          </div>
+        </header>
+
+        <section class="print-section">
+          <h3 class="print-h3">1. Sumário Executivo de Conformidade</h3>
+          <div class="print-stats-grid">
+            <div class="print-stat-box">
+              <span class="print-stat-val">${stats.pct}%</span>
+              <span class="print-stat-lbl">Índice Geral</span>
+            </div>
+            <div class="print-stat-box">
+              <span class="print-stat-val" style="color: #10b981;">${stats.pass}</span>
+              <span class="print-stat-lbl">Atendidos</span>
+            </div>
+            <div class="print-stat-box">
+              <span class="print-stat-val print-stat-fail">${stats.fail}</span>
+              <span class="print-stat-lbl">Falhas</span>
+            </div>
+            <div class="print-stat-box">
+              <span class="print-stat-val">${stats.na}</span>
+              <span class="print-stat-lbl">N/A</span>
+            </div>
+            <div class="print-stat-box">
+              <span class="print-stat-val" style="color: #d97706;">${stats.pending}</span>
+              <span class="print-stat-lbl">Pendentes</span>
+            </div>
+          </div>
+        </section>
+
+        ${failuresHtml}
+        ${groupsHtml}
+
+        <footer class="print-footer">
+          <p>Relatório emitido pela bancada técnica de auditoria do <strong>Guia PrismaIHC</strong> — Grupo 10 (FGA0173 IHC 2026.2 / UnB).</p>
+          <p>Autoria técnica 100% autoral dos integrantes do Grupo 10. Em conformidade com a Declaração de Integridade Acadêmica e Uso de IA.</p>
+        </footer>
+      </div>
+    `;
+  }
+
+  function triggerPdfPrint(htmlContent, title) {
+    const printWindow = window.open("", "_blank", "width=920,height=800");
+    if (!printWindow) {
+      alert("Por favor, permita a abertura de janelas pop-up para gerar e salvar o relatório em PDF.");
+      return;
+    }
+    const styles = `
+      <style>
+        @page { size: A4; margin: 14mm; }
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          font-size: 10pt;
+          line-height: 1.48;
+          color: #0f172a;
+          margin: 0;
+          padding: 20px;
+          background: #ffffff;
+        }
+        .print-header {
+          border-bottom: 2px solid #0f2b48;
+          padding-bottom: 12px;
+          margin-bottom: 18px;
+        }
+        .print-header__top {
+          display: flex;
+          justify-content: space-between;
+          font-size: 8pt;
+          font-weight: 700;
+          color: #475569;
+          text-transform: uppercase;
+          margin-bottom: 8px;
+        }
+        .print-title {
+          font-size: 15pt;
+          font-weight: 800;
+          color: #0f2b48;
+          margin: 0 0 6px 0;
+        }
+        .print-meta {
+          font-size: 8.5pt;
+          color: #475569;
+        }
+        .print-h3 {
+          font-size: 11pt;
+          font-weight: 700;
+          color: #0f2b48;
+          border-bottom: 1px solid #cbd5e1;
+          padding-bottom: 4px;
+          margin: 18px 0 10px 0;
+        }
+        .print-h4 {
+          font-size: 9.5pt;
+          font-weight: 700;
+          color: #1e3a8a;
+          margin: 14px 0 6px 0;
+        }
+        .print-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 8px;
+          margin-bottom: 15px;
+        }
+        .print-stat-box {
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+          padding: 6px 8px;
+          text-align: center;
+          background: #f8fafc;
+        }
+        .print-stat-val {
+          display: block;
+          font-size: 13pt;
+          font-weight: 800;
+          color: #0f2b48;
+        }
+        .print-stat-fail {
+          color: #b91c1c;
+        }
+        .print-stat-lbl {
+          display: block;
+          font-size: 7.2pt;
+          font-weight: 600;
+          color: #475569;
+          text-transform: uppercase;
+        }
+        .print-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 8.5pt;
+          margin: 8px 0 16px 0;
+        }
+        .print-table th, .print-table td {
+          border: 1px solid #cbd5e1;
+          padding: 5px 7px;
+          text-align: left;
+          vertical-align: top;
+        }
+        .print-table th {
+          background: #f1f5f9;
+          font-weight: 700;
+          color: #0f2b48;
+        }
+        .print-sev-badge {
+          display: inline-block;
+          font-size: 7.5pt;
+          font-weight: 700;
+          padding: 2px 4px;
+          border-radius: 3px;
+        }
+        .sev-4 { background: #fee2e2; color: #991b1b; }
+        .sev-3 { background: #ffedd5; color: #9a3412; }
+        .sev-2 { background: #fef3c7; color: #92400e; }
+        .sev-1 { background: #e0e7ff; color: #3730a3; }
+        .print-list {
+          padding-left: 16px;
+          margin: 4px 0;
+          font-size: 8.5pt;
+        }
+        .print-list li {
+          margin: 2px 0;
+        }
+        .print-badge {
+          display: inline-block;
+          font-size: 7.2pt;
+          font-weight: 700;
+          padding: 1px 4px;
+          border-radius: 3px;
+          margin-right: 4px;
+        }
+        .status-pass { background: #dcfce7; color: #166534; }
+        .status-fail { background: #fee2e2; color: #991b1b; }
+        .status-na { background: #f1f5f9; color: #475569; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .print-footer {
+          margin-top: 22px;
+          border-top: 1px solid #e2e8f0;
+          padding-top: 10px;
+          font-size: 8pt;
+          color: #64748b;
+          text-align: center;
+        }
+        .print-actions-bar {
+          background: #0f2b48;
+          color: #ffffff;
+          padding: 10px 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+          border-radius: 6px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .print-actions-bar button {
+          background: #2563eb;
+          color: #ffffff;
+          border: none;
+          padding: 8px 16px;
+          font-size: 9.5pt;
+          font-weight: 700;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .print-actions-bar button:hover {
+          background: #1d4ed8;
+        }
+        @media print {
+          .print-actions-bar {
+            display: none !important;
+          }
+          body {
+            padding: 0;
+          }
+        }
+      </style>
+    `;
+
+    printWindow.document.open();
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="pt-BR">
+      <head>
+        <meta charset="utf-8">
+        <title>${escapeHtml(title)}</title>
+        ${styles}
+      </head>
+      <body>
+        <div class="print-actions-bar">
+          <span><strong>Visualização do Relatório Técnico Oficial</strong> — Selecione <em>"Salvar como PDF"</em> na janela de impressão</span>
+          <button type="button" onclick="window.print()">Salvar como PDF / Imprimir</button>
+        </div>
+        ${htmlContent}
+        <script>
+          window.addEventListener('load', () => {
+            setTimeout(() => {
+              window.print();
+            }, 350);
+          });
+        </script>
+      </body>
+      </html>
+    `);
+    printWindow.document.close();
   }
 
   function buildMarkdownReport(reportTitle, stats, groups) {
@@ -695,7 +1048,7 @@
           <button type="button" id="prisma-mark-visible" class="prisma-btn prisma-btn--primary">✓ Atender visíveis</button>
           <button type="button" id="prisma-toggle-details" class="prisma-btn">▾ Expandir todos</button>
           <button type="button" id="prisma-clear-page" class="prisma-btn">↺ Limpar</button>
-          <button type="button" id="prisma-export-page" class="prisma-btn">Exportar Relatório (.md)</button>
+          <button type="button" id="prisma-export-page" class="prisma-btn prisma-btn--primary">Exportar Relatório (PDF)</button>
         </div>
       </div>
       <div class="prisma-filter-bar">
@@ -968,10 +1321,13 @@
         normas: m.badges.norma,
       }));
       const stats = computeStats(entries);
-      const md = buildMarkdownReport(`Relatório — ${pageTitle}`, stats, [
-        { label: pageTitle, ...stats, entries },
-      ]);
-      openReportModal(md);
+      const title = `Relatório — ${pageTitle}`;
+      const groups = [{ label: pageTitle, ...stats, entries }];
+      const html = buildHtmlReport(title, stats, groups);
+      const md = buildMarkdownReport(title, stats, groups);
+      openReportModal(title, html, md, () => {
+        triggerPdfPrint(html, title);
+      });
     });
 
     refreshPageState();
@@ -996,6 +1352,9 @@
   // =========================================================================
   // 3. MODAL COMPARTILHADO DE EXPORTAÇÃO MARKDOWN
   // =========================================================================
+  let currentPrintCallback = null;
+  let currentMarkdownText = "";
+
   function ensureModal() {
     let backdrop = document.getElementById("prisma-report-modal");
     if (backdrop) return backdrop;
@@ -1003,15 +1362,21 @@
     backdrop.id = "prisma-report-modal";
     backdrop.className = "prisma-modal-backdrop";
     backdrop.innerHTML = `
-      <div class="prisma-modal" role="dialog" aria-modal="true" aria-label="Relatório de Auditoria em Markdown">
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem;">
-          <strong style="font-size:1rem;">Prévia do Relatório Fundamentado (.md)</strong>
+      <div class="prisma-modal prisma-modal--report" role="dialog" aria-modal="true" aria-label="Prévia do Relatório Oficial em PDF">
+        <div class="prisma-modal__header">
+          <div>
+            <strong style="font-size:1.05rem; color:var(--prisma-text);" id="prisma-modal-title">Prévia do Relatório Técnico Oficial</strong>
+            <div style="font-size:0.75rem; color:var(--prisma-muted);">Selecione "Salvar como PDF" na janela de impressão do navegador</div>
+          </div>
           <button type="button" id="prisma-modal-close" class="prisma-btn">✕ Fechar</button>
         </div>
-        <pre id="prisma-modal-pre"></pre>
-        <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.65rem; margin-top:0.85rem;">
-          <span id="prisma-copy-ok" style="font-size:0.78rem; color:#10b981; display:none; font-weight:700;">✓ Copiado!</span>
-          <button type="button" id="prisma-modal-copy" class="prisma-btn prisma-btn--primary">Copiar Markdown</button>
+        <div id="prisma-modal-preview-body" class="prisma-report-preview-box"></div>
+        <div class="prisma-modal__footer">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span id="prisma-copy-ok" style="font-size:0.78rem; color:#10b981; display:none; font-weight:700;">✓ Copiado!</span>
+            <button type="button" id="prisma-modal-copy" class="prisma-btn">Copiar Texto (.md)</button>
+          </div>
+          <button type="button" id="prisma-modal-print-btn" class="prisma-btn prisma-btn--primary">🖶 Imprimir / Salvar em PDF</button>
         </div>
       </div>
     `;
@@ -1024,16 +1389,27 @@
       if (e.target === backdrop) backdrop.classList.remove("is-open");
     });
     backdrop.querySelector("#prisma-modal-copy").addEventListener("click", () => {
-      const txt = backdrop.querySelector("#prisma-modal-pre").textContent;
-      if (navigator.clipboard) navigator.clipboard.writeText(txt);
+      if (navigator.clipboard && currentMarkdownText) {
+        navigator.clipboard.writeText(currentMarkdownText);
+      }
       backdrop.querySelector("#prisma-copy-ok").style.display = "inline";
+    });
+    backdrop.querySelector("#prisma-modal-print-btn").addEventListener("click", () => {
+      if (typeof currentPrintCallback === "function") {
+        currentPrintCallback();
+      }
     });
     return backdrop;
   }
 
-  function openReportModal(markdownText) {
+  function openReportModal(title, htmlContent, markdownText, onPrint) {
     const modal = ensureModal();
-    modal.querySelector("#prisma-modal-pre").textContent = markdownText;
+    currentPrintCallback = onPrint;
+    currentMarkdownText = markdownText;
+    const titleEl = modal.querySelector("#prisma-modal-title");
+    if (titleEl) titleEl.textContent = title;
+    const previewEl = modal.querySelector("#prisma-modal-preview-body");
+    if (previewEl) previewEl.innerHTML = htmlContent;
     modal.querySelector("#prisma-copy-ok").style.display = "none";
     modal.classList.add("is-open");
   }
