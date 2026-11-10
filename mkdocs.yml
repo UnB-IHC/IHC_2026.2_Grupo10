@@ -50,10 +50,10 @@ markdown_extensions:
       clickable_checkbox: true
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2.1
 
 extra_javascript:
-  - javascripts/auditoria.js
+  - javascripts/auditoria.js?v=2.1
 
 nav:
   - Início: index.md
