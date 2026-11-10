@@ -1,0 +1,1903 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guia de Concepção e Checklist de Auditoria em IHC e Acessibilidade Digital - Grupo 10 (UnB 2026.2)">
+      
+      
+      
+        <link rel="canonical" href="https://unb-ihc.github.io/IHC_2026.2_Grupo10/05-ferramentas/tutoriais-passo-a-passo.html">
+      
+      
+        <link rel="prev" href="comparativo-ferramentas.html">
+      
+      
+        <link rel="next" href="../sobre/declaracao-ia.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../imagens/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Roteiros de Teste Passo a Passo - PrismaIHC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css?v=2.1">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testes-praticos-de-ferramentas-e-passo-a-passo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../index.html" title="PrismaIHC" class="md-header__button md-logo" aria-label="PrismaIHC" data-md-component="logo">
+      
+  <img src="../imagens/logo-prismaihc.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PrismaIHC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roteiros de Teste Passo a Passo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UnB-IHC/IHC_2026.2_Grupo10" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnB-IHC/IHC_2026.2_Grupo10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-totalx-personas/total-experience.html" class="md-tabs__link">
+          
+  
+  
+  Total X e Personas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-jornadas-blueprints/user-journey-vs-flows.html" class="md-tabs__link">
+          
+  
+  
+  Jornadas, Blueprint e Omnicanal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-cognicao-ui-figma/cognicao-usabilidade.html" class="md-tabs__link">
+          
+  
+  
+  Cognição, IHC, UI e Figma
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../04-web-normas/web-semantica-conteudo.html" class="md-tabs__link">
+          
+  
+  
+  Web, NBR 17225 e WCAG 2.2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="comparativo-ferramentas.html" class="md-tabs__link">
+          
+  
+  
+  Ferramentas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sobre/declaracao-ia.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Declaração de Uso de IA
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PrismaIHC" class="md-nav__button md-logo" aria-label="PrismaIHC" data-md-component="logo">
+      
+  <img src="../imagens/logo-prismaihc.svg" alt="logo">
+
+    </a>
+    PrismaIHC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UnB-IHC/IHC_2026.2_Grupo10" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnB-IHC/IHC_2026.2_Grupo10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Total X e Personas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Total X e Personas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/total-experience.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX, CX, EX e TX (Total X)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/design-empatico-canvas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Empático e Canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/personas-como-criar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas Inclusivas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/personas-ecossistemicas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas Ecossistêmicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jornadas, Blueprint e Omnicanal
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jornadas, Blueprint e Omnicanal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/user-journey-vs-flows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fluxos de Navegação (User Flows)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/omnicanalidade.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Omnicanalidade e Paridade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/blueprint-morgan-miller.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palco e Bastidores (Blueprint)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/blueprint-situacoes-kalbach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento As-Is para To-Be (Kalbach)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognição, IHC, UI e Figma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cognição, IHC, UI e Figma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/cognicao-usabilidade.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acessibilidade Cognitiva e COGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/heuristicas-nielsen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heurísticas de Nielsen (H01 a H10)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/design-ui.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Visual de UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/ui-prototipacao-figma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototipação e Handoff no Figma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web, NBR 17225 e WCAG 2.2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web, NBR 17225 e WCAG 2.2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-web-normas/web-semantica-conteudo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Código Semântico, Mídia e Conteúdo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-web-normas/normas-nbr-wcag.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normas NBR 17225, 17060 e WCAG 2.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ferramentas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comparativo-ferramentas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparativo de Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiros de Teste Passo a Passo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tutoriais-passo-a-passo.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiros de Teste Passo a Passo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-a-as-11-ferramentas-dos-filtros-de-auditoria-web-ferramenta-ferramenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte A: As 11 Ferramentas dos Filtros de Auditoria Web (Ferramenta: Ferramenta)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte A: As 11 Ferramentas dos Filtros de Auditoria Web (Ferramenta: Ferramenta)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-inspecao-manual-heuristica-ferramenta-inspecao-manual-heuristica-4-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Inspeção Manual / Heurística: Ferramenta: Inspeção Manual / Heurística [4] [14]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-navegacao-por-teclado-ferramenta-teclado-tab-esc-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Navegação por Teclado: Ferramenta: Teclado (Tab / Esc) [1] [2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-navegador-devtools-ferramenta-devtools-zoom-refluxo-e-visao-7-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Navegador DevTools: Ferramenta: DevTools (Zoom, Refluxo e Visão) [7] [15]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wave-web-accessibility-evaluation-tool-ferramenta-wave-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. WAVE: Web Accessibility Evaluation Tool — Ferramenta: WAVE [6]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-axe-devtools-deque-ferramenta-axe-devtools-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Axe DevTools (Deque): Ferramenta: Axe DevTools [5]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-google-lighthouse-ferramenta-google-lighthouse-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Lighthouse: Ferramenta: Google Lighthouse [7]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-accessibility-insights-for-web-ferramenta-accessibility-insights-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Accessibility Insights for Web: Ferramenta: Accessibility Insights [8]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-colour-contrast-analyser-cca-tpgi-ferramenta-colour-contrast-analyser-cca-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Colour Contrast Analyser (CCA: TPGi) — Ferramenta: Colour Contrast Analyser (CCA) [9]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-ases-web-govbr-emag-ferramenta-ases-web-govbr-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ASES Web (Gov.br / eMAG): Ferramenta: ASES Web (Gov.br) [10]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-leitores-de-tela-desktop-ferramenta-nvda-voiceover-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Leitores de Tela Desktop: Ferramenta: NVDA / VoiceOver [11]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-tecnologias-assistivas-moveis-ferramenta-talkback-voiceover-mobile-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Tecnologias Assistivas Móveis: Ferramenta: TalkBack / VoiceOver Mobile [13]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-b-ferramenta-preventiva-de-prototipo-pre-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte B: Ferramenta Preventiva de Protótipo (Pré-Código)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte B: Ferramenta Preventiva de Protótipo (Pré-Código)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-stark-no-figma-apoio-ao-guia-de-prototipacao-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Stark no Figma (Apoio ao Guia de Prototipação) [12]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas-e-documentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências Bibliográficas e Documentais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/declaracao-ia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Declaração de Uso de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-a-as-11-ferramentas-dos-filtros-de-auditoria-web-ferramenta-ferramenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte A: As 11 Ferramentas dos Filtros de Auditoria Web (Ferramenta: Ferramenta)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte A: As 11 Ferramentas dos Filtros de Auditoria Web (Ferramenta: Ferramenta)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-inspecao-manual-heuristica-ferramenta-inspecao-manual-heuristica-4-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Inspeção Manual / Heurística: Ferramenta: Inspeção Manual / Heurística [4] [14]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-navegacao-por-teclado-ferramenta-teclado-tab-esc-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Navegação por Teclado: Ferramenta: Teclado (Tab / Esc) [1] [2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-navegador-devtools-ferramenta-devtools-zoom-refluxo-e-visao-7-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Navegador DevTools: Ferramenta: DevTools (Zoom, Refluxo e Visão) [7] [15]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-wave-web-accessibility-evaluation-tool-ferramenta-wave-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. WAVE: Web Accessibility Evaluation Tool — Ferramenta: WAVE [6]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-axe-devtools-deque-ferramenta-axe-devtools-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Axe DevTools (Deque): Ferramenta: Axe DevTools [5]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-google-lighthouse-ferramenta-google-lighthouse-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Lighthouse: Ferramenta: Google Lighthouse [7]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-accessibility-insights-for-web-ferramenta-accessibility-insights-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Accessibility Insights for Web: Ferramenta: Accessibility Insights [8]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-colour-contrast-analyser-cca-tpgi-ferramenta-colour-contrast-analyser-cca-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Colour Contrast Analyser (CCA: TPGi) — Ferramenta: Colour Contrast Analyser (CCA) [9]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-ases-web-govbr-emag-ferramenta-ases-web-govbr-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ASES Web (Gov.br / eMAG): Ferramenta: ASES Web (Gov.br) [10]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-leitores-de-tela-desktop-ferramenta-nvda-voiceover-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Leitores de Tela Desktop: Ferramenta: NVDA / VoiceOver [11]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-tecnologias-assistivas-moveis-ferramenta-talkback-voiceover-mobile-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Tecnologias Assistivas Móveis: Ferramenta: TalkBack / VoiceOver Mobile [13]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-b-ferramenta-preventiva-de-prototipo-pre-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte B: Ferramenta Preventiva de Protótipo (Pré-Código)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte B: Ferramenta Preventiva de Protótipo (Pré-Código)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-stark-no-figma-apoio-ao-guia-de-prototipacao-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Stark no Figma (Apoio ao Guia de Prototipação) [12]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas-e-documentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências Bibliográficas e Documentais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+<p><span class="prisma-pill-tag">Guia Metodológico • Bancada Prática</span></p>
+<h1 id="testes-praticos-de-ferramentas-e-passo-a-passo">Testes Práticos de Ferramentas e Passo a Passo</h1>
+<p>Esta página apresenta o guia completo e os comentários críticos das <strong>11 ferramentas e métodos de auditoria web</strong> integrados ao filtro <strong><code>Ferramenta: Ferramenta</code></strong> dos checklists — além do plugin preventivo <strong>Stark no Figma</strong> — cobrindo de ponta a ponta os testes da WCAG 2.2 <a href="#ref-1">[1]</a>, ABNT NBR 17225:2025 <a href="#ref-2">[2]</a>, ABNT NBR 17060:2022 <a href="#ref-13">[13]</a>, LBI <a href="#ref-3">[3]</a> e Governo Digital <a href="#ref-4">[4]</a>.</p>
+<hr />
+<h2 id="parte-a-as-11-ferramentas-dos-filtros-de-auditoria-web-ferramenta-ferramenta">Parte A: As 11 Ferramentas dos Filtros de Auditoria Web (<code>Ferramenta: Ferramenta</code>)</h2>
+<h3 id="1-inspecao-manual-heuristica-ferramenta-inspecao-manual-heuristica-4-14">1. Inspeção Manual / Heurística: <code>Ferramenta: Inspeção Manual / Heurística</code> <a href="#ref-4">[4]</a> <a href="#ref-14">[14]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Avaliar aspectos que nenhum robô compreende: clareza de fluxos, Heurísticas de Nielsen, carga cognitiva (W3C COGA), Linguagem Simples (Lei 15.263/2025), prevenção/recuperação de erros e paridade omnicanal.</li>
+<li><strong>Comentário crítico:</strong> É onde surgem as barreiras mais graves de abandono de tarefa (jargões, perda de dados em formulário, falta de botão voltar ou suporte inacessível), devendo sempre ser guiada por tarefas reais e perfis de personas.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para a Inspeção Manual / Heurística</summary>
+<ol>
+<li>Escolha de <strong>2 a 3 tarefas críticas</strong> do site (ex.: buscar informação/serviço, preencher cadastro ou formulário com erro intencional, acionar ajuda/suporte).</li>
+<li>Percorra cada tarefa observando visibilidade de etapa, vocabulário simples, saídas de emergência (voltar/cancelar/desfazer) e clareza das mensagens.</li>
+<li>Ao encontrar violação nos checklists, clique em <strong>✕</strong>, classifique a <strong>Severidade de Nielsen (1 a 4)</strong> e anote a URL/componente exato.</li>
+</ol>
+</details>
+<h3 id="2-navegacao-por-teclado-ferramenta-teclado-tab-esc-1-2">2. Navegação por Teclado: <code>Ferramenta: Teclado (Tab / Esc)</code> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Homologar operabilidade sem mouse (<code>2.1.1</code>), ausência de armadilhas (<code>2.1.2</code>), link de pular para o conteúdo (<code>2.4.1</code>), ordem lógica (<code>2.4.3</code>) e foco visível não encoberto (<code>2.4.7</code>, <code>2.4.11</code>, <code>2.4.13</code>).</li>
+<li><strong>Comentário crítico:</strong> É o teste manual mais rápido e revelador de acessibilidade técnica: em menos de 3 minutos expõe menus inacessíveis, <code>&lt;div&gt;</code> clicáveis que não recebem foco e modais que prendem o usuário.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para auditar via Teclado (Tab / Esc)</summary>
+<ol>
+<li>Recarregue a página, solte o mouse e pressione <code>Tab</code> logo no início para verificar se surge o atalho <strong>"Pular para o conteúdo principal"</strong>.</li>
+<li>Avance com <code>Tab</code> e retroceda com <code>Shift + Tab</code> por toda a tela: confira se o contorno de foco é sempre visível e nunca fica escondido atrás de cabeçalhos ou banners fixos.</li>
+<li>Acione botões com <code>Enter</code>/<code>Espaço</code>, navegue por abas/menus com setas e abra modais conferindo se <code>Esc</code> fecha a janela devolvendo o foco ao botão de origem.</li>
+</ol>
+</details>
+<h3 id="3-navegador-devtools-ferramenta-devtools-zoom-refluxo-e-visao-7-15">3. Navegador DevTools: <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code> <a href="#ref-7">[7]</a> <a href="#ref-15">[15]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Testar refluxo responsivo a 400% (<code>320px</code> CSS), zoom de 200%, dimensões de alvos clicáveis (<code>24×24 px</code>), preferência <code>prefers-reduced-motion</code>, árvore de acessibilidade e simulação de deficiências visuais.</li>
+<li><strong>Comentário crítico:</strong> Nativo no Chrome, Edge e Firefox, permite validar critérios visuais, motores e vestibulares da WCAG 2.2 sem instalar nada externo.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o DevTools (Zoom, Refluxo e Visão)</summary>
+<ol>
+<li>Pressione <code>F12</code> e ative a barra de dispositivos (<code>Ctrl + Shift + M</code>), ajustando a largura para <strong><code>320px</code> × <code>640px</code></strong> (equivalente a 400% de zoom em <code>1280px</code>) para verificar se não há rolagem horizontal nem texto cortado.</li>
+<li>Use o seletor de inspeção (<code>Ctrl + Shift + C</code>) sobre botões e ícones para confirmar área computada mínima de <strong><code>24 × 24 px</code></strong> (ideal <code>44 × 44 px</code>).</li>
+<li>Abra o menu <code>Ctrl + Shift + P</code> → digite <strong>Rendering</strong>: teste <strong>Emulate prefers-reduced-motion: reduce</strong> e <strong>Emulate vision deficiencies</strong> (protanopia, deuteranopia, tritanopia, acromatopsia e visão turva).</li>
+</ol>
+</details>
+<h3 id="4-wave-web-accessibility-evaluation-tool-ferramenta-wave-6">4. WAVE: Web Accessibility Evaluation Tool — <code>Ferramenta: WAVE</code> <a href="#ref-6">[6]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Inspeção visual didática da árvore de cabeçalhos (<code>H1–H6</code>), regiões semânticas, textos alternativos (<code>alt</code>), rótulos de formulário e links ambíguos.</li>
+<li><strong>Comentário crítico:</strong> Excelente para alinhar designers, redatores e desenvolvedores pelos ícones aplicados diretamente sobre a página; porém exige revisão humana para julgar se o texto do <code>alt</code> realmente descreve a imagem.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o WAVE</summary>
+<ol>
+<li>Clique no ícone da extensão <strong>WAVE</strong> no navegador (ou informe a URL em <code>wave.webaim.org</code> para páginas públicas).</li>
+<li>Na aba <strong>Details</strong>, revise todos os ícones vermelhos (erros críticos) e amarelos (alertas de links redundantes, PDFs ou textos suspeitos).</li>
+<li>Abra a aba <strong>Structure</strong> para conferir se <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> e a sequência <code>H1 → H2 → H3</code> estão corretos e sem saltos.</li>
+</ol>
+</details>
+<h3 id="5-axe-devtools-deque-ferramenta-axe-devtools-5">5. Axe DevTools (Deque): <code>Ferramenta: Axe DevTools</code> <a href="#ref-5">[5]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Triagem técnica rigorosa de HTML semântico, papéis/estados/propriedades WAI-ARIA (<code>4.1.2</code>), associação de <code>&lt;label&gt;</code>, idioma <code>lang</code> e contraste automático direto no DOM renderizado.</li>
+<li><strong>Comentário crítico:</strong> Referência de mercado pela política de baixíssimo índice de falsos positivos (funciona inclusive em SPAs dinâmicas após abrir modais ou estados de erro), mas cobre apenas regras verificáveis por código.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o Axe DevTools</summary>
+<ol>
+<li>Instale a extensão gratuita <strong>axe DevTools</strong> no Chrome ou Edge.</li>
+<li>Abra a página (inclusive após abrir um modal ou disparar validação de formulário), pressione <code>F12</code> e selecione a aba <strong>axe DevTools</strong>.</li>
+<li>Clique em <strong>Scan ALL of my page</strong>, use <strong>Highlight</strong> para localizar o elemento na tela e leia a recomendação técnica do nó no DOM.</li>
+</ol>
+</details>
+<h3 id="6-google-lighthouse-ferramenta-google-lighthouse-7">6. Google Lighthouse: <code>Ferramenta: Google Lighthouse</code> <a href="#ref-7">[7]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Diagnóstico automatizado rápido (nota 0 a 100) já embutido no Chrome/Edge para checar metadados (<code>&lt;title&gt;</code>, <code>lang</code>, <code>meta viewport</code> sem trava de zoom), nomes acessíveis, contraste básico e alvos móveis.</li>
+<li><strong>Comentário crítico:</strong> Ótimo como termômetro inicial e comparativo entre versões, mas <strong>tirar nota 100 não significa site acessível</strong>: ele testa apenas uma fração automatizável dos critérios e sempre exige os testes manuais ao lado.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o Google Lighthouse</summary>
+<ol>
+<li>Abra a página em uma janela anônima do Chrome ou Edge (para extensões não alterarem o DOM) e pressione <code>F12</code>.</li>
+<li>Na aba <strong>Lighthouse</strong>, marque a categoria <strong>Accessibility</strong>, escolha <strong>Mobile</strong> (mais rigoroso para alvos de toque e viewport) ou <strong>Desktop</strong> e clique em <strong>Analyze page load</strong>.</li>
+<li>Expanda <strong>Additional items to manually check</strong> abaixo da nota para não ignorar os pontos pendentes de revisão humana.</li>
+</ol>
+</details>
+<h3 id="7-accessibility-insights-for-web-ferramenta-accessibility-insights-8">7. Accessibility Insights for Web: <code>Ferramenta: Accessibility Insights</code> <a href="#ref-8">[8]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Desenhar visualmente a rota numerada da tecla <code>Tab</code> (<strong>Tab Stops</strong>) e destacar marcos de região (<strong>Landmarks</strong>) e cabeçalhos na tela.</li>
+<li><strong>Comentário crítico:</strong> É a melhor ferramenta para gerar capturas de tela comprobatórias em relatórios de auditoria, deixando visível para qualquer leitor quando o foco pula áreas, some ou fica preso.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o Accessibility Insights</summary>
+<ol>
+<li>Instale a extensão <strong>Accessibility Insights for Web</strong> (Microsoft) e clique no ícone sobre a página avaliada.</li>
+<li>Selecione <strong>Ad hoc tools → Tab stops</strong>, ative a chave e pressione <code>Tab</code> pela página: círculos e linhas numeradas desenharão o caminho exato do foco.</li>
+<li>No mesmo painel, ative <strong>Landmarks</strong> e <strong>Headings</strong> para inspecionar visualmente as regiões e níveis de título.</li>
+</ol>
+</details>
+<h3 id="8-colour-contrast-analyser-cca-tpgi-ferramenta-colour-contrast-analyser-cca-9">8. Colour Contrast Analyser (CCA: TPGi) — <code>Ferramenta: Colour Contrast Analyser (CCA)</code> <a href="#ref-9">[9]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Medir com conta-gotas o contraste exato de elementos que varredores automáticos deixam passar: ícones funcionais, bordas de inputs, estados <code>:hover</code>/<code>:focus</code> e texto sobre fotos ou gradientes.</li>
+<li><strong>Comentário crítico:</strong> Indispensável para comprovar conformidade nos critérios <code>1.4.3</code> (<strong>4,5:1</strong> texto normal / <strong>3:1</strong> texto grande), <code>1.4.11</code> (<strong>3:1</strong> componentes e gráficos) e <code>2.4.13</code> (<strong>3:1</strong> indicador de foco).</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o CCA</summary>
+<ol>
+<li>Instale o aplicativo gratuito <strong>Colour Contrast Analyser (CCA)</strong> no Windows ou macOS.</li>
+<li>Clique no conta-gotas de <strong>Cor do primeiro plano</strong> sobre o pixel mais claro/crítico da letra, ícone, borda ou anel de foco, e no de <strong>Cor do fundo</strong> na área adjacente.</li>
+<li>Verifique se a razão calculada aprova os indicadores <strong>1.4.3 (AA)</strong> e <strong>1.4.11 (AA)</strong>.</li>
+</ol>
+</details>
+<h3 id="9-ases-web-govbr-emag-ferramenta-ases-web-govbr-10">9. ASES Web (Gov.br / eMAG): <code>Ferramenta: ASES Web (Gov.br)</code> <a href="#ref-10">[10]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Avaliar páginas públicas quanto às recomendações brasileiras do <strong>eMAG 3.1</strong> (atalhos e estrutura de marcação, links, tabelas, formulários, multimídia e página/declaração de acessibilidade).</li>
+<li><strong>Comentário crítico:</strong> Essencial em auditorias de órgãos governamentais e portais institucionais no Brasil, mas avalia apenas o HTML estático entregue pelo servidor (não executa fluxos SPA em React/Vue) nem substitui a nova ABNT NBR 17225:2025.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o ASES Web</summary>
+<ol>
+<li>Acesse <a href="https://asesweb.governoeletronico.gov.br/">https://asesweb.governoeletronico.gov.br/</a> e informe a URL pública (ou cole o código-fonte HTML renderizado na aba <strong>Código Fonte</strong>).</li>
+<li>Clique em <strong>Executar</strong> e inspecione os erros e avisos agrupados por seção (<em>Marcação, Comportamento, Conteúdo/Informação, Apresentação, Multimídia e Formulários</em>).</li>
+</ol>
+</details>
+<h3 id="10-leitores-de-tela-desktop-ferramenta-nvda-voiceover-11">10. Leitores de Tela Desktop: <code>Ferramenta: NVDA / VoiceOver</code> <a href="#ref-11">[11]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Homologar na prática a experiência não visual: anúncio de nome/papel/estado (<code>4.1.2</code>), navegação rápida por cabeçalhos e regiões, leitura de tabelas, erros de formulário e mensagens dinâmicas (<code>4.1.3</code> / <code>aria-live</code>).</li>
+<li><strong>Comentário crítico:</strong> O <strong>Visualizador de Fala</strong> do NVDA (ou legenda do VoiceOver) permite documentar literalmente o que é lido (ex.: <em>"botão sem rótulo"</em>); complementa, mas nunca substitui testes com pessoas cegas experientes.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para auditar com NVDA / VoiceOver</summary>
+<ol>
+<li>No Windows, abra o <strong>NVDA</strong> gratuito (<code>Ctrl + Alt + N</code>) e ative <em>Menu NVDA (<code>Insert + N</code>) → Ferramentas → Visualizador de fala</em>; no macOS, ative o <strong>VoiceOver</strong> (<code>Cmd + F5</code>).</li>
+<li>Navegue pela página usando os atalhos reais de varredura: <code>H</code> (cabeçalhos), <code>D</code> (marcos/regiões), <code>F</code> (campos de formulário), <code>B</code> (botões) e <code>Insert + F7</code> (lista de links fora de contexto).</li>
+<li>Submeta um formulário com erro e filtre uma busca para confirmar se os avisos são anunciados sem precisar caçá-los pela tela.</li>
+</ol>
+</details>
+<h3 id="11-tecnologias-assistivas-moveis-ferramenta-talkback-voiceover-mobile-13">11. Tecnologias Assistivas Móveis: <code>Ferramenta: TalkBack / VoiceOver Mobile</code> <a href="#ref-13">[13]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Validar o site ou web-app diretamente no celular conforme a <strong>ABNT NBR 17060:2022</strong>: gestos de deslizar (<em>swipe</em>), alvos de toque confortáveis, rotação retrato/paisagem, teclados virtuais (<code>inputmode</code>) e ausência de gestos multiponto obrigatórios.</li>
+<li><strong>Comentário crítico:</strong> Muitas falhas graves de menus <em>hambúrguer</em>, modais móveis e carrosséis só aparecem ao testar no navegador móvel real com TalkBack (Android) ou VoiceOver (iOS).</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para auditar com TalkBack / VoiceOver Mobile</summary>
+<ol>
+<li>Ative o <strong>TalkBack</strong> (Android: <em>Configurações → Acessibilidade → TalkBack</em>) ou o <strong>VoiceOver</strong> (iOS: <em>Ajustes → Acessibilidade → VoiceOver</em>) no smartphone.</li>
+<li>Abra o site no navegador móvel e deslize um dedo para a direita/esquerda para percorrer todos os elementos na ordem lógica, dando <strong>toque duplo</strong> para acionar botões e menus.</li>
+<li>Gire o aparelho para a horizontal (paisagem) e amplie a fonte do sistema para verificar se o layout permanece íntegro e operável.</li>
+</ol>
+</details>
+<hr />
+<h2 id="parte-b-ferramenta-preventiva-de-prototipo-pre-codigo">Parte B: Ferramenta Preventiva de Protótipo (Pré-Código)</h2>
+<h3 id="12-stark-no-figma-apoio-ao-guia-de-prototipacao-12">12. Stark no Figma (Apoio ao Guia de Prototipação) <a href="#ref-12">[12]</a></h3>
+<ul>
+<li><strong>Adequação principal:</strong> Prevenir falhas de contraste, tipografia mínima e dependência exclusiva de cor ainda no arquivo <code>.fig</code>, antes do handoff para o desenvolvimento.</li>
+<li><strong>Comentário crítico:</strong> Reduz drasticamente o custo de correção ao barrar combinações inacessíveis na fase de UI, devendo ser combinado às anotações de foco e ordem de <code>Tab</code> do <a href="../03-cognicao-ui-figma/ui-prototipacao-figma.html">Guia de Prototipação no Figma</a>.</li>
+</ul>
+<details class="info">
+<summary>Passo a passo para usar o Stark no Figma</summary>
+<ol>
+<li>No arquivo do projeto no Figma, abra <strong>Plugins → Stark</strong>.</li>
+<li>Selecione textos, botões, ícones ou <em>Frames</em> e utilize <strong>Contrast</strong> (validando <code>4,5:1</code> e <code>3:1</code>) e <strong>Vision Simulator</strong> (testando protanopia, deuteranopia e acromatopsia).</li>
+</ol>
+</details>
+<hr />
+<h2 id="referencias-bibliograficas-e-documentais">Referências Bibliográficas e Documentais</h2>
+<ol>
+<li><a id="ref-1"></a> W3C WAI. <strong>Web Content Accessibility Guidelines (WCAG) 2.2</strong>. 2023. Disponível em: <a href="https://www.w3.org/TR/WCAG22/">https://www.w3.org/TR/WCAG22/</a>.</li>
+<li><a id="ref-2"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR 17225:2025 — Acessibilidade em conteúdo e aplicações web — Requisitos</strong>. Rio de Janeiro: ABNT, 2025.</li>
+<li><a id="ref-3"></a> BRASIL. <strong>Lei nº 13.146, de 6 de julho de 2015</strong> (Lei Brasileira de Inclusão da Pessoa com Deficiência).</li>
+<li><a id="ref-4"></a> BRASIL. Governo Digital. <strong>Guia de Boas Práticas para Acessibilidade Digital</strong>. 2023. Disponível em: <a href="https://www.gov.br/governodigital/">https://www.gov.br/governodigital/</a>.</li>
+<li><a id="ref-5"></a> DEQUE SYSTEMS. <strong>axe DevTools Documentation</strong>. Disponível em: <a href="https://docs.deque.com/devtools-html/">https://docs.deque.com/devtools-html/</a>.</li>
+<li><a id="ref-6"></a> WEBAIM. <strong>WAVE Web Accessibility Evaluation Tool</strong>. Disponível em: <a href="https://wave.webaim.org/">https://wave.webaim.org/</a>.</li>
+<li><a id="ref-7"></a> GOOGLE. <strong>Lighthouse Accessibility Audits</strong>. Disponível em: <a href="https://developer.chrome.com/docs/lighthouse/accessibility/">https://developer.chrome.com/docs/lighthouse/accessibility/</a>.</li>
+<li><a id="ref-8"></a> MICROSOFT. <strong>Accessibility Insights for Web</strong>. Disponível em: <a href="https://accessibilityinsights.io/docs/web/overview/">https://accessibilityinsights.io/docs/web/overview/</a>.</li>
+<li><a id="ref-9"></a> TPGi. <strong>Colour Contrast Analyser (CCA)</strong>. Disponível em: <a href="https://www.tpgi.com/color-contrast-checker/">https://www.tpgi.com/color-contrast-checker/</a>.</li>
+<li><a id="ref-10"></a> BRASIL. Governo Digital. <strong>ASES — Avaliador e Simulador de Acessibilidade em Sítios</strong>. Disponível em: <a href="https://asesweb.governoeletronico.gov.br/">https://asesweb.governoeletronico.gov.br/</a>.</li>
+<li><a id="ref-11"></a> NV ACCESS. <strong>NVDA User Guide</strong>. Disponível em: <a href="https://www.nvaccess.org/help/">https://www.nvaccess.org/help/</a>.</li>
+<li><a id="ref-12"></a> STARK. <strong>Stark Accessibility Tools for Figma</strong>. Disponível em: <a href="https://www.getstark.co/">https://www.getstark.co/</a>.</li>
+<li><a id="ref-13"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR 17060:2022 — Acessibilidade em aplicativos de dispositivos móveis — Requisitos</strong>. Rio de Janeiro: ABNT, 2022.</li>
+<li><a id="ref-14"></a> NIELSEN, Jakob. <strong>Severity Ratings for Usability Problems</strong>. Nielsen Norman Group, 1994. Disponível em: <a href="https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/">https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/</a>.</li>
+<li><a id="ref-15"></a> CHROME FOR DEVELOPERS. <strong>Accessibility features Reference — Chrome DevTools</strong>. Disponível em: <a href="https://developer.chrome.com/docs/devtools/accessibility/reference/">https://developer.chrome.com/docs/devtools/accessibility/reference/</a>.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/auditoria.js?v=2.1"></script>
+      
+    
+  </body>
+</html>

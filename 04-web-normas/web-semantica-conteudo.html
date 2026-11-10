@@ -1,0 +1,1746 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guia de Concepção e Checklist de Auditoria em IHC e Acessibilidade Digital - Grupo 10 (UnB 2026.2)">
+      
+      
+      
+        <link rel="canonical" href="https://unb-ihc.github.io/IHC_2026.2_Grupo10/04-web-normas/web-semantica-conteudo.html">
+      
+      
+        <link rel="prev" href="../03-cognicao-ui-figma/ui-prototipacao-figma.html">
+      
+      
+        <link rel="next" href="normas-nbr-wcag.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../imagens/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Código Semântico, Mídia e Conteúdo - PrismaIHC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css?v=2.1">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#codigo-semantico-midia-e-conteudo-claro" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../index.html" title="PrismaIHC" class="md-header__button md-logo" aria-label="PrismaIHC" data-md-component="logo">
+      
+  <img src="../imagens/logo-prismaihc.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PrismaIHC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Código Semântico, Mídia e Conteúdo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="teal"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="teal"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UnB-IHC/IHC_2026.2_Grupo10" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnB-IHC/IHC_2026.2_Grupo10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-totalx-personas/total-experience.html" class="md-tabs__link">
+          
+  
+  
+  Total X e Personas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-jornadas-blueprints/user-journey-vs-flows.html" class="md-tabs__link">
+          
+  
+  
+  Jornadas, Blueprint e Omnicanal
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-cognicao-ui-figma/cognicao-usabilidade.html" class="md-tabs__link">
+          
+  
+  
+  Cognição, IHC, UI e Figma
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="web-semantica-conteudo.html" class="md-tabs__link">
+          
+  
+  
+  Web, NBR 17225 e WCAG 2.2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-ferramentas/comparativo-ferramentas.html" class="md-tabs__link">
+          
+  
+  
+  Ferramentas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sobre/declaracao-ia.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Declaração de Uso de IA
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PrismaIHC" class="md-nav__button md-logo" aria-label="PrismaIHC" data-md-component="logo">
+      
+  <img src="../imagens/logo-prismaihc.svg" alt="logo">
+
+    </a>
+    PrismaIHC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UnB-IHC/IHC_2026.2_Grupo10" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnB-IHC/IHC_2026.2_Grupo10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Total X e Personas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Total X e Personas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/total-experience.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX, CX, EX e TX (Total X)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/design-empatico-canvas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Empático e Canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/personas-como-criar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas Inclusivas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-totalx-personas/personas-ecossistemicas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas Ecossistêmicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jornadas, Blueprint e Omnicanal
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jornadas, Blueprint e Omnicanal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/user-journey-vs-flows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fluxos de Navegação (User Flows)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/omnicanalidade.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Omnicanalidade e Paridade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/blueprint-morgan-miller.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Palco e Bastidores (Blueprint)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-jornadas-blueprints/blueprint-situacoes-kalbach.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeamento As-Is para To-Be (Kalbach)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognição, IHC, UI e Figma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cognição, IHC, UI e Figma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/cognicao-usabilidade.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acessibilidade Cognitiva e COGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/heuristicas-nielsen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heurísticas de Nielsen (H01 a H10)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/design-ui.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Visual de UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-cognicao-ui-figma/ui-prototipacao-figma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototipação e Handoff no Figma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web, NBR 17225 e WCAG 2.2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web, NBR 17225 e WCAG 2.2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Código Semântico, Mídia e Conteúdo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="web-semantica-conteudo.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Código Semântico, Mídia e Conteúdo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-semantica-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura Semântica HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-e-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links e Formulários
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagens-audio-e-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imagens, Áudio e Vídeo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texto-adaptavel-e-linguagem-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texto Adaptável e Linguagem Simples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas-e-documentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências Bibliográficas e Documentais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="normas-nbr-wcag.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Normas NBR 17225, 17060 e WCAG 2.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ferramentas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-ferramentas/comparativo-ferramentas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparativo de Ferramentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-ferramentas/tutoriais-passo-a-passo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiros de Teste Passo a Passo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/declaracao-ia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Declaração de Uso de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-semantica-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura Semântica HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-e-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links e Formulários
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagens-audio-e-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imagens, Áudio e Vídeo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texto-adaptavel-e-linguagem-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texto Adaptável e Linguagem Simples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas-e-documentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências Bibliográficas e Documentais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+<p><span class="prisma-pill-tag">Checklist de Auditoria Web • Código, Mídia &amp; Texto</span></p>
+<h1 id="codigo-semantico-midia-e-conteudo-claro">Código Semântico, Mídia e Conteúdo Claro</h1>
+<p>A acessibilidade web nasce na árvore semântica do HTML (papel, nome e estado expostos a leitores de tela e controle por voz) aliada a mídias acessíveis e <strong>Linguagem Simples</strong> <a href="#ref-1">[1]</a> <a href="#ref-3">[3]</a> <a href="#ref-6">[6]</a>. Combine varredura automática, inspeção manual no DevTools e teste com tecnologia assistiva; quando o site não possuir áudio/vídeo ou formulários, marque <strong><code>N/A</code></strong>.</p>
+<hr />
+<details class="info">
+<summary>Consultar referência rápida: Escala de Severidade de Nielsen (0 a 4)</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Nível</th>
+<th style="text-align: left;">Classificação</th>
+<th style="text-align: left;">Critério de Impacto e Prioridade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>Não é problema</strong></td>
+<td style="text-align: left;">Não afeta a usabilidade nem a compreensão da tarefa.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Problema Cosmético</strong></td>
+<td style="text-align: left;">Detalhe estético superficial; corrigir apenas se houver tempo disponível.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;"><strong>Problema Simples (Menor)</strong></td>
+<td style="text-align: left;">Pequeno atrito ou dúvida pontual da qual o usuário se recupera facilmente.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>Problema Grave (Maior)</strong></td>
+<td style="text-align: left;">Dificulta de forma importante a tarefa, gerando frustração ou risco de abandono.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;"><strong>Catástrofe de Usabilidade</strong></td>
+<td style="text-align: left;">Bloqueia a conclusão da tarefa essencial ou causa perda de dados; correção imediata.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="estrutura-semantica-html">Estrutura Semântica HTML</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-01: Cada página possui <code>&lt;title&gt;</code> único e descritivo e declara o idioma principal (<code>lang="pt-BR"</code>) e eventuais trechos em outro idioma?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Cognitiva / TDAH</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: Google Lighthouse</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code> <code>Ferramenta: NVDA / VoiceOver</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.13.1</code>, <code>5.13.2</code> e <code>5.13.3</code>; WCAG 2.2, critérios <code>2.4.2</code> (A), <code>3.1.1</code> (A) e <code>3.1.2</code> (AA).</p>
+<ol>
+<li>Abra ao menos três páginas do site e confira se os títulos das abas são distintos e identificam o conteúdo atual.</li>
+<li>No DevTools, confirme se <code>&lt;html&gt;</code> declara <code>lang="pt-BR"</code> e se passagens estrangeiras relevantes possuem <code>lang</code> específico (ex.: <code>lang="en"</code>).</li>
+<li><strong>Critério de aprovação:</strong> Títulos de página são únicos e o leitor de tela pronuncia cada trecho com a fonética correta.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-02: A página possui um único <code>&lt;h1&gt;</code> principal e os demais cabeçalhos (<code>&lt;h2&gt;</code>–<code>&lt;h6&gt;</code>) seguem hierarquia lógica sem saltos de nível?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Dislexia</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: WAVE</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: NVDA / VoiceOver</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.3.1</code>, <code>5.3.2</code>, <code>5.3.3</code> e <code>5.3.5</code>; WCAG 2.2, critérios <code>1.3.1</code> (A), <code>2.4.6</code> (AA) e <code>2.4.10</code> (AAA).</p>
+<ol>
+<li>Na aba <strong>Structure</strong> do WAVE, confira se há exatamente um <code>&lt;h1&gt;</code> e se não ocorrem saltos (ex.: de <code>&lt;h2&gt;</code> direto para <code>&lt;h4&gt;</code>).</li>
+<li>Procure títulos visuais feitos apenas com negrito/<code>&lt;div&gt;</code> ou tags <code>&lt;h*&gt;</code> usadas só para aumentar fonte; navegue com a tecla <code>H</code> no NVDA.</li>
+<li><strong>Critério de aprovação:</strong> A árvore de cabeçalhos lida isoladamente funciona como um sumário fiel da página.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-03: O conteúdo está organizado em regiões semânticas (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>) e oferece link de salto para o conteúdo principal?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Motora / Teclado</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: Accessibility Insights</code> <code>Ferramenta: Teclado (Tab / Esc)</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: NVDA / VoiceOver</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.4.1</code>, <code>5.4.2</code>, <code>5.4.4</code>, <code>5.4.5</code> e <code>5.7.12</code>; WCAG 2.2, critérios <code>1.3.1</code> (A), <code>2.4.1</code> (A) e <code>4.1.2</code> (A).</p>
+<ol>
+<li>Ative <strong>Landmarks</strong> no Accessibility Insights e verifique se há um único <code>&lt;main&gt;</code> e se múltiplas tags <code>&lt;nav&gt;</code> possuem <code>aria-label</code> distintos.</li>
+<li>Recarregue a página e pressione <code>Tab</code>: confira se surge um link <em>"Pular para o conteúdo principal"</em> que move o foco direto ao <code>&lt;main&gt;</code>.</li>
+<li><strong>Critério de aprovação:</strong> As regiões cobrem a página com nomes claros (tecla <code>D</code> no NVDA) e é possível pular blocos repetidos.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-04: Listas e tabelas de dados usam marcação semântica correta (<code>ul</code>/<code>ol</code>, <code>th scope</code>, <code>caption</code>), sem usar tabelas apenas para leiaute?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Baixa Visão</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: WAVE</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: NVDA / VoiceOver</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.5.1</code>, <code>5.5.2</code>, <code>5.6.1</code>–<code>5.6.3</code>, <code>5.6.5</code> e Anexo <code>A.1.8</code>; WCAG 2.2, critério <code>1.3.1</code> (A).</p>
+<ol>
+<li>Verifique se agrupamentos de itens usam <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> ou <code>&lt;dl&gt;</code> (e não quebras <code>&lt;br&gt;</code> com hífens manuais).</li>
+<li>Quando houver tabelas de dados, confirme cabeçalhos <code>&lt;th scope="col|row"&gt;</code> e navegue com <code>Ctrl+Alt+Setas</code> no NVDA; tabelas inexistentes não reprovam o item se as listas estiverem corretas.</li>
+<li><strong>Critério de aprovação:</strong> O leitor anuncia a contagem de itens das listas e lê os cabeçalhos associados às células de tabelas.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-05: Controles interativos priorizam HTML nativo e, quando customizados, expõem papel (<code>role</code>), nome e estado (<code>aria-*</code>) atualizados?</strong> <a href="#ref-1">[1]</a> <a href="#ref-3">[3]</a> <a href="#ref-4">[4]</a> <a href="#ref-11">[11]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Controle por Voz</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: Axe DevTools</code> <code>Ferramenta: Google Lighthouse</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.13.10</code>–<code>5.13.13</code> e Anexo <code>A.1.6</code>; WCAG 2.2, critério <code>4.1.2</code> (A); WAI-ARIA 1.2 / APG.</p>
+<ol>
+<li>Inspecione sanfonas, abas, menus suspensos, modais e carrosséis no painel <strong>Accessibility</strong> do DevTools e rode o <strong>Axe DevTools</strong>.</li>
+<li>Abra e feche os componentes confirmando que <code>aria-expanded</code>, <code>aria-selected</code> ou <code>aria-checked</code> mudam dinamicamente conforme o estado visual.</li>
+<li><strong>Critério de aprovação:</strong> Nenhum controle interativo fica sem papel/nome válido nem anuncia estado defasado.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-06: Links navegam (<code>&lt;a href&gt;</code>), botões executam ações (<code>&lt;button&gt;</code>) e o nome acessível de cada controle contém o rótulo visível na tela?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-11">[11]</a></p>
+<ul>
+<li><code>Perfil: Controle por Voz</code> <code>Perfil: Leitor de Tela</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: Axe DevTools</code> <code>Ferramenta: Google Lighthouse</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.7.1</code>, <code>5.7.2</code>, <code>5.8.1</code>–<code>5.8.3</code> e <code>5.13.7</code>; WCAG 2.2, critérios <code>2.5.3</code> (A) e <code>4.1.2</code> (A).</p>
+<ol>
+<li>Procure elementos clicáveis construídos com <code>&lt;div onclick&gt;</code> ou <code>&lt;a href="#"&gt;</code> usados indevidamente como botões.</li>
+<li>Confira botões apenas de ícone (lupa, fechar, menu) e verifique se controles com texto visível preservam esse texto dentro do <code>aria-label</code> (para comando por voz).</li>
+<li><strong>Critério de aprovação:</strong> Todos os controles têm semântica correta e podem ser acionados falando o texto visível na tela.</li>
+</ol>
+</details>
+</li>
+</ul>
+<h2 id="links-e-formularios">Links e Formulários</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-07: O texto de cada link deixa claro seu destino (sem "clique aqui" isolado) e avisa quando abre nova aba ou baixa arquivo?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-10">[10]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Idoso / Baixo Letramento</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: eMAG / Gov.br</code> <code>Ferramenta: NVDA / VoiceOver</code> <code>Ferramenta: WAVE</code> <code>Ferramenta: ASES Web (Gov.br)</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.7.3</code>, <code>5.7.4</code> e <code>5.7.6</code>–<code>5.7.8</code>; WCAG 2.2, critério <code>2.4.4</code> (A); eMAG 3.1.</p>
+<ol>
+<li>Pressione <code>NVDA+F7</code> (lista de Links) ou revise os alertas de <em>Suspicious link text</em> no WAVE.</li>
+<li>Verifique se não há links genéricos ambíguos (<em>"saiba mais"</em>, <em>"acesse"</em>) apontando para URLs diferentes e se downloads indicam formato/tamanho (ex.: <code>PDF, 2 MB</code>).</li>
+<li><strong>Critério de aprovação:</strong> Cada link comunica claramente seu destino e comportamento esperado.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-08: Todo campo possui <code>&lt;label&gt;</code> visível associado, grupos usam <code>fieldset</code>/<code>legend</code>, obrigatórios são claros e dados aceitam <code>autocomplete</code>?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Motora / Teclado</code> <code>Perfil: Idoso / Baixo Letramento</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: WAVE</code> <code>Ferramenta: Axe DevTools</code> <code>Ferramenta: Google Lighthouse</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: NVDA / VoiceOver</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.9.1</code>–<code>5.9.3</code> e <code>5.9.6</code>–<code>5.9.8</code>; WCAG 2.2, critérios <code>1.3.1</code> (A), <code>1.3.5</code> (AA) e <code>3.3.2</code> (A).</p>
+<ol>
+<li>Clique no rótulo de cada campo de entrada/busca (o foco deve ir ao campo) e confirme que nenhum campo depende apenas de <code>placeholder</code>.</li>
+<li>Confira <code>&lt;fieldset&gt;</code>/<code>&lt;legend&gt;</code> em botões de rádio/checkboxes, indicação explícita de obrigatoriedade e <code>autocomplete</code> em dados pessoais.</li>
+<li><strong>Critério de aprovação:</strong> Navegando com <code>F</code> no NVDA, todo campo anuncia rótulo, agrupamento, tipo e obrigatoriedade.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-09: Erros de formulário identificam o campo afetado em texto explicando como corrigir, e mensagens de status são lidas via <code>aria-live</code>?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Cognitiva / TDAH</code> <code>Perfil: Daltonismo</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: NVDA / VoiceOver</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.9.9</code>, <code>5.9.10</code> e <code>5.13.8</code>; WCAG 2.2, critérios <code>3.3.1</code> (A), <code>3.3.3</code> (AA) e <code>4.1.3</code> (AA).</p>
+<ol>
+<li>Submeta campos vazios ou inválidos e verifique se o erro é associado ao campo (<code>aria-describedby</code> / <code>aria-invalid</code>), em texto e ícone (não só borda vermelha).</li>
+<li>Dispare buscas/filtros com o leitor de tela ligado e confirme se resultados dinâmicos (<em>"5 itens encontrados"</em>) são anunciados sem mover o foco.</li>
+<li><strong>Critério de aprovação:</strong> Erros e retornos dinâmicos são comunicados em texto claro e anunciados às tecnologias assistivas.</li>
+</ol>
+</details>
+</li>
+</ul>
+<h2 id="imagens-audio-e-video">Imagens, Áudio e Vídeo</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-10: Imagens informativas e funcionais possuem <code>alt</code> coerente, decorativas usam <code>alt=""</code> e não há texto preso em imagem?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-5">[5]</a></p>
+<ul>
+<li><code>Perfil: Leitor de Tela</code> <code>Perfil: Baixa Visão</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: WAVE</code> <code>Ferramenta: Google Lighthouse</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.2.1</code> a <code>5.2.5</code>; WCAG 2.2, critérios <code>1.1.1</code> (A) e <code>1.4.5</code> (AA).</p>
+<ol>
+<li>Com o WAVE e a Árvore de Decisão do W3C <a href="#ref-5">[5]</a>, audite imagens de conteúdo (descrição fiel), ícones clicáveis (ação realizada), decorativas (<code>alt=""</code>) e gráficos complexos (descrição adjacente).</li>
+<li>Procure banners com frases renderizadas dentro de JPG/PNG que ficam pixeladas no zoom e invisíveis ao leitor.</li>
+<li><strong>Critério de aprovação:</strong> Nenhuma informação visual relevante se perde ao navegar sem carregar imagens.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-11: Vídeos e áudios oferecem legendas sincronizadas, transcrição, audiodescrição (e Libras quando aplicável), sem som automático?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-8">[8]</a> <a href="#ref-9">[9]</a></p>
+<ul>
+<li><code>Perfil: Surdez / Libras</code> <code>Perfil: Leitor de Tela</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: Teclado (Tab / Esc)</code> <code>Ferramenta: ASES Web (Gov.br)</code> <code>Ferramenta: Inspeção Manual / Heurística</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.14.1</code>–<code>5.14.7</code>; WCAG 2.2, critérios <code>1.2.1</code>–<code>1.2.6</code> e <code>1.4.2</code> (A); NBR 16452; NBR 15610-3.</p>
+<ol>
+<li>Caso o site não possua vídeos nem áudios em seu escopo, marque <strong><code>N/A</code></strong>.</li>
+<li>Nos vídeos existentes, confira legendas descritivas (não apenas automáticas com erros), transcrição textual, audiodescrição para cenas mudas, suporte a Libras e player operável por teclado sem autoplay sonoro &gt; 3 s.</li>
+<li><strong>Critério de aprovação:</strong> Pessoas surdas e pessoas cegas obtêm integralmente o conteúdo audiovisual.</li>
+</ol>
+</details>
+</li>
+</ul>
+<h2 id="texto-adaptavel-e-linguagem-simples">Texto Adaptável e Linguagem Simples</h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-12: A página suporta zoom de 200% a 400% (refluxo em <code>320px</code>) e ajuste de espaçamento de texto sem rolagem horizontal nem cortes?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a></p>
+<ul>
+<li><code>Perfil: Baixa Visão</code> <code>Perfil: Dislexia</code> <code>Base: ABNT NBR 17225:2025</code> <code>Base: WCAG 2.2</code> <code>Ferramenta: DevTools (Zoom, Refluxo e Visão)</code> <code>Ferramenta: Google Lighthouse</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> NBR 17225, itens <code>5.10.4</code>, <code>5.12.1</code>–<code>5.12.4</code>, <code>5.12.6</code>, <code>5.12.7</code> e <code>5.13.5</code>; WCAG 2.2, critérios <code>1.4.4</code> (AA), <code>1.4.10</code> (AA) e <code>1.4.12</code> (AA).</p>
+<ol>
+<li>Verifique se <code>&lt;meta name="viewport"&gt;</code> não bloqueia o zoom (<code>user-scalable=no</code>) e aplique zoom de 200% e 400% em tela de <code>1280px</code> (ou largura <code>320px</code> no DevTools).</li>
+<li>Teste aumento de espaçamento (<code>line-height: 1.5</code>, letras <code>0.12em</code>, palavras <code>0.16em</code>) observando se textos somem ou sobrepõem caixas vizinhas.</li>
+<li><strong>Critério de aprovação:</strong> Todo o conteúdo reflui em coluna única sem perda de funcionalidade nem sobreposição.</li>
+</ol>
+</details>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>WEB-13: Os textos principais seguem Linguagem Simples. frases curtas em ordem direta, palavras comuns, ideia principal no início e siglas explicadas?</strong> <a href="#ref-1">[1]</a> <a href="#ref-2">[2]</a> <a href="#ref-6">[6]</a> <a href="#ref-7">[7]</a></p>
+<ul>
+<li><code>Perfil: Idoso / Baixo Letramento</code> <code>Perfil: Surdez / Libras</code> <code>Perfil: Dislexia</code> <code>Base: Linguagem Simples (Lei 15.263/2025)</code> <code>Base: ABNT NBR 17225:2025</code> <code>Ferramenta: Inspeção Manual / Heurística</code></li>
+</ul>
+<details class="info">
+<summary>Como auditar / Passo a passo</summary>
+<p><strong>Base normativa:</strong> Lei nº 15.263/2025; ABNT NBR ISO 24495-1:2024; NBR 17225, itens <code>3.34</code> e <code>5.12.10</code>–<code>5.12.12</code>; WCAG 2.2 <code>3.1.3</code>–<code>3.1.5</code> (AAA).</p>
+<ol>
+<li>Avalie três textos centrais do site (capa, instruções de serviço e aviso/erro) quanto às diretrizes da Lei 15.263/2025: voz ativa, frases curtas, uma ideia por parágrafo e listas escaneáveis.</li>
+<li>Verifique se siglas trazem significado expandido na primeira ocorrência (importante também para surdos sinalizantes de Libras que têm o português como L2).</li>
+<li><strong>Critério de aprovação:</strong> O leitor localiza, compreende e utiliza a informação na primeira leitura sem ajuda externa.</li>
+</ol>
+</details>
+</li>
+</ul>
+<hr />
+<h2 id="referencias-bibliograficas-e-documentais">Referências Bibliográficas e Documentais</h2>
+<ol>
+<li><a id="ref-1"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR 17225:2025</strong>: Acessibilidade em conteúdo e aplicações web: Requisitos. Rio de Janeiro: ABNT, 2025.</li>
+<li><a id="ref-2"></a> W3C. <strong>Web Content Accessibility Guidelines (WCAG) 2.2</strong>. W3C Recommendation, 2023. Disponível em: <a href="https://www.w3.org/TR/WCAG22/">https://www.w3.org/TR/WCAG22/</a>.</li>
+<li><a id="ref-3"></a> W3C. <strong>Accessible Rich Internet Applications (WAI-ARIA) 1.2</strong>. W3C Recommendation, 2023. Disponível em: <a href="https://www.w3.org/TR/wai-aria-1.2/">https://www.w3.org/TR/wai-aria-1.2/</a>.</li>
+<li><a id="ref-4"></a> W3C WAI. <strong>ARIA Authoring Practices Guide (APG)</strong>. Disponível em: <a href="https://www.w3.org/WAI/ARIA/apg/">https://www.w3.org/WAI/ARIA/apg/</a>.</li>
+<li><a id="ref-5"></a> W3C WAI. <strong>Images Tutorial</strong>: inclui a árvore de decisão do atributo alt. Disponível em: <a href="https://www.w3.org/WAI/tutorials/images/">https://www.w3.org/WAI/tutorials/images/</a>.</li>
+<li><a id="ref-6"></a> BRASIL. <strong>Lei nº 15.263, de 14 de novembro de 2025</strong>. Institui a Política Nacional de Linguagem Simples. Diário Oficial da União, Brasília, 17 nov. 2025.</li>
+<li><a id="ref-7"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR ISO 24495-1:2024</strong>: Linguagem simples: Parte 1: Princípios e diretrizes norteadores. Rio de Janeiro: ABNT, 2024.</li>
+<li><a id="ref-8"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR 16452:2016</strong>: Acessibilidade na comunicação: Audiodescrição. Rio de Janeiro: ABNT, 2016.</li>
+<li><a id="ref-9"></a> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>ABNT NBR 15610-3:2016</strong>: Televisão digital terrestre: Acessibilidade: Parte 3: Língua de Sinais (LIBRAS). Rio de Janeiro: ABNT, 2016.</li>
+<li><a id="ref-10"></a> BRASIL. Ministério do Planejamento, Orçamento e Gestão. <strong>eMAG: Modelo de Acessibilidade em Governo Eletrônico</strong>. Versão 3.1. Brasília, 2014. Disponível em: <a href="https://emag.governoeletronico.gov.br/">https://emag.governoeletronico.gov.br/</a>.</li>
+<li><a id="ref-11"></a> MOZILLA. <strong>MDN Web Docs: Acessibilidade</strong>. Disponível em: <a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility">https://developer.mozilla.org/pt-BR/docs/Web/Accessibility</a>.</li>
+<li><a id="ref-12"></a> BARBOSA, Simone Diniz Junqueira; SILVA, Bruno Santana da; SILVEIRA, Milene Selbach; GASPARINI, Isabela; DARIN, Ticianne; BARBOSA, Gabriel Diniz Junqueira. <strong>Interação Humano-Computador e Experiência do Usuário</strong>. Rio de Janeiro: Autopublicação, 2021.</li>
+<li><a id="ref-13"></a> FIGUEIREDO, Rejane Maria da Costa. <strong>Material de aula da disciplina FGA0173: Interação Humano-Computador</strong>. Brasília: Universidade de Brasília, 2026.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/auditoria.js?v=2.1"></script>
+      
+    
+  </body>
+</html>

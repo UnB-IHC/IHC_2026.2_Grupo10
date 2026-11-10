@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(99+) vagas de t.i remoto brasil | Vagas | LinkedIn</title>
+  <style>
+    :root {
+      --bg-canvas: #000000;
+      --bg-card: #1B1F23;
+      --bg-card-hover: #24292E;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --border-pill: rgba(255, 255, 255, 0.42);
+      --text-primary: rgba(255, 255, 255, 0.92);
+      --text-secondary: rgba(255, 255, 255, 0.62);
+      --text-muted: rgba(255, 255, 255, 0.45);
+      --linkedin-green: #37C898;
+      --linkedin-green-hover: #2BB385;
+      --linkedin-blue: #70B5F9;
+      --linkedin-blue-hover: #98CBFB;
+      --alert-blue-bg: #8BC4FF;
+      --premium-gold: #F8C77E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ==========================================================================
+       HEADER PRINCIPAL DO LINKEDIN
+       ========================================================================== */
+    .li-navbar {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-subtle);
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .li-navbar-inner {
+      width: 100%;
+      max-width: 1128px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      gap: 12px;
+    }
+
+    .li-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      max-width: 460px;
+    }
+
+    .li-logo {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .li-search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 410px;
+    }
+
+    .li-search-box {
+      display: flex;
+      align-items: center;
+      height: 34px;
+      background-color: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+      padding: 0 12px;
+      gap: 8px;
+    }
+
+    .li-search-box:focus-within {
+      border-color: #FFFFFF;
+      box-shadow: 0 0 0 1px #FFFFFF;
+      background-color: #121518;
+    }
+
+    .li-search-icon {
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .li-search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .li-search-clear {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+
+    .li-search-clear:hover {
+      color: var(--text-primary);
+    }
+
+    /* Sugestões de busca estilo nativo do LinkedIn */
+    .li-search-dropdown {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+      padding: 6px 0;
+      display: none;
+      z-index: 2000;
+    }
+
+    .li-search-wrap.open-dropdown .li-search-dropdown {
+      display: block;
+    }
+
+    .li-dropdown-item {
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    .li-dropdown-item:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .li-dropdown-tag {
+      font-size: 11.5px;
+      color: #1B1F23;
+      background: var(--linkedin-green);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Ícones de Navegação da Barra Superior */
+    .li-nav-right {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .li-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      height: 100%;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+      position: relative;
+      padding: 0 6px;
+    }
+
+    .li-nav-item:hover {
+      color: var(--text-primary);
+    }
+
+    .li-nav-item.active {
+      color: #FFFFFF;
+    }
+
+    .li-nav-item.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #FFFFFF;
+    }
+
+    .li-nav-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+    }
+
+    .li-nav-label {
+      font-size: 12px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    /* No modo Antes, os textos embaixo dos ícones somem quando a barra de busca está aberta */
+    body.mode-before .li-nav-label {
+      display: none !important;
+    }
+
+    body.mode-before .li-nav-item {
+      min-width: 56px;
+    }
+
+    .li-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #38434F;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2px;
+    }
+
+    .li-divider {
+      width: 1px;
+      height: 36px;
+      background-color: var(--border-subtle);
+      margin: 0 6px;
+    }
+
+    .li-premium-link {
+      color: var(--premium-gold);
+      font-size: 11.5px;
+      text-align: center;
+      line-height: 1.25;
+      text-decoration: underline;
+      max-width: 115px;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       BARRA SECUNDÁRIA DE FILTROS DE VAGAS (PADRÃO REAL DO LINKEDIN)
+       ========================================================================== */
+    .li-filter-bar {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 900;
+    }
+
+    .li-filter-inner {
+      width: 100%;
+      max-width: 1128px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .li-filter-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .li-pill {
+      height: 32px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-pill);
+      background: transparent;
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .li-pill:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .li-pill.active {
+      background-color: var(--linkedin-green);
+      border-color: var(--linkedin-green);
+      color: #1B1F23;
+    }
+
+    .li-pill.active:hover {
+      background-color: var(--linkedin-green-hover);
+    }
+
+    .li-pill-text-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 0 8px;
+      cursor: pointer;
+      height: 32px;
+    }
+
+    .li-pill-text-btn:hover {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    body.mode-before .only-after-pill {
+      display: none !important;
+    }
+
+    .only-before-pill {
+      display: none;
+    }
+
+    body.mode-before .only-before-pill {
+      display: inline-flex;
+    }
+
+    /* Popover de Modalidade (Presencial/remoto) */
+    .filter-popover {
+      position: absolute;
+      top: 38px;
+      left: 0;
+      width: 250px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.75);
+      padding: 14px;
+      display: none;
+      z-index: 1500;
+      color: var(--text-primary);
+      cursor: default;
+    }
+
+    .filter-popover.open {
+      display: block;
+    }
+
+    .popover-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 4px;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .popover-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--linkedin-green);
+      cursor: pointer;
+    }
+
+    .popover-footer {
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 10px;
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       CORPO PRINCIPAL: LISTAGEM DE VAGAS (ESQUERDA) + DETALHES DA VAGA (DIREITA)
+       ========================================================================== */
+    .li-main-wrapper {
+      max-width: 1128px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .li-sub-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .li-sub-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .li-location-btn {
+      color: var(--linkedin-blue);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .li-sub-links a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+      font-size: 12px;
+    }
+
+    .li-jobs-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      height: calc(100vh - 145px);
+      min-height: 540px;
+    }
+
+    .li-jobs-list-col {
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .li-job-card {
+      display: flex;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .li-job-card:hover {
+      background-color: var(--bg-card-hover);
+    }
+
+    .li-job-card.selected {
+      background-color: #24292F;
+    }
+
+    .li-company-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 12px;
+      color: #111;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .li-job-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .li-job-card-title {
+      color: var(--linkedin-blue);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .verified-icon {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .li-job-card-company {
+      color: var(--text-primary);
+      font-size: 13.5px;
+      margin-bottom: 2px;
+    }
+
+    .li-job-card-loc {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .li-alumni-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .unb-mini-flag {
+      width: 18px;
+      height: 13px;
+      border-radius: 2px;
+      background: linear-gradient(to bottom, #003366 33%, #FFFFFF 33%, #FFFFFF 66%, #006633 66%);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .li-job-card-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .li-job-card-meta .green-highlight {
+      color: var(--linkedin-green);
+      font-weight: 600;
+    }
+
+    .li-job-dismiss {
+      color: var(--text-secondary);
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      align-self: flex-start;
+      padding: 2px 4px;
+    }
+
+    .li-alert-bar {
+      margin-top: auto;
+      background-color: var(--alert-blue-bg);
+      color: #0F172A;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13.5px;
+      font-weight: 600;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .li-toggle-dark {
+      width: 44px;
+      height: 24px;
+      background: #1B1F23;
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .li-toggle-dark::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: var(--alert-blue-bg);
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 4px;
+    }
+
+    /* Coluna Direita: Detalhes da Vaga */
+    .li-job-detail-col {
+      padding: 24px 28px;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .li-detail-company-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .li-detail-company-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .li-detail-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .li-detail-sub {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .li-detail-tags {
+      display: flex;
+      gap: 8px;
+      margin: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .li-detail-tag {
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-pill);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .li-detail-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .li-btn-apply {
+      background-color: var(--linkedin-blue);
+      color: #0F172A;
+      border: none;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .li-btn-apply:hover {
+      background-color: var(--linkedin-blue-hover);
+    }
+
+    .li-btn-save {
+      background: transparent;
+      color: var(--linkedin-blue);
+      border: 1.5px solid var(--linkedin-blue);
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .li-match-card {
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+
+    .li-match-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .li-match-title {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .li-match-title span {
+      color: var(--linkedin-blue);
+    }
+
+    .li-match-btn {
+      background: transparent;
+      border: 1px solid var(--border-pill);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       GAVETA LATERAL "TODOS OS FILTROS" DO LINKEDIN
+       ========================================================================== */
+    .li-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 3000;
+      display: none;
+      justify-content: flex-end;
+    }
+
+    .li-drawer-backdrop.open {
+      display: flex;
+    }
+
+    .li-drawer {
+      width: 480px;
+      max-width: 92vw;
+      background: var(--bg-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border-subtle);
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.8);
+    }
+
+    .li-drawer-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .li-drawer-body {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .li-drawer-section {
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .li-drawer-section h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .li-drawer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .li-drawer-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      background: var(--bg-card);
+    }
+
+    body.mode-before .drawer-only-after {
+      display: none !important;
+    }
+
+    .drawer-only-before {
+      display: none;
+    }
+
+    body.mode-before .drawer-only-before {
+      display: block !important;
+    }
+
+    /* Dock de Mensagens (Canto Inferior Direito) */
+    .li-msg-dock {
+      position: fixed;
+      bottom: 0;
+      right: 24px;
+      width: 280px;
+      height: 44px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 800;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+    }
+
+    /* Chave Discreta de Alternância no Canto Inferior Esquerdo */
+    .mode-switcher-discreet {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      background: #1B1F23;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 6px;
+      padding: 4px;
+      display: inline-flex;
+      gap: 4px;
+      z-index: 4000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .mode-switcher-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .mode-switcher-btn.active {
+      background: #293138;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body class="mode-after">
+
+  <!-- BARRA DE NAVEGAÇÃO SUPERIOR DO LINKEDIN (SEM NENHUM BANNER ACIMA) -->
+  <header class="li-navbar">
+    <div class="li-navbar-inner">
+      <div class="li-nav-left">
+        <div class="li-logo" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34" fill="#FFFFFF">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+          </svg>
+        </div>
+
+        <div class="li-search-wrap" id="searchWrap">
+          <div class="li-search-box">
+            <span class="li-search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                <path d="M14.56 12.44L11.3 9.18a5.51 5.51 0 10-2.12 2.12l3.26 3.26a1.5 1.5 0 102.12-2.12zM3 6.5A3.5 3.5 0 116.5 10 3.5 3.5 0 013 6.5z"></path>
+              </svg>
+            </span>
+            <input
+              type="text"
+              class="li-search-input"
+              id="searchInput"
+              value="vagas de t.i remoto brasil"
+              placeholder="Pesquisar"
+              onfocus="document.getElementById('searchWrap').classList.add('open-dropdown')"
+              onblur="setTimeout(() => document.getElementById('searchWrap').classList.remove('open-dropdown'), 200)"
+              oninput="handleSearchInput(this.value)"
+            />
+            <button class="li-search-clear" title="Limpar busca" onclick="clearSearch()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                <path d="M8 1a7 7 0 107 7 7 7 0 00-7-7zm2.78 8.72a.75.75 0 01-1.06 1.06L8 9.06l-1.72 1.72a.75.75 0 01-1.06-1.06L6.94 8 5.22 6.28a.75.75 0 011.06-1.06L8 6.94l1.72-1.72a.75.75 0 011.06 1.06L9.06 8z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="li-search-dropdown">
+            <div class="li-dropdown-item" onclick="activateRemoteFilter()">
+              <span>vagas de t.i — <strong>em Vagas</strong></span>
+              <span class="li-dropdown-tag">Filtro: Remoto</span>
+            </div>
+            <div class="li-dropdown-item" onclick="activateRemoteFilter()">
+              <span>estágio t.i remoto — <strong>em Vagas</strong></span>
+              <span class="li-dropdown-tag">Filtro: Remoto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ícones de Navegação -->
+      <nav class="li-nav-right">
+        <a class="li-nav-item" title="Início">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1v-9.5z"></path>
+            </svg>
+          </span>
+          <span class="li-nav-label">Início</span>
+        </a>
+
+        <a class="li-nav-item" title="Networking">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="9" cy="7" r="3.2"></circle>
+              <path d="M3 19v-1.5A4.5 4.5 0 017.5 13h3A4.5 4.5 0 0115 17.5V19"></path>
+              <circle cx="17" cy="8" r="2.5"></circle>
+              <path d="M21 19v-1a3.5 3.5 0 00-2.5-3.35"></path>
+            </svg>
+          </span>
+          <span class="li-nav-label">Networking</span>
+        </a>
+
+        <a class="li-nav-item active" title="Vagas">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4.98 4.98 0 01-3-1H8a4.98 4.98 0 01-3 1H2v5a3 3 0 003 3h14a3 3 0 003-3v-5z"></path>
+            </svg>
+          </span>
+          <span class="li-nav-label">Vagas</span>
+        </a>
+
+        <a class="li-nav-item" title="Mensagens">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 12c0 4.42-4.03 8-9 8a10.6 10.6 0 01-3.6-.62L3 21l1.4-4.1A7.4 7.4 0 013 12c0-4.42 4.03-8 9-8s9 3.58 9 8z"></path>
+              <circle cx="8.5" cy="12" r="1" fill="currentColor"></circle>
+              <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+              <circle cx="15.5" cy="12" r="1" fill="currentColor"></circle>
+            </svg>
+          </span>
+          <span class="li-nav-label">Mensagens</span>
+        </a>
+
+        <a class="li-nav-item" title="Notificações">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 01-3.46 0"></path>
+            </svg>
+          </span>
+          <span class="li-nav-label">Notificações</span>
+        </a>
+
+        <a class="li-nav-item" title="Eu">
+          <div class="li-avatar">LB</div>
+          <span class="li-nav-label">Eu ▾</span>
+        </a>
+
+        <div class="li-divider"></div>
+
+        <a class="li-nav-item" title="Para negócios">
+          <span class="li-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <circle cx="6" cy="6" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="18" cy="6" r="2"></circle>
+              <circle cx="6" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="18" cy="12" r="2"></circle>
+              <circle cx="6" cy="18" r="2"></circle><circle cx="12" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle>
+            </svg>
+          </span>
+          <span class="li-nav-label">Para negócios ▾</span>
+        </a>
+
+        <div class="li-premium-link">
+          Experimente<br>Premium por R$ 0
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BARRA DE FILTROS DO LINKEDIN (LIMPA, SEM CAIXAS DE TEXTO DE IA) -->
+  <section class="li-filter-bar">
+    <div class="li-filter-inner">
+      <div class="li-filter-row">
+        <button class="li-pill active">
+          <span>Vagas</span>
+          <span>▾</span>
+        </button>
+
+        <!-- Pílula Presencial/remoto visível no Protótipo -->
+        <div style="position: relative;" class="only-after-pill">
+          <button class="li-pill active" id="pillRemote" onclick="toggleRemotePopover(event)">
+            <span id="pillRemoteLabel">Presencial/remoto: Remoto</span>
+            <span>▾</span>
+          </button>
+
+          <div class="filter-popover" id="remotePopover" onclick="event.stopPropagation()">
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" checked id="chkRemoto" onchange="syncFromPopover()" />
+              <span>Remoto</span>
+            </label>
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" id="chkHibrido" onchange="syncFromPopover()" />
+              <span>Híbrido</span>
+            </label>
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" id="chkPresencial" onchange="syncFromPopover()" />
+              <span>Presencial</span>
+            </label>
+            <div class="popover-footer">
+              <button class="li-pill" style="height: 28px; font-size: 12px;" onclick="toggleRemotePopover(event)">Cancelar</button>
+              <button class="li-pill active" style="height: 28px; font-size: 12px;" onclick="toggleRemotePopover(event)">Exibir resultados</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="li-pill" onclick="toggleDrawer(true)">
+          <span>Data de publicação</span>
+          <span>▾</span>
+        </button>
+
+        <button class="li-pill" onclick="toggleDrawer(true)">
+          <span>Empresa</span>
+          <span>▾</span>
+        </button>
+
+        <button class="li-pill" id="pillEasyApply" onclick="toggleEasyApply()">
+          <span>Candidatura simplificada</span>
+        </button>
+
+        <button class="li-pill" onclick="toggleDrawer(true)">
+          <span>Nível de experiência</span>
+          <span>▾</span>
+        </button>
+
+        <button class="li-pill" onclick="toggleDrawer(true)">
+          <span>Tipo de emprego</span>
+          <span>▾</span>
+        </button>
+
+        <button class="li-pill" onclick="this.classList.toggle('active')">Java</button>
+        <button class="li-pill" onclick="this.classList.toggle('active')">AWS</button>
+        <button class="li-pill" onclick="this.classList.toggle('active')">Azure</button>
+      </div>
+
+      <div class="li-filter-row">
+        <button class="li-pill" onclick="this.classList.toggle('active')">Cibersegurança</button>
+        <button class="li-pill" onclick="this.classList.toggle('active')">Fim</button>
+        <button class="li-pill" onclick="this.classList.toggle('active')">Verificação realizada</button>
+        <button class="li-pill-text-btn" onclick="toggleDrawer(true)">Todos os filtros</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="li-main-wrapper">
+    <div class="li-sub-bar">
+      <div class="li-sub-left">
+        <span id="resultsCounterText">99 + resultados</span>
+        <span class="li-location-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+            <path d="M8 1a5 5 0 00-5 5c0 3.75 5 9 5 9s5-5.25 5-9a5 5 0 00-5-5zm0 7a2 2 0 112-2 2 2 0 01-2 2z"></path>
+          </svg>
+          Brasil ▾
+        </span>
+      </div>
+      <div class="li-sub-links">
+        <a href="javascript:void(0)">Como as vagas promovidas são classificadas</a> ·
+        <a href="javascript:void(0)">Como funciona a pesquisa por IA</a>
+      </div>
+    </div>
+
+    <div class="li-jobs-grid">
+      <!-- COLUNA ESQUERDA: LISTA DE VAGAS -->
+      <div class="li-jobs-list-col" id="jobsListContainer"></div>
+
+      <!-- COLUNA DIREITA: DETALHE DA VAGA -->
+      <div class="li-job-detail-col">
+        <div class="li-detail-company-row">
+          <div class="li-detail-company-left">
+            <div class="li-company-logo" id="detailLogo" style="width: 32px; height: 32px; font-size: 9px; color: #E04F33;">
+              Baires
+            </div>
+            <span id="detailCompany">BairesDev</span>
+          </div>
+          <span style="color: var(--text-secondary); cursor: pointer; font-size: 18px;">•••</span>
+        </div>
+
+        <h1 class="li-detail-title">
+          <span id="detailTitle">IT Support Analyst - Remote Work | REF#159048</span>
+          <span class="verified-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2l7 3v6c0 5.25-3.5 9.75-7 11-3.5-1.25-7-5.75-7-11V5l7-3z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </span>
+        </h1>
+
+        <div class="li-detail-sub" id="detailSub">
+          São Paulo, São Paulo, Brasil · Compartilhada há 2 meses · Mais de 100 pessoas clicaram em Candidate-se
+        </div>
+        <div class="li-detail-sub">
+          Respostas gerenciadas fora do LinkedIn
+        </div>
+
+        <div class="li-detail-tags" id="detailTags">
+          <span class="li-detail-tag">Remoto</span>
+          <span class="li-detail-tag">Tempo integral</span>
+        </div>
+
+        <div class="li-detail-actions">
+          <button class="li-btn-apply">
+            <span>Candidatar-se</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+              <path d="M12 2H7v1.5h3.44L5.22 8.72l1.06 1.06L11.5 4.56V8H13V3a1 1 0 00-1-1z"></path>
+              <path d="M11 11H4V5h3V3.5H4A1.5 1.5 0 002.5 5v7A1.5 1.5 0 004 13.5h7a1.5 1.5 0 001.5-1.5V9H11v2z"></path>
+            </svg>
+          </button>
+          <button class="li-btn-save">Salvar</button>
+        </div>
+
+        <div class="li-match-card">
+          <div class="li-match-header">
+            <div>
+              <div class="li-match-title">
+                Algumas qualificações obrigatórias <span>não constam</span> do seu perfil e currículo
+              </div>
+            </div>
+            <div class="li-avatar" style="width: 38px; height: 38px; flex-shrink: 0;">LB</div>
+          </div>
+          <button class="li-match-btn">
+            <span>✦ Exibir detalhes da correspondência</span>
+          </button>
+          <div style="margin-top: 14px; font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between;">
+            <span>Beta • Estas informações são úteis?</span>
+            <span>Gostei &nbsp;·&nbsp; Não gostei</span>
+          </div>
+        </div>
+
+        <div class="li-match-card">
+          <h3 style="font-size: 16px; margin-bottom: 8px;">Veja como você se compara a mais de 100 pessoas que clicaram em Candidate-se</h3>
+          <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;" id="detailDesc">
+            Atuação em suporte técnico e desenvolvimento distribuído. Requisitos de inglês intermediário e experiência inicial com suporte a sistemas e redes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- GAVETA LATERAL "TODOS OS FILTROS" -->
+  <div class="li-drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
+    <div class="li-drawer" onclick="event.stopPropagation()">
+      <div class="li-drawer-header">
+        <span>Filtros de vagas</span>
+        <button class="li-job-dismiss" style="font-size: 20px;" onclick="toggleDrawer(false)">✕</button>
+      </div>
+      <div class="li-drawer-body">
+        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.45; margin-bottom: 18px;">
+          A pesquisa agora é mais conversacional. Refine seus resultados adicionando detalhes como localidade, setor e experiência diretamente na sua pesquisa (ex.: "Vagas de desenhista de moda para iniciantes nos Estados Unidos"). <a href="javascript:void(0)" style="color: var(--linkedin-blue);">Saiba mais</a>
+        </p>
+
+        <div class="li-drawer-section">
+          <h4>Sugestões com base na sua pesquisa</h4>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="li-pill">Java</span>
+            <span class="li-pill">AWS</span>
+            <span class="li-pill">Azure</span>
+            <span class="li-pill">Cibersegurança</span>
+            <span class="li-pill">Fim</span>
+          </div>
+        </div>
+
+        <!-- Seção Presencial/remoto (visível no Protótipo, ausente na versão Antes) -->
+        <div class="li-drawer-section drawer-only-after">
+          <h4>Presencial/remoto</h4>
+          <div class="li-drawer-grid">
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" checked id="drwRemoto" onchange="updateDrawerPreviewCount()" />
+              <span>Remoto</span>
+            </label>
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" id="drwHibrido" onchange="updateDrawerPreviewCount()" />
+              <span>Híbrido</span>
+            </label>
+            <label class="popover-option">
+              <input type="checkbox" class="popover-checkbox" id="drwPresencial" onchange="updateDrawerPreviewCount()" />
+              <span>Presencial</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="li-drawer-section">
+          <h4>Data de publicação</h4>
+          <div class="li-drawer-grid">
+            <label class="popover-option"><input type="radio" name="dt" value="all" class="popover-checkbox" checked onchange="updateDrawerPreviewCount()" /> <span>Último mês</span></label>
+            <label class="popover-option"><input type="radio" name="dt" value="week" class="popover-checkbox" onchange="updateDrawerPreviewCount()" /> <span>Última semana</span></label>
+            <label class="popover-option"><input type="radio" name="dt" value="24h" class="popover-checkbox" onchange="updateDrawerPreviewCount()" /> <span>Últimas 24 horas</span></label>
+          </div>
+        </div>
+
+        <div class="li-drawer-section">
+          <h4>Nível de experiência</h4>
+          <div class="li-drawer-grid">
+            <label class="popover-option"><input type="checkbox" class="popover-checkbox" checked id="drwEstagio" onchange="updateDrawerPreviewCount()" /> <span>Iniciante</span></label>
+            <label class="popover-option"><input type="checkbox" class="popover-checkbox" checked id="drwJunior" onchange="updateDrawerPreviewCount()" /> <span>Sênior</span></label>
+            <label class="popover-option"><input type="checkbox" class="popover-checkbox" checked id="drwPleno" onchange="updateDrawerPreviewCount()" /> <span>Gerente</span></label>
+            <label class="popover-option"><input type="checkbox" class="popover-checkbox" /> <span>Diretor</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="li-drawer-footer">
+        <button class="li-pill" onclick="resetAllFilters()">Redefinir</button>
+        <button class="li-btn-apply" id="drawerApplyBtn" style="height: 34px; font-size: 14px;" onclick="applyDrawerFilters()">
+          Resultados
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCK FLUTUANTE DE MENSAGENS -->
+  <div class="li-msg-dock">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="li-avatar" style="margin: 0;">LB</div>
+      <span>Mensagens</span>
+    </div>
+    <div style="color: var(--text-secondary); display: flex; gap: 12px; font-size: 13px;">
+      <span>•••</span>
+      <span>⌃</span>
+    </div>
+  </div>
+
+  <!-- SELETOR DISCRETO NO CANTO INFERIOR ESQUERDO -->
+  <div class="mode-switcher-discreet">
+    <button class="mode-switcher-btn active" id="btnAfter" onclick="setMode('after')">Protótipo (Depois)</button>
+    <button class="mode-switcher-btn" id="btnBefore" onclick="setMode('before')">Original (Antes)</button>
+  </div>
+
+  <script>
+    const shieldSvg = `<span class="verified-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l7 3v6c0 5.25-3.5 9.75-7 11-3.5-1.25-7-5.75-7-11V5l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg></span>`;
+
+    const allJobs = [
+      {
+        id: 1,
+        company: 'BairesDev',
+        logoText: 'Baires<br>Dev',
+        logoColor: '#E04F33',
+        logoBg: '#FFFFFF',
+        title: 'IT Support Analyst - Remote Work | REF#159048',
+        loc: 'São Paulo, SP (Remoto)',
+        modality: 'Remoto',
+        level: 'Estágio',
+        recent24h: false,
+        easyApply: false,
+        alumni: 21,
+        meta: 'há 2 meses',
+        sub: 'São Paulo, São Paulo, Brasil · Compartilhada há 2 meses · Mais de 100 pessoas clicaram em Candidate-se',
+        desc: 'Atuação 100% remota em suporte técnico e infraestrutura de TI.'
+      },
+      {
+        id: 2,
+        company: 'BairesDev',
+        logoText: 'Baires<br>Dev',
+        logoColor: '#E04F33',
+        logoBg: '#FFFFFF',
+        title: 'IT Support Analyst - Remote Work | REF#283636',
+        loc: 'São Bernardo do Campo, SP (Remoto)',
+        modality: 'Remoto',
+        level: 'Estágio',
+        recent24h: false,
+        easyApply: false,
+        alumni: 21,
+        meta: 'há 1 ano',
+        sub: 'São Bernardo do Campo, SP (Remoto) · Compartilhada há 1 ano',
+        desc: 'Suporte técnico remoto para clientes internacionais.'
+      },
+      {
+        id: 3,
+        company: 'Serasa Experian',
+        logoText: 'Serasa',
+        logoColor: '#6B21A8',
+        logoBg: '#FFFFFF',
+        title: 'Analista de Suporte Técnico Pleno',
+        loc: 'São Paulo, SP (Remoto)',
+        modality: 'Remoto',
+        level: 'Júnior',
+        recent24h: true,
+        easyApply: true,
+        alumni: 33,
+        meta: 'há 3 horas · <span class="green-highlight">Seja uma das primeiras pessoas a se candidatar</span>',
+        sub: 'São Paulo, SP (Remoto) · Anunciada há 3 horas · Seja uma das primeiras pessoas a se candidatar',
+        desc: 'Atuação remota na sustentação de sistemas e atendimento técnico.'
+      },
+      {
+        id: 4,
+        company: 'Remessa Online',
+        logoText: '10<br>anos',
+        logoColor: '#FFFFFF',
+        logoBg: '#1D4ED8',
+        title: 'Analista de Service Desk Pleno',
+        loc: 'Brasil (Remoto)',
+        modality: 'Remoto',
+        level: 'Júnior',
+        recent24h: false,
+        easyApply: true,
+        alumni: 12,
+        meta: '<span class="green-highlight">Avaliando candidaturas</span>',
+        sub: 'Brasil (Remoto) · Avaliando candidaturas ativamente',
+        desc: 'Atuação remota em Service Desk e operações de TI.'
+      },
+      {
+        id: 5,
+        company: 'Itaú Unibanco',
+        logoText: 'Itaú',
+        logoColor: '#FFFFFF',
+        logoBg: '#EC7000',
+        title: 'Estágio em Tecnologia e Suporte TI (Híbrido)',
+        loc: 'São Paulo, SP (Híbrido)',
+        modality: 'Híbrido',
+        level: 'Estágio',
+        recent24h: true,
+        easyApply: true,
+        alumni: 39,
+        meta: 'há 5 horas · <span class="green-highlight">Candidatura simplificada</span>',
+        sub: 'São Paulo, SP (Híbrido) · Anunciada há 5 horas',
+        desc: 'Vaga em modelo híbrido no polo de tecnologia.'
+      },
+      {
+        id: 6,
+        company: 'TOTVS',
+        logoText: 'TOTVS',
+        logoColor: '#111111',
+        logoBg: '#E2E8F0',
+        title: 'Analista de Suporte Técnico Júnior (Presencial)',
+        loc: 'Brasília, DF (Presencial)',
+        modality: 'Presencial',
+        level: 'Júnior',
+        recent24h: false,
+        easyApply: true,
+        alumni: 19,
+        meta: 'há 4 dias',
+        sub: 'Brasília, DF (Presencial) · Tempo integral',
+        desc: 'Atendimento presencial e suporte a sistemas.'
+      }
+    ];
+
+    let easyApplyOnly = false;
+
+    function getFilteredJobs() {
+      const r = document.getElementById('chkRemoto').checked;
+      const h = document.getElementById('chkHibrido').checked;
+      const p = document.getElementById('chkPresencial').checked;
+      const dtRadio = document.querySelector('input[name="dt"]:checked');
+      const dtVal = dtRadio ? dtRadio.value : 'all';
+
+      return allJobs.filter(job => {
+        const modMatch = (r && job.modality === 'Remoto') ||
+                         (h && job.modality === 'Híbrido') ||
+                         (p && job.modality === 'Presencial') ||
+                         (!r && !h && !p);
+        const dtMatch = (dtVal === '24h') ? job.recent24h : true;
+        const easyMatch = easyApplyOnly ? job.easyApply : true;
+        return modMatch && dtMatch && easyMatch;
+      });
+    }
+
+    function renderJobsList() {
+      const container = document.getElementById('jobsListContainer');
+      const filtered = getFilteredJobs();
+      document.getElementById('resultsCounterText').textContent =
+        filtered.length === 4 ? '99 + resultados' : `${filtered.length} resultados`;
+
+      let html = '';
+      filtered.forEach((job, idx) => {
+        html += `
+          <div class="li-job-card ${idx === 0 ? 'selected' : ''}" onclick="selectJobById(${job.id}, this)">
+            <div class="li-company-logo" style="background: ${job.logoBg}; color: ${job.logoColor}; border: 1px solid #eee;">
+              ${job.logoText}
+            </div>
+            <div class="li-job-card-info">
+              <div class="li-job-card-title">
+                <span>${job.title}</span>
+                ${shieldSvg}
+              </div>
+              <div class="li-job-card-company">${job.company}</div>
+              <div class="li-job-card-loc">${job.loc}</div>
+              <div class="li-alumni-row">
+                <span class="unb-mini-flag"></span>
+                <span>${job.alumni} ex-alunos da instituição trabalham aqui</span>
+              </div>
+              <div class="li-job-card-meta">${job.meta}</div>
+            </div>
+            <button class="li-job-dismiss" onclick="event.stopPropagation()">✕</button>
+          </div>
+        `;
+      });
+
+      html += `
+        <div class="li-alert-bar">
+          <span>Receber alertas de vaga para esta pesquisa</span>
+          <div class="li-toggle-dark"></div>
+        </div>
+      `;
+      container.innerHTML = html;
+      if (filtered.length > 0) {
+        selectJobById(filtered[0].id, container.querySelector('.li-job-card'));
+      }
+    }
+
+    function selectJobById(jobId, cardEl) {
+      document.querySelectorAll('.li-job-card').forEach(c => c.classList.remove('selected'));
+      if (cardEl) cardEl.classList.add('selected');
+      const job = allJobs.find(j => j.id === jobId);
+      if (!job) return;
+      document.getElementById('detailCompany').textContent = job.company;
+      document.getElementById('detailTitle').textContent = job.title;
+      document.getElementById('detailSub').textContent = job.sub;
+      document.getElementById('detailDesc').textContent = job.desc;
+      const logo = document.getElementById('detailLogo');
+      logo.innerHTML = job.logoText;
+      logo.style.background = job.logoBg;
+      logo.style.color = job.logoColor;
+      document.getElementById('detailTags').innerHTML = `
+        <span class="li-detail-tag">${job.modality}</span>
+        <span class="li-detail-tag">Tempo integral</span>
+      `;
+    }
+
+    function setMode(mode) {
+      const body = document.body;
+      const btnAfter = document.getElementById('btnAfter');
+      const btnBefore = document.getElementById('btnBefore');
+      if (mode === 'before') {
+        body.classList.remove('mode-after');
+        body.classList.add('mode-before');
+        btnBefore.classList.add('active');
+        btnAfter.classList.remove('active');
+      } else {
+        body.classList.remove('mode-before');
+        body.classList.add('mode-after');
+        btnAfter.classList.add('active');
+        btnBefore.classList.remove('active');
+      }
+    }
+
+    function toggleRemotePopover(e) {
+      e.stopPropagation();
+      document.getElementById('remotePopover').classList.toggle('open');
+    }
+
+    document.addEventListener('click', () => {
+      const pop = document.getElementById('remotePopover');
+      if (pop) pop.classList.remove('open');
+    });
+
+    function syncFromPopover() {
+      document.getElementById('drwRemoto').checked = document.getElementById('chkRemoto').checked;
+      document.getElementById('drwHibrido').checked = document.getElementById('chkHibrido').checked;
+      document.getElementById('drwPresencial').checked = document.getElementById('chkPresencial').checked;
+      updatePillsAndRender();
+    }
+
+    function updateDrawerPreviewCount() {
+      document.getElementById('chkRemoto').checked = document.getElementById('drwRemoto').checked;
+      document.getElementById('chkHibrido').checked = document.getElementById('drwHibrido').checked;
+      document.getElementById('chkPresencial').checked = document.getElementById('drwPresencial').checked;
+    }
+
+    function applyDrawerFilters() {
+      updatePillsAndRender();
+      toggleDrawer(false);
+    }
+
+    function resetAllFilters() {
+      document.getElementById('chkRemoto').checked = true;
+      document.getElementById('chkHibrido').checked = false;
+      document.getElementById('chkPresencial').checked = false;
+      document.getElementById('drwRemoto').checked = true;
+      document.getElementById('drwHibrido').checked = false;
+      document.getElementById('drwPresencial').checked = false;
+      easyApplyOnly = false;
+      document.getElementById('pillEasyApply').classList.remove('active');
+      updatePillsAndRender();
+    }
+
+    function toggleEasyApply() {
+      easyApplyOnly = !easyApplyOnly;
+      document.getElementById('pillEasyApply').classList.toggle('active', easyApplyOnly);
+      renderJobsList();
+    }
+
+    function updatePillsAndRender() {
+      const r = document.getElementById('chkRemoto').checked;
+      const h = document.getElementById('chkHibrido').checked;
+      const p = document.getElementById('chkPresencial').checked;
+      const labels = [];
+      if (r) labels.push('Remoto');
+      if (h) labels.push('Híbrido');
+      if (p) labels.push('Presencial');
+      const pill = document.getElementById('pillRemote');
+      const text = document.getElementById('pillRemoteLabel');
+      if (labels.length > 0) {
+        pill.classList.add('active');
+        text.textContent = 'Presencial/remoto: ' + labels.join(', ');
+      } else {
+        pill.classList.remove('active');
+        text.textContent = 'Presencial/remoto';
+      }
+      renderJobsList();
+    }
+
+    function handleSearchInput(val) {
+      const lower = val.toLowerCase();
+      if (lower.includes('remoto')) {
+        document.getElementById('chkRemoto').checked = true;
+        document.getElementById('drwRemoto').checked = true;
+        updatePillsAndRender();
+      }
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      input.focus();
+    }
+
+    function activateRemoteFilter() {
+      document.getElementById('chkRemoto').checked = true;
+      document.getElementById('drwRemoto').checked = true;
+      updatePillsAndRender();
+      document.getElementById('searchWrap').classList.remove('open-dropdown');
+    }
+
+    function toggleDrawer(open) {
+      const el = document.getElementById('drawerBackdrop');
+      if (open) el.classList.add('open');
+      else el.classList.remove('open');
+    }
+
+    renderJobsList();
+  </script>
+</body>
+</html>
